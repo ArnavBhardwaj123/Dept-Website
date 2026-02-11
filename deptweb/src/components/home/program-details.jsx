@@ -74,7 +74,7 @@ export default function ProgramDetails() {
                                     onClick={() => toggleAccordion(index)}
                                     className="w-100 d-flex justify-content-between align-items-center p-3 border-0 text-start"
                                     style={{
-                                        backgroundColor: '#002147', // Deep blue
+                                        backgroundColor: '#00304C', // User defined blue
                                         color: '#ffffff',
                                         borderRadius: '5px',
                                         cursor: 'pointer',
@@ -87,7 +87,8 @@ export default function ProgramDetails() {
                                     <span
                                         style={{
                                             transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)',
-                                            transition: 'transform 0.3s ease',
+                                            color: isActive ? '#F26520' : '#fff', // Orange when active
+                                            transition: 'transform 0.3s ease, color 0.3s ease',
                                             fontSize: '0.8rem'
                                         }}
                                     >

@@ -124,7 +124,7 @@ export default function Faculty() {
                                     className="card-title fw-bold mb-1"
                                     style={{
                                         fontSize: '1rem',
-                                        color: '#002147' // Deep blue/navy
+                                        color: '#00304C' // User defined blue
                                     }}
                                 >
                                     {member.name}

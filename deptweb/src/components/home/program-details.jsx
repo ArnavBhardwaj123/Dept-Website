@@ -62,7 +62,7 @@ export default function ProgramDetails() {
     };
 
     return (
-        <section className="py-5 bg-white">
+        <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
             <div className="container">
                 <div className="d-flex flex-column gap-3">
                     {programs.map((item, index) => {
@@ -74,7 +74,7 @@ export default function ProgramDetails() {
                                     onClick={() => toggleAccordion(index)}
                                     className="w-100 d-flex justify-content-between align-items-center p-3 border-0 text-start"
                                     style={{
-                                        backgroundColor: '#00304C', // User defined blue
+                                        backgroundColor: '#00304C',
                                         color: '#ffffff',
                                         borderRadius: '5px',
                                         cursor: 'pointer',
@@ -87,7 +87,7 @@ export default function ProgramDetails() {
                                     <span
                                         style={{
                                             transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)',
-                                            color: isActive ? '#F26520' : '#fff', // Orange when active
+                                            color: isActive ? '#F26520' : '#fff',
                                             transition: 'transform 0.3s ease, color 0.3s ease',
                                             fontSize: '0.8rem'
                                         }}

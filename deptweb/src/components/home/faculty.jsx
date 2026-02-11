@@ -52,16 +52,16 @@ export default function Faculty() {
     }, []);
 
     return (
-        <section className="py-5 bg-white">
+        <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
             <div className="container">
                 {/* Header */}
                 <div className="d-flex justify-content-between align-items-center mb-4">
-                    <h2 className="fw-bold m-0" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.1rem)', color: '#000' }}>
+                    <h2 className="fw-bold m-0" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.1rem)', color: '#00304C' }}>
                         Faculty
                     </h2>
                     <button
                         className="btn btn-link text-decoration-none fw-semibold p-0 border-0"
-                        style={{ color: '#000' }}
+                        style={{ color: '#F26520' }}
                     >
                         View All
                         <span className="ms-1">→</span>
@@ -157,14 +157,14 @@ export default function Faculty() {
                         <button
                             onClick={() => scroll('left')}
                             className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center p-0"
-                            style={{ width: '32px', height: '32px', border: '1px solid #dee2e6', color: '#6c757d' }}
+                            style={{ width: '32px', height: '32px', border: '1px solid #F26520', color: '#F26520' }}
                         >
                             <span style={{ fontSize: '1.2rem', lineHeight: 0, paddingBottom: '4px' }}>‹</span>
                         </button>
                         <button
                             onClick={() => scroll('right')}
                             className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center p-0"
-                            style={{ width: '32px', height: '32px', border: '1px solid #dee2e6', color: '#6c757d' }}
+                            style={{ width: '32px', height: '32px', border: '1px solid #F26520', color: '#F26520' }}
                         >
                             <span style={{ fontSize: '1.2rem', lineHeight: 0, paddingBottom: '4px' }}>›</span>
                         </button>
@@ -179,10 +179,10 @@ export default function Faculty() {
                                     width: '10px',
                                     height: '10px',
                                     borderRadius: '50%',
-                                    backgroundColor: activeDot === index ? '#212529' : 'transparent',
-                                    border: '1px solid #ced4da',
+                                    backgroundColor: activeDot === index ? '#F26520' : 'transparent',
+                                    border: activeDot === index ? '1px solid #F26520' : '1px solid #ced4da',
                                     cursor: 'pointer',
-                                    transition: 'background-color 0.2s ease'
+                                    transition: 'background-color 0.2s ease, border-color 0.2s ease'
                                 }}
                                 onClick={() => {
                                     // Optional: Click dot to scroll to section

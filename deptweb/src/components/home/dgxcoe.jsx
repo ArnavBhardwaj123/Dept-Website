@@ -33,7 +33,7 @@ export default function DgxCoe() {
                 href="https://nextgen-supercomputing.in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn px-3 py-2 fw-semibold"
+                className="btn px-4 py-2 fw-semibold"
                 style={{ 
                   backgroundColor: '#ff5722', 
                   color: 'white',

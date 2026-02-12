@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export default function KeyHighlights() {
+export default function Overview() {
   return (
     <section className="py-5 bg-white">
       <div className="container">

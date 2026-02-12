@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Faculty() {
     const scrollRef = useRef(null);
@@ -71,18 +72,12 @@ export default function Faculty() {
                 {/* Scrollable Container */}
                 <div
                     ref={scrollRef}
-                    className="d-flex gap-4 overflow-auto pb-4 px-1"
+                    className="d-flex gap-4 overflow-auto pb-4 px-1 scrollbar-hide"
                     style={{
-                        scrollbarWidth: 'none',
-                        msOverflowStyle: 'none',
                         scrollSnapType: 'x mandatory'
                     }}
                 >
-                    <style jsx>{`
-            div::-webkit-scrollbar {
-              display: none;
-            }
-          `}</style>
+
 
                     {facultyMembers.map((member) => (
                         <div
@@ -109,13 +104,14 @@ export default function Faculty() {
                                 style={{
                                     height: '220px',
                                     borderTopLeftRadius: '12px',
-                                    borderTopRightRadius: '12px'
+                                    borderTopRightRadius: '12px',
+                                    position: 'relative'
                                 }}
                             >
-                                <img
+                                <Image
                                     src={member.image}
                                     alt={member.name}
-                                    className="w-100 h-100"
+                                    fill
                                     style={{ objectFit: 'cover' }}
                                 />
                             </div>

@@ -112,14 +112,12 @@ export default function PublicationsResearch() {
                     <div
                         ref={scrollRef}
                         onScroll={handleScroll}
-                        className="d-flex gap-4 overflow-auto pb-4 px-1"
+                        className="d-flex gap-4 overflow-auto pb-4 px-1 scrollbar-hide"
                         style={{
-                            scrollbarWidth: 'none',
-                            msOverflowStyle: 'none',
                             scrollSnapType: 'x mandatory'
                         }}
                     >
-                        <style jsx>{`div::-webkit-scrollbar { display: none; }`}</style>
+
                         {publications.map((pub) => (
                             <div
                                 key={pub.id}

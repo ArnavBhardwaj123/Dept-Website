@@ -3,111 +3,78 @@
 import React from 'react';
 
 export default function KeyHighlights() {
-  const highlights = [
-    {
-      id: 1,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
-    },
-    {
-      id: 2,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
-    },
-    {
-      id: 3,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
-    },
-    {
-      id: 4,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
-    },
-    {
-      id: 5,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
-    },
-    {
-      id: 6,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
-    },
-    {
-      id: 7,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
-    },
-    {
-      id: 8,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
-    }
-  ];
-
   return (
-    <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
+    <section className="py-5 bg-white">
       <div className="container">
-        <h2 className="fw-bold mb-5" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.1rem)', color: '#000' }}>
-          Key Highlights
-        </h2>
-        
-        <div className="row g-4">
-          {highlights.map((highlight) => (
-            <div key={highlight.id} className="col-lg-6">
-              <div 
-                className="d-flex align-items-start bg-white rounded-3 overflow-hidden"
-                style={{ 
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.12)';
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
-                  e.currentTarget.style.transform = 'translateY(0)';
+        <div
+          className="p-4 p-lg-5"
+          style={{
+            boxShadow: '0 0 20px rgba(0,0,0,0.05)', // Soft shadow
+            borderRadius: '16px',
+            backgroundColor: '#fff'
+          }}
+        >
+          <div className="row align-items-center g-5">
+            {/* Left Content */}
+            <div className="col-lg-5">
+              <h2 className="fw-bold mb-4" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: '#000' }}>
+                CSE (AI) Department's <span style={{ color: '#F26520' }}>Key <br /> Highlights</span> in <span style={{ color: '#F26520' }}>Numbers</span>
+              </h2>
+
+              <p className="text-muted mb-4" style={{ lineHeight: '1.6' }}>
+                Explore the dynamic journey of KIET's CSE (Artificial Intelligence) program through numbers that reflect our technological excellence, research innovation, industry partnerships, and student achievements – making us one of the most future-ready AI branches in the country.
+              </p>
+
+              <a
+                href="https://admission.kiet.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn px-4 py-2 text-white fw-semibold"
+                style={{
+                  backgroundColor: '#F26520',
+                  borderRadius: '6px',
+                  border: 'none',
+                  fontSize: '0.95rem',
+                  textDecoration: 'none',
+                  display: 'inline-block'
                 }}
               >
-                {/* Image */}
-                <div style={{ flex: '0 0 160px', height: '140px' }}>
-                  <img
-                    src="/cse-ai-assets/images/kiet-building.jpeg"
-                    alt={highlight.title}
-                    className="w-100 h-100"
-                    style={{ objectFit: 'cover' }}
-                  />
+                Apply Now
+              </a>
+            </div>
+
+            {/* Right Stats Grid */}
+            <div className="col-lg-7">
+              <div className="row g-4 text-center text-lg-start">
+                {/* Stat 1 */}
+                <div className="col-sm-6">
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>₹7 Cr</h3>
+                  <p className="small fw-bold mb-0 text-dark">Funding Raised by Our</p>
+                  <p className="small text-muted">Alumni Through Startups</p>
                 </div>
-                
-                {/* Content */}
-                <div className="p-3 flex-grow-1">
-                  <h5 
-                    className="fw-semibold mb-2" 
-                    style={{ 
-                      fontSize: '1rem', 
-                      color: '#0d3b66',
-                      lineHeight: '1.4'
-                    }}
-                  >
-                    {highlight.title}
-                  </h5>
-                  <p 
-                    className="mb-0" 
-                    style={{ 
-                      fontSize: '0.85rem', 
-                      color: '#666',
-                      lineHeight: '1.5'
-                    }}
-                  >
-                    {highlight.description}
-                  </p>
+
+                {/* Stat 2 */}
+                <div className="col-sm-6">
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>95%</h3>
+                  <p className="small fw-bold mb-0 text-dark">Placement Record in</p>
+                  <p className="small text-muted">Leading Tech & AI Companies</p>
+                </div>
+
+                {/* Stat 3 */}
+                <div className="col-sm-6">
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>180</h3>
+                  <p className="small fw-bold mb-0 text-dark">Annual Student Intake</p>
+                </div>
+
+                {/* Stat 4 */}
+                <div className="col-sm-6">
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>500+</h3>
+                  <p className="small fw-bold mb-0 text-dark">Global Certifications</p>
+                  <p className="small text-muted">(AI • ML • Cloud)</p>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

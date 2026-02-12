@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 export default function PlacementOverview() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+
   const images = [
     '/cse-ai-assets/images/kiet-building.jpeg',
     // Add more images here if needed
@@ -29,11 +30,11 @@ export default function PlacementOverview() {
                 <span style={{ color: '#ff5722' }}>PLACEMENT</span>{' '}
                 <span style={{ color: '#000' }}>OVERVIEW</span>
               </h1>
-              
+
               <p className="fw-semibold mb-4" style={{ fontSize: '1rem', color: '#000' }}>
                 NUMBER OF COMPANIES VISITED
               </p>
-              
+
               {/* Statistics */}
               <div className="row mb-4">
                 <div className="col-md-4 mb-3 mb-md-0">
@@ -44,7 +45,7 @@ export default function PlacementOverview() {
                     B.Tech (CSE-AI)
                   </p>
                 </div>
-                
+
                 <div className="col-md-4 mb-3 mb-md-0">
                   <h2 className="fw-bold mb-2" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#0d3b66' }}>
                     120+
@@ -53,7 +54,7 @@ export default function PlacementOverview() {
                     B.Tech (CSE-AI/AI&ML)
                   </p>
                 </div>
-                
+
                 <div className="col-md-4">
                   <h2 className="fw-bold mb-2" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#0d3b66' }}>
                     50+
@@ -63,12 +64,12 @@ export default function PlacementOverview() {
                   </p>
                 </div>
               </div>
-              
-              <a 
+
+              <a
                 href="#placements"
                 className="btn px-4 py-2 fw-semibold"
-                style={{ 
-                  backgroundColor: '#ff5722', 
+                style={{
+                  backgroundColor: '#ff5722',
                   color: 'white',
                   border: 'none',
                   borderRadius: '8px',
@@ -97,9 +98,9 @@ export default function PlacementOverview() {
           {/* Right Image Slider */}
           <div className="col-lg-6">
             <div className="position-relative">
-              <div 
+              <div
                 className="rounded-4 overflow-hidden"
-                style={{ 
+                style={{
                   boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
                   border: '8px solid white',
                   height: '350px',
@@ -107,16 +108,15 @@ export default function PlacementOverview() {
                   position: 'relative'
                 }}
               >
-                <img
+                <Image
                   src={images[currentSlide]}
                   alt="KIET Campus"
-                  className="w-100 h-100"
-                  style={{ 
-                    objectFit: 'cover',
-                    display: 'block'
+                  fill
+                  style={{
+                    objectFit: 'cover'
                   }}
                 />
-                
+
                 {/* Navigation Arrow - Right */}
                 {images.length > 1 && (
                   <button

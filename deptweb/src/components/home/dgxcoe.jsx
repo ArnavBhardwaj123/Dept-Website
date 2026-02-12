@@ -18,7 +18,7 @@ export default function DgxCoe() {
               <h1 className="fw-bold mb-4" style={{ color: 'black' ,fontSize: 'clamp(1.3rem, 3vw, 2rem)' }}>
                 Discover <span style={{ color: '#ff5722' }}>Supercomputing Excellence</span>
                 <br />
-                at <span style={{ color: '#ff5722' }}>KIET's COE</span>
+                at <span style={{ color: '#ff5722' }}>KIET&apos;s COE</span>
               </h1>
               
               <p className="text-muted mb-4" style={{ fontSize: 'clamp(0.95rem, 2vw, 1rem)', lineHeight: '1.8' }}>
@@ -70,16 +70,16 @@ export default function DgxCoe() {
                   boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
                   border: '8px solid white',
                   height: '350px',
-                  width: '100%'
+                  width: '100%',
+                  position: 'relative'
                 }}
               >
-                <img
+                <Image
                   src="/cse-ai-assets/images/kiet-building.jpeg"
                   alt="KIET College Building"
-                  className="w-100 h-100"
+                  fill
                   style={{ 
-                    objectFit: 'cover',
-                    display: 'block'
+                    objectFit: 'cover'
                   }}
                 />
               </div>

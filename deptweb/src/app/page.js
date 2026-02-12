@@ -6,7 +6,7 @@ import Faculty from "@/components/home/faculty";
 import ProgramDetails from "@/components/home/program-details";
 import PublicationsResearch from "@/components/home/publications-research";
 import HomeNav from "@/components/home/home-nav";
-
+import KeyHighlights from "@/components/home/keyhighlights";
 import FloatingAdmissionButton from "@/components/home/floating-admission-button";
 
 export default function Home() {
@@ -18,6 +18,7 @@ export default function Home() {
       <PlacementRecord />
       <DgxCoe />
       <PlacementOverview />
+      <KeyHighlights />
       <Faculty />
       <ProgramDetails />
       <PublicationsResearch />

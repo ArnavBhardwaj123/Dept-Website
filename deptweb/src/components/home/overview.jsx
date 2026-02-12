@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Overview() {
   return (
-    <section className="py-5 bg-white">
+    <section className="py-5" style={{ backgroundColor: "#f8f9fa" }}>
       <div className="container">
         <div
           className="p-4 p-lg-5"

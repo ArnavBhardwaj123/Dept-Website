@@ -2,9 +2,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="py-5 text-light"
+      className="py-5 text-dark"
       style={{
-        background: "linear-gradient(135deg, #0d6efd, #0b5ed7)",
+        background: "#f8f9fa",
         minHeight: "90vh",
         display: "flex",
         alignItems: "center"
@@ -21,11 +21,11 @@ export default function Hero() {
         </p>
 
         <div className="d-flex justify-content-center gap-3">
-          <a href="#programs" className="btn btn-light btn-lg">
+          <a href="#programs" className="btn btn-primary btn-lg">
             Explore Programs
           </a>
 
-          <a href="#contact" className="btn btn-outline-light btn-lg">
+          <a href="#contact" className="btn btn-outline-primary btn-lg">
             Contact Us
           </a>
         </div>

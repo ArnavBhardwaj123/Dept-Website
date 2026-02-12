@@ -11,7 +11,7 @@ export default function PlacementRecord() {
     ];
 
     return (
-        <section className="py-5" style={{ backgroundColor: '#fff' }}>
+        <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
             <div className="container">
                 <div className="row g-3">
                     {cards.map((card, index) => (

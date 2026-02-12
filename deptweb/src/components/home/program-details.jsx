@@ -105,7 +105,6 @@ export default function ProgramDetails() {
                                         opacity: isActive ? 1 : 0,
                                         boxShadow: isActive ? '0 4px 6px rgba(0,0,0,0.05)' : 'none',
                                         border: isActive ? '1px solid #dee2e6' : 'none',
-                                        borderTop: 'none',
                                         borderRadius: '0 0 5px 5px'
                                     }}
                                 >

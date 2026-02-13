@@ -80,7 +80,7 @@ export default function KeyHighlights() {
 
                 {/* Content */}
                 <div className="p-3 flex-grow-1">
-                  <h5
+                  <h3 
                     className="fw-semibold mb-2"
                     style={{
                       fontSize: '1.2rem',
@@ -89,7 +89,7 @@ export default function KeyHighlights() {
                     }}
                   >
                     {highlight.title}
-                  </h5>
+                  </h3>
                   <p
                     className="mb-0"
                     style={{

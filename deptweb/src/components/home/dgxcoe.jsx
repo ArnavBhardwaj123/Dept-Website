@@ -15,11 +15,11 @@ export default function DgxCoe() {
                 Your Journey Into Advanced Computing Begins Here
               </p>
               
-              <h1 className="fw-bold mb-4" style={{ color: 'black' ,fontSize: 'clamp(1.3rem, 3vw, 2rem)' }}>
+              <h2 className="fw-bold mb-4" style={{ color: 'black' ,fontSize: 'clamp(1.3rem, 3vw, 2rem)' }}>
                 Discover <span style={{ color: '#ff5722' }}>Supercomputing Excellence</span>
                 <br />
                 at <span style={{ color: '#ff5722' }}>KIET&apos;s COE</span>
-              </h1>
+              </h2>
               
               <p className="text-muted mb-4" style={{ fontSize: 'clamp(0.95rem, 2vw, 1rem)', lineHeight: '1.8' }}>
                 Step into the Center of Excellence (COE) for Supercomputing at KIET — a premier 

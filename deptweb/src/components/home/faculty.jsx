@@ -2,19 +2,35 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Faculty() {
     const scrollRef = useRef(null);
     const [activeDot, setActiveDot] = useState(0);
 
-    // Generate 20 mock faculty members
-    const facultyMembers = Array.from({ length: 20 }, (_, i) => ({
-        id: i + 1,
-        name: "Prof. (Dr.) Rekha Kashyap",
-        designation: "Dean, CSE (AI/AI&ML)",
-        university: "Jawaharlal Nehru University",
-        image: "/cse-ai-assets/images/kiet-building.jpeg"
-    }));
+    // Top 20 faculty members
+    const facultyMembers = [
+        { id: 1, name: "Dr. Rekha Kashyap", position: "Dean-CSE(AI/AI&ML)", branch: "", degree: "Ph.D.", university: "JNU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 2, name: "Dr. Pratibha Singh", position: "Associate Professor & Program Head", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "IIT - Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 3, name: "Dr. Laxman Singh", position: "Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "Jamia Millia Islamia, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 4, name: "Dr. Richa Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "Amity University, Lucknow", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 5, name: "Dr. Kavya Gupta", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "IGDTUW, Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 6, name: "Dr. Davesh Kumar Sharma", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "SRM Institute of Science and Technology", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 7, name: "Mr. Rajeev Kumar Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Dr. A.P.J. AKTU, Lucknow", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 8, name: "Ms. Bhawna", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Maharishi Markandeshwar University, Mullana, Ambala", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 9, name: "Ms. Payal Chhabra", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Govind Ballabh Pant University, Pantnagar", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 10, name: "Ms. Akanksha", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Gautam Buddha University, Greater Noida", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 11, name: "Mr. Nagendra Nath Dubey", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Rajasthan Technical University, Kota", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 12, name: "Mr. Thammali Gangadhar", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 13, name: "Ms. Nidhi Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "UPTU, Lucknow", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 14, name: "Mr. Tanmoy Das", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 15, name: "Mr. Rachit Patel", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 16, name: "Mr. Mayank Lakhotia", position: "Assistant Professor & Program Head (First Year)", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "NSUT, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 17, name: "Mr. Abhishek Shukla", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 18, name: "Ms. Surbhi Verma", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Shobhit University, Meerut", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 19, name: "Mr. Sundeep Raj", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "GGSIPU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 20, name: "Ms. Anjali Maurya", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "IIITDM, Jabalpur", image: "/cse-ai-assets/images/Dean's photo.JPG" }
+    ];
 
     const scroll = (direction) => {
         if (scrollRef.current) {
@@ -60,13 +76,14 @@ export default function Faculty() {
                     <h2 className="fw-bold m-0" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.1rem)', color: '#00304C' }}>
                         Faculty
                     </h2>
-                    <button
+                    <Link
+                        href="/faculty"
                         className="btn btn-link text-decoration-none fw-semibold p-0 border-0"
                         style={{ color: '#F26520' }}
                     >
                         View All
                         <span className="ms-1">→</span>
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Scrollable Container */}
@@ -84,7 +101,7 @@ export default function Faculty() {
                             key={member.id}
                             className="card border-0 shadow-sm flex-shrink-0"
                             style={{
-                                width: '280px',
+                                width: '300px',
                                 borderRadius: '12px',
                                 scrollSnapAlign: 'start',
                                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -102,7 +119,7 @@ export default function Faculty() {
                             <div
                                 className="overflow-hidden"
                                 style={{
-                                    height: '220px',
+                                    height: '200px',
                                     borderTopLeftRadius: '12px',
                                     borderTopRightRadius: '12px',
                                     position: 'relative'
@@ -115,31 +132,33 @@ export default function Faculty() {
                                     style={{ objectFit: 'cover' }}
                                 />
                             </div>
-                            <div className="card-body text-center p-4">
-                                <h5
-                                    className="card-title fw-bold mb-1"
+                            <div className="card-body text-center p-3">
+                                <h3
+                                    className="card-title fw-bold mb-2"
                                     style={{
-                                        fontSize: '1rem',
-                                        color: '#00304C' // User defined blue
+                                        fontSize: '1.05rem',
+                                        color: '#00304C',
+                                        lineHeight: '1.3'
                                     }}
                                 >
                                     {member.name}
-                                </h5>
+                                </h3>
                                 <p
-                                    className="card-text mb-1"
+                                    className="card-text mb-3"
                                     style={{
                                         fontSize: '0.85rem',
                                         color: '#666',
-                                        fontWeight: '500'
+                                        fontWeight: '500',
+                                        lineHeight: '1.4'
                                     }}
                                 >
-                                    {member.designation}
+                                    {member.position}, {member.branch}
                                 </p>
                                 <p
-                                    className="card-text small text-muted"
-                                    style={{ fontSize: '0.75rem' }}
+                                    className="card-text small text-muted mb-0"
+                                    style={{ fontSize: '0.75rem', lineHeight: '1.3' }}
                                 >
-                                    {member.university}
+                                    {member.degree} {member.university}
                                 </p>
                             </div>
                         </div>

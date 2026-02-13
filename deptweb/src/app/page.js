@@ -16,17 +16,17 @@ export default function Home() {
     <>
       <HomeNav />
       <FloatingAdmissionButton />
-      <Overview />
-      
-      {/* <PlacementOverview /> */}
-      <PlacementRecord />
-      <DgxCoe />
-      <DeanMessage />
-      <KeyHighlights />
-      <Faculty />
-      <PublicationsResearch />
-      <ProgramDetails />
-
+      <main>
+        <Overview />
+        {/* <PlacementOverview /> */}
+        <PlacementRecord />
+        <DgxCoe />
+        <DeanMessage />
+        <KeyHighlights />
+        <Faculty />
+        <PublicationsResearch />
+        <ProgramDetails />
+      </main>
     </>
   );
 }

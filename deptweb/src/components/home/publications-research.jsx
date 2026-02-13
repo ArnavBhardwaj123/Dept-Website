@@ -199,13 +199,8 @@ export default function PublicationsResearch() {
     };
 
     return (
-        <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
+        <section className="pb-5" style={{ backgroundColor: '#f8f9fa' }}>
             <div className="container">
-                {/* Header */}
-                <h2 className="fw-bold mb-4" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.1rem)', color: '#00304C' }}>
-
-                </h2>
-
                 {/* 1. Recent Research Heading */}
                 <h3 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Recent Research</h3>
 
@@ -243,7 +238,7 @@ export default function PublicationsResearch() {
                                 }}
                             >
                                 <div>
-                                    <h5 className="fw-bold mb-3 line-clamp-2" style={{
+                                    <h4 className="fw-bold mb-3 line-clamp-2" style={{
                                         color: '#F26520',
                                         fontSize: '1.1rem',
                                         display: '-webkit-box',
@@ -253,7 +248,7 @@ export default function PublicationsResearch() {
                                         lineHeight: '1.4'
                                     }}>
                                         {pub.title}
-                                    </h5>
+                                    </h4>
                                     <p className="text-muted small mb-3" style={{ fontSize: '0.85rem' }}>{pub.authors}</p>
                                 </div>
                                 <a
@@ -354,7 +349,7 @@ export default function PublicationsResearch() {
 
 
                 {/* 2. Publications Heading */}
-                <h3 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Publications Statistics</h3>
+                <h2 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Publications Statistics</h2>
 
                 {/* Research Stats */}
                 <div>
@@ -363,13 +358,15 @@ export default function PublicationsResearch() {
                         <div className="col-lg-7">
                             <div className="card border-0 shadow-sm p-4 h-100 rounded-4">
                                 <div className="d-flex justify-content-between align-items-center mb-4">
-                                    <h6 className="text-muted mb-0 fw-semibold">Academic Year</h6>
+                                    <label htmlFor="year-select" className="text-muted mb-0 fw-semibold" style={{ fontSize: '1rem', color: '#495057' }}>Academic Year</label>
                                     {/* Year Dropdown */}
                                     <select
-                                        className="form-select border-0 bg-light text-primary fw-bold shadow-none"
+                                        id="year-select"
+                                        className="form-select border-0 bg-light fw-bold shadow-none"
                                         style={{ width: 'auto', cursor: 'pointer', color: '#00304C' }}
                                         value={activeYear}
                                         onChange={(e) => setActiveYear(e.target.value)}
+                                        aria-label="Select academic year for publication statistics"
                                     >
                                         {Object.keys(statsData).map(year => (
                                             <option key={year} value={year}>{year}</option>

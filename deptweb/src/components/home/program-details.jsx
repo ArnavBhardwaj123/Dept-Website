@@ -10,7 +10,7 @@ export default function ProgramDetails() {
             title: "Program Description",
             content: (
                 <>
-                    <h5 className="fw-bold mb-3">About the Program</h5>
+                    <h3 className="fw-bold mb-3">About the Program</h3>
                     <p className="mb-3">
                         The CSE (AI/AI&ML) programs are strategically designed to shape future-ready professionals in Artificial Intelligence and emerging technologies. Blending strong core computing foundations with cutting-edge domains like Machine Learning, Deep Learning, Computer Vision, NLP, Robotics, and Generative AI, the curriculum emphasizes structured, hands-on, and industry-aligned learning.
                     </p>

@@ -25,7 +25,7 @@ export default function Faculty() {
         { id: 13, name: "Ms. Nidhi Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "UPTU, Lucknow", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 14, name: "Mr. Tanmoy Das", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 15, name: "Mr. Rachit Patel", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
-        { id: 16, name: "Mr. Mayank Lakhotia", position: "Assistant Professor & Program Head (First Year)", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "NSUT, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 16, name: "Mr. Mayank Lakhotia", position: "Assistant Professor & Program Head (First Year)", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "NSUT, New Delhi", image: "/cse-ai-assets/images/Mayank_Lakhotia.PNG" },
         { id: 17, name: "Mr. Abhishek Shukla", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 18, name: "Ms. Surbhi Verma", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Shobhit University, Meerut", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 19, name: "Mr. Sundeep Raj", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "GGSIPU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },

@@ -223,7 +223,7 @@ export default function PublicationsResearch() {
                             <button
                                 key={year}
                                 onClick={() => setActiveYear(year)}
-                                className="btn position-relative fw-bold px-4 py-2"
+                                className="btn position-relative fw-bold py-3"
                                 style={{
                                     backgroundColor: activeYear === year ? '#00304C' : '#fff',
                                     color: activeYear === year ? '#fff' : '#00304C',
@@ -231,7 +231,9 @@ export default function PublicationsResearch() {
                                     zIndex: 1,
                                     borderRadius: '8px',
                                     boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-                                    transition: 'all 0.3s ease'
+                                    transition: 'all 0.3s ease',
+                                    minWidth: '220px',
+                                    letterSpacing: '1.5px'
                                 }}
                             >
                                 {year}
@@ -251,7 +253,7 @@ export default function PublicationsResearch() {
                                                 style={{
                                                     width: '100%',
                                                     height: `${(value / maxVal) * 200}px`,
-                                                    backgroundColor: key === 'patents' || key === 'collaboration' ? '#FFDbbA' : '#F9CAB3', // Light orange shades
+                                                    backgroundColor: '#F9CAB3', // Uniform light orange/peach
                                                     borderRadius: '8px 8px 0 0',
                                                     transition: 'height 0.5s ease'
                                                 }}
@@ -272,35 +274,35 @@ export default function PublicationsResearch() {
                                     {/* Publicatons */}
                                     <div className="col-6">
                                         <div className="card border-0 shadow-sm p-3 h-100 rounded-4">
-                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520' }}>{currentStats.publications}</h3>
+                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.publications}</h3>
                                             <p className="small text-muted m-0">No. of Publications</p>
                                         </div>
                                     </div>
                                     {/* Patents */}
                                     <div className="col-6">
                                         <div className="card border-0 shadow-sm p-3 h-100 rounded-4">
-                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520' }}>{currentStats.patents}</h3>
+                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.patents}</h3>
                                             <p className="small text-muted m-0">No. of Patents</p>
                                         </div>
                                     </div>
                                     {/* Govt Projects */}
                                     <div className="col-6">
                                         <div className="card border-0 shadow-sm p-3 h-100 rounded-4">
-                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520' }}>{currentStats.projects}</h3>
+                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.projects}</h3>
                                             <p className="small text-muted m-0">No. of Govt. Projects</p>
                                         </div>
                                     </div>
                                     {/* Grants */}
                                     <div className="col-6">
                                         <div className="card border-0 shadow-sm p-3 h-100 rounded-4">
-                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520' }}>{currentStats.grants}</h3>
+                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.grants}</h3>
                                             <p className="small text-muted m-0">No. of Grants</p>
                                         </div>
                                     </div>
                                     {/* Collaboration */}
                                     <div className="col-12">
                                         <div className="card border-0 shadow-sm p-3 rounded-4">
-                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520' }}>{currentStats.collaboration}</h3>
+                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.collaboration}</h3>
                                             <p className="small text-muted m-0">No. of International/Industry Collaboration</p>
                                         </div>
                                     </div>

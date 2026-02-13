@@ -12,13 +12,13 @@ export default function ProgramDetails() {
                 <>
                     <h5 className="fw-bold mb-3">About the Program</h5>
                     <p className="mb-3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        The CSE (AI/AI&ML) programs are strategically designed to shape future-ready professionals in Artificial Intelligence and emerging technologies. Blending strong core computing foundations with cutting-edge domains like Machine Learning, Deep Learning, Computer Vision, NLP, Robotics, and Generative AI, the curriculum emphasizes structured, hands-on, and industry-aligned learning.
                     </p>
                     <p className="mb-3">
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        Beyond technical excellence, equal focus is given to communication, leadership, teamwork, and professional ethics—ensuring holistic personality development. Through internships, industry exposure, live projects, and continuous mentoring, students gain real-world experience and career confidence.
                     </p>
                     <p className="mb-0">
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+                        With a supportive ecosystem that fosters innovation, adaptability, and problem-solving, we empower learners to build impactful careers and responsibly contribute to the evolving global technology landscape.
                     </p>
                 </>
             )
@@ -27,32 +27,85 @@ export default function ProgramDetails() {
             title: "Vision",
             content: (
                 <p className="mb-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.
+                    To emerge as a globally competent leader by fostering industry-linked, innovative learning and impactful research in Computational Intelligence.
                 </p>
             )
         },
         {
             title: "Mission",
             content: (
-                <p className="mb-0">
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                </p>
+                <ul className="mb-0 ps-3">
+                    <li className="mb-2">To develop students with strong foundation of computer science with focus on Artificial Intelligence and other emerging technologies through outcome-based teaching learning process.</li>
+                    <li className="mb-2">To collaborate with industry for skill enhancement of teaching professionals and students emphasizing on project-based learning.</li>
+                    <li className="mb-0">To prepare ethically strong students with powerful leadership skills.</li>
+                </ul>
             )
         },
         {
             title: "Program Outcomes",
             content: (
-                <p className="mb-0">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-                </p>
+                <ul className="mb-0 ps-3">
+                    <li className="mb-2"><strong>PO1: Engineering Knowledge:</strong> Apply knowledge of mathematics, natural science, computing, engineering fundamentals and an engineering specialization as specified in WK1 to WK4 respectively to develop to the solution of complex engineering problems.</li>
+                    <li className="mb-2"><strong>PO2: Problem Analysis:</strong> Identify, formulate, review research literature and analyze complex engineering problems reaching substantiated conclusions with consideration for sustainable development. (WK1 to WK4)</li>
+                    <li className="mb-2"><strong>PO3: Design/Development of Solutions:</strong> Design creative solutions for complex engineering problems and design/develop systems/components/processes to meet identified needs with consideration for the public health and safety, whole-life cost, net zero carbon, culture, society and environment as required. (WK5)</li>
+                    <li className="mb-2"><strong>PO4: Conduct Investigations of Complex Problems:</strong> Conduct investigations of complex engineering problems using research-based knowledge including design of experiments, modelling, analysis & interpretation of data to provide valid conclusions. (WK8)</li>
+                    <li className="mb-2"><strong>PO5: Engineering Tool Usage:</strong> Create, select and apply appropriate techniques, resources and modern engineering & IT tools, including prediction and modelling recognizing their limitations to solve complex engineering problems. (WK2 and WK6)</li>
+                    <li className="mb-2"><strong>PO6: The Engineer and The World:</strong> Analyze and evaluate societal and environmental aspects while solving complex engineering problems for its impact on sustainability with reference to economy, health, safety, legal framework, culture and environment. (WK1, WK5, and WK7)</li>
+                    <li className="mb-2"><strong>PO7: Ethics:</strong> Apply ethical principles and commit to professional ethics, human values, diversity and inclusion; adhere to national & international laws. (WK9)</li>
+                    <li className="mb-2"><strong>PO8: Individual and Collaborative Team work:</strong> Function effectively as an individual, and as a member or leader in diverse/multi-disciplinary teams.</li>
+                    <li className="mb-2"><strong>PO9: Communication:</strong> Communicate effectively and inclusively within the engineering community and society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations considering cultural, language, and learning differences.</li>
+                    <li className="mb-2"><strong>PO10: Project Management and Finance:</strong> Apply knowledge and understanding of engineering management principles and economic decision-making and apply these to one’s own work, as a member and leader in a team, and to manage projects and in multidisciplinary environments.</li>
+                    <li className="mb-0"><strong>PO11: Life-Long Learning:</strong> Recognize the need for, and have the preparation and ability for (i) Independent and life-long learning (ii) Adaptability to new and emerging technologies and (iii) Critical thinking in the broadest context of technological change. (WK8)</li>
+                </ul>
             )
         },
         {
             title: "Syllabus",
             content: (
-                <p className="mb-0">
-                    Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
-                </p>
+                <div className="d-flex flex-column gap-2">
+                    {[
+                        { title: "I YEAR", link: "#" },
+                        { title: "II YEAR", link: "#" }
+                    ].map((item, idx) => (
+                        <a
+                            key={idx}
+                            href={item.link}
+                            className="d-flex align-items-center p-2 bg-white rounded text-decoration-none border shadow-sm"
+                            style={{
+                                transition: 'all 0.2s ease',
+                                width: '100%',
+                                maxWidth: '300px',
+                                borderColor: '#e9ecef'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.borderColor = '#F26520';
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                const textSpan = e.currentTarget.querySelector('.syllabus-text');
+                                if (textSpan) textSpan.style.color = '#F26520';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.borderColor = '#e9ecef';
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                const textSpan = e.currentTarget.querySelector('.syllabus-text');
+                                if (textSpan) textSpan.style.color = '#00304C';
+                            }}
+                        >
+                            <span className="me-3 d-flex align-items-center justify-content-center bg-light rounded-circle"
+                                style={{
+                                    width: '36px',
+                                    height: '36px',
+                                    flexShrink: 0
+                                }}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#F26520" className="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                                    <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                                    <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+                                </svg>
+                            </span>
+                            <span className="syllabus-text fw-medium" style={{ color: '#00304C', transition: 'color 0.2s ease', fontSize: '0.95rem' }}>{item.title}</span>
+                        </a>
+                    ))}
+                </div>
             )
         }
     ];

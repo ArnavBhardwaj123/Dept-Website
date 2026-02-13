@@ -4,15 +4,19 @@ import React from 'react';
 
 export default function PlacementRecord() {
     const cards = [
-        { color: '#F26520', textcolor: 'white' }, // Orange
-        { color: '#002855', textcolor: 'white' }, // Dark Blue
-        { color: '#F26520', textcolor: 'white' }, // Orange
-        { color: '#002855', textcolor: 'white' }, // Dark Blue
+        { value: '60 LPA', label: 'Highest Package', color: '#F26520', textcolor: 'white' },
+        { value: '17 LPA', label: 'Top 10% Placement', color: '#002855', textcolor: 'white' },
+        { value: '6.5 LPA', label: 'Average Package', color: '#F26520', textcolor: 'white' },
+        { value: '150+', label: 'Total Companies', color: '#002855', textcolor: 'white' },
     ];
 
     return (
         <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
             <div className="container">
+            <h1 className="fw-bold mb-4" style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}>
+                <span style={{ color: '#ff5722' }}>PLACEMENT</span>{' '}
+                <span style={{ color: '#000' }}>OVERVIEW</span>
+              </h1>
                 <div className="row g-3">
                     {cards.map((card, index) => (
                         <div key={index} className="col-md-6 col-lg-3">
@@ -22,11 +26,11 @@ export default function PlacementRecord() {
                                     backgroundColor: card.color,
                                     color: card.textcolor,
                                     borderRadius: '12px',
-                                    minHeight: '160px'
+                                    minHeight: '170px'
                                 }}
                             >
-                                <h3 className="fw-bold mb-2">₹10-22 LPA</h3>
-                                <p className="mb-0 small opacity-75">Average for Top Performers</p>
+                                <h3 className="fw-bold mb-3">{card.value}</h3>
+                                <p className="mb-0 opacity-75" style={{ fontSize: '1.4rem' }}>{card.label}</p>
                             </div>
                         </div>
                     ))}

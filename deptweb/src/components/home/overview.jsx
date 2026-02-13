@@ -18,11 +18,11 @@ export default function Overview() {
             {/* Left Content */}
             <div className="col-lg-5">
               <h2 className="fw-bold mb-4" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: '#000' }}>
-                CSE (AI) Department's <span style={{ color: '#F26520' }}>Key <br /> Highlights</span> in <span style={{ color: '#F26520' }}>Numbers</span>
+                CSE (AI / AI&ML) Department's <span style={{ color: '#F26520' }}>Key <br /> Highlights</span> in <span style={{ color: '#F26520' }}>Numbers</span>
               </h2>
 
               <p className="text-muted mb-4" style={{ lineHeight: '1.6' }}>
-                Explore the dynamic journey of KIET's CSE (Artificial Intelligence) program through numbers that reflect our technological excellence, research innovation, industry partnerships, and student achievements – making us one of the most future-ready AI branches in the country.
+                These achievements reflect our commitment to excellence in scale, skill, and success. With a robust intake, strong placement outcomes, global certifications, and significant student-led funding, the department stands as a dynamic ecosystem where academic strength, industry readiness, and entrepreneurial ambition translate into measurable, impactful results.
               </p>
 
               <a
@@ -49,8 +49,8 @@ export default function Overview() {
                 {/* Stat 1 */}
                 <div className="col-sm-6">
                   <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>₹7 Cr</h3>
-                  <p className="small fw-bold mb-0 text-dark">Funding Raised by Our</p>
-                  <p className="small text-muted">Alumni Through Startups</p>
+                  <p className="small fw-bold mb-0 text-dark">Funding Raised by Alumni</p>
+                  <p className="small text-muted">Through Startups : 2025 batch</p>
                 </div>
 
                 {/* Stat 2 */}
@@ -62,14 +62,14 @@ export default function Overview() {
 
                 {/* Stat 3 */}
                 <div className="col-sm-6">
-                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>180</h3>
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>240+300</h3>
                   <p className="small fw-bold mb-0 text-dark">Annual Student Intake</p>
                 </div>
 
                 {/* Stat 4 */}
                 <div className="col-sm-6">
-                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>500+</h3>
-                  <p className="small fw-bold mb-0 text-dark">Global Certifications</p>
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>650+</h3>
+                  <p className="small fw-bold mb-0 text-dark">Globally Certified Students</p>
                   <p className="small text-muted">(AI • ML • Cloud)</p>
                 </div>
               </div>

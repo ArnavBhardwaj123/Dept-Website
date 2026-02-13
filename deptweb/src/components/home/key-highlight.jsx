@@ -6,43 +6,33 @@ export default function KeyHighlights() {
   const highlights = [
     {
       id: 1,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
+      title: "Progressive, Experiential Learning Model",
+      description: "A technology-enabled, project-driven pedagogy that emphasizes continuous assessment and real-world problem solving. Students learn by building, experimenting, and innovating—not memorizing."
     },
     {
       id: 2,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
+      title: " Industry-Ready, Future-Focused Graduates",
+      description: "Structured exposure to industry tools, live projects, and applied learning ensures students graduate confident, competent, and workplace-ready."
     },
     {
       id: 3,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
+      title: "Globally Validated Skill Excellence",
+      description: "International certifications and global benchmarks strengthen our academic rigor, ensuring students meet worldwide standards of technical competence"
     },
     {
       id: 4,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
+      title: "Outstanding Career & Placement Success",
+      description: "A results-oriented ecosystem consistently translating academic excellence into high-impact career outcomes across premier organizations."
     },
     {
       id: 5,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
+      title: "AI-First Academic Framework",
+      description: "A strategically designed curriculum centered on Artificial Intelligence, Data, Cloud, and emerging technologies—preparing leaders for the intelligent digital era."
     },
     {
       id: 6,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
-    },
-    {
-      id: 7,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
-    },
-    {
-      id: 8,
-      title: "Hands-On Learning with Real-World AI Exposure",
-      description: "Students gain industry-level experience through AI-driven internships, research projects, and live problem-solving, graduating with a strong portfolio and practical skills in ML..."
+      title: "Innovation-Driven Entrepreneurial Ecosystem",
+      description: "We foster creators, researchers, and founders—transforming ideas into funded ventures, impactful research, and scalable technological solutions."
     }
   ];
 
@@ -87,7 +77,7 @@ export default function KeyHighlights() {
                   <h5 
                     className="fw-semibold mb-2" 
                     style={{ 
-                      fontSize: '1rem', 
+                      fontSize: '1.2rem', 
                       color: '#0d3b66',
                       lineHeight: '1.4'
                     }}

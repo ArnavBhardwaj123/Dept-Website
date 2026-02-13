@@ -29,35 +29,7 @@ export default function DgxCoe() {
                 that accelerates innovation.
               </p>
               
-              <a 
-                href="https://nextgen-supercomputing.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn px-4 py-2 fw-semibold"
-                style={{ 
-                  backgroundColor: '#ff5722', 
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '8px',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 4px 12px rgba(255, 87, 34, 0.3)',
-                  textDecoration: 'none',
-                  display: 'inline-block',
-                  fontSize: '1rem'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#e64a19';
-                  e.target.style.transform = 'translateY(-2px)';
-                  e.target.style.boxShadow = '0 6px 16px rgba(255, 87, 34, 0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#ff5722';
-                  e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow = '0 4px 12px rgba(255, 87, 34, 0.3)';
-                }}
-              >
-                Visit Website
-              </a>
+              
             </div>
           </div>
 
@@ -75,7 +47,7 @@ export default function DgxCoe() {
                 }}
               >
                 <Image
-                  src="/cse-ai-assets/images/kiet-building.jpeg"
+                  src="/cse-ai-assets/images/DGX-Supercomputing.png"
                   alt="KIET College Building"
                   fill
                   style={{ 

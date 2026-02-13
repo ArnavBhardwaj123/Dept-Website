@@ -2,6 +2,7 @@ import DgxCoe from "@/components/home/dgxcoe";
 import PlacementOverview from "@/components/home/placement-overview";
 import PlacementRecord from "@/components/home/placement-record";
 import Overview from "@/components/home/overview";
+import DeanMessage from "@/components/home/dean-message";
 import KeyHighlights from "@/components/home/key-highlight";
 import Faculty from "@/components/home/faculty";
 import ProgramDetails from "@/components/home/program-details";
@@ -16,13 +17,16 @@ export default function Home() {
       <HomeNav />
       <FloatingAdmissionButton />
       <Overview />
+      
+      {/* <PlacementOverview /> */}
       <PlacementRecord />
       <DgxCoe />
-      <PlacementOverview />
+      <DeanMessage />
       <KeyHighlights />
       <Faculty />
-      <ProgramDetails />
       <PublicationsResearch />
+      <ProgramDetails />
+
     </>
   );
 }

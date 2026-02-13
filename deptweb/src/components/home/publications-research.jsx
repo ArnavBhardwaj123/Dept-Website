@@ -3,79 +3,178 @@
 import React, { useState, useRef } from 'react';
 
 export default function PublicationsResearch() {
-    const [activeYear, setActiveYear] = useState('2023-24');
+    const [activeYear, setActiveYear] = useState('2025-26');
     const [activeDot, setActiveDot] = useState(0);
     const scrollRef = useRef(null);
 
-    // --- Data ---
-    // Generating 20 dummy publications
-    const publications = Array.from({ length: 20 }, (_, i) => ({
-        id: i + 1,
-        title: [
-            "Deep Learning-Based Weather Forecasting",
-            "Network Modeling for Fast Emergency Response",
-            "Mapping Urban Heat Zones Using Satellite",
-            "Optimized Routing for Autonomous Drones",
-            "AI-Driven Traffic Management Systems",
-            "Blockchain for Secure Health Data Exchange",
-            "Quantum Computing Algorithms for Logistics",
-            "Smart Grid Energy Distribution Optimization",
-            "Robotic Process Automation in Manufacturing",
-            "Augmented Reality for medical Training",
-            "Cybersecurity Protocols for IoT Devices",
-            "Edge Computing in Smart Agriculture",
-            "Natural Language Processing for Legal Tech",
-            "Computer Vision for Autonomous Vehicles",
-            "Sustainable Urban Planning using Big Data",
-            "Predictive Maintenance in Industrial IoT",
-            "5G Network Slicing for Critical Apps",
-            "Wearable Health Monitoring Devices",
-            "Cloud-Native Microservices Architecture",
-            "Ethical AI Frameworks for Public Sector"
-        ][i] || `Research Topics ${i + 1}`,
-        authors: [
-            "D. Singh, C. Patel, V. Rao",
-            "A. Kumar, B. Singh, S. Sharma",
-            "M. Gupta, K. Reddy, P. Nair",
-            "R. Verma, T. Das, L. Iyer",
-            "S. Bose, J. Chatterjee"
-        ][i % 5],
-        journal: [
-            "Tech Robotics Journal",
-            "AI & GeoScience Rev.",
-            "Geo Spatial Insights",
-            "Intl Journal of Info. Sci.",
-            "Smart City Tech"
-        ][i % 5] + ` ${2020 + (i % 6)}`,
-        link: "#"
-    }));
+    const publications = [
+        {
+            id: 1,
+            title: "Prominent solution for solar panel defect detection using AI-based computer vision technology",
+            authors: "Dr. Rekha Kashyap, Dr. Richa Singh",
+            journal: "IJIT 2024",
+            link: "https://doi.org/10.1007/s41870-024-02212-2"
+        },
+        {
+            id: 2,
+            title: "Towards Intelligent Retail Security: ConvLSTM-Based Shoplifting Detection with Adam Optimization",
+            authors: "Dr. Rekha Kashyap, Dr. Kiran, Dr. Laxman Singh",
+            journal: "Zenodo 2025",
+            link: "https://doi.org/10.5281/zenodo.17386861"
+        },
+        {
+            id: 3,
+            title: "Predicting the Veracity of News Articles Using Multimodal Embeddings and NLP-Based Features",
+            authors: "Dr. Rekha Kashyap, Dr. Richa Singh, Dr. Gaurav Srivastav",
+            journal: "IDICAIEI 2023",
+            link: "https://doi.org/10.1109/IDICAIEI58380.2023.10406898"
+        },
+        {
+            id: 4,
+            title: "Proposed ResVGG-Net Model for Mango Leaf Disease Classification and Agricultural Sustainability",
+            authors: "Dr. Sapna Juneja",
+            journal: "App. Fru.Sci. 2025",
+            link: "https://doi.org/10.1007/s10341-025-01667-2"
+        },
+        {
+            id: 5,
+            title: "Hybrid deep learning system for crop disease classification using modified SegNet segmentation",
+            authors: "Dr. Mukesh Kumar Tripathi",
+            journal: "Comp. & Elec. Eng. 2025",
+            link: "https://doi.org/10.1016/j.compeleceng.2025.110576"
+        },
+        {
+            id: 6,
+            title: "A Hybrid DL with Battle Royal Optimisation Algorithm for Accurate Tree Counting Using Satellite Images",
+            authors: "Dr. Shelly Gupta",
+            journal: "IJCIS 2025",
+            link: "https://doi.org/10.1007/s44196-025-00928-y"
+        },
+        {
+            id: 7,
+            title: "Hybrid optimization with constraints handling for combinatorial test case prioritization problems",
+            authors: "Dr. Mukesh Kumar Tripathi",
+            journal: "NCNS 2025",
+            link: "https://doi.org/10.1080/0954898x.2025.2517130"
+        },
+        {
+            id: 8,
+            title: "Advanced hyperparameter optimization for lung cancer detection using DenseBeetle network",
+            authors: "Dr. Laxman Singh",
+            journal: "Chem. & Int. Lab. Sys. 2026",
+            link: "https://doi.org/10.1016/j.chemolab.2025.105584"
+        },
+        {
+            id: 9,
+            title: "Enhanced tree enumeration through satellite imagery and hybrid ensemble cyclic averaging stacked chain model",
+            authors: "Dr. Shelly Gupta",
+            journal: "Jour. of Opt. 2025",
+            link: "https://doi.org/10.1007/s12596-025-02810-8"
+        },
+        {
+            id: 10,
+            title: "Design of an Efficient Integrated Feature Engineering based Deep Learning Model Using CNN for Customer’s Review",
+            authors: "Dr. Laxman Singh",
+            journal: "Wir. Per. Comm. 2024",
+            link: "https://doi.org/10.1007/s11277-023-10834-1"
+        },
+        {
+            id: 11,
+            title: "Improvement of process capability analysis through Six Sigma methodology: a case study in capacitor industry",
+            authors: "Nidhi Singh",
+            journal: "IJSSCA 2025",
+            link: "https://doi.org/10.1504/IJSSCA.2025.145612"
+        },
+        {
+            id: 12,
+            title: "Multi-model machine learning framework for lung cancer risk prediction: A comparative analysis",
+            authors: "Dr. Sapna Juneja",
+            journal: "SLAS Tech. 2025",
+            link: "https://doi.org/10.1016/j.slast.2025.100314"
+        },
+        {
+            id: 13,
+            title: "Enhancing security and privacy of chest X-ray images by implementing edge-based steganography",
+            authors: "Dr. Sapna Juneja",
+            journal: "Alex. Eng. Jour. 2025",
+            link: "https://doi.org/10.1016/j.aej.2025.08.051"
+        },
+        {
+            id: 14,
+            title: "Hybrid pre trained model based feature extraction for enhanced indoor scene classification",
+            authors: "Dr. Sapna Juneja",
+            journal: "Sci. Rep. 2025",
+            link: "https://doi.org/10.1038/s41598-025-16673-3"
+        },
+        {
+            id: 15,
+            title: "Diabetic Retinopathy Detection with Uncertainty scores: A Combined Approach Using Transfer Learning",
+            authors: "Preeti Verma",
+            journal: "ADCAIJ 2025",
+            link: "https://doi.org/10.14201/adcaij.32209"
+        },
+        {
+            id: 16,
+            title: "Anomaly detection framework for highly scattered and dynamic data on large-scale networks using AWS",
+            authors: "Dr. Richa Singh",
+            journal: "IJIT 2024",
+            link: "https://doi.org/10.1007/s41870-024-01765-6"
+        },
+        {
+            id: 17,
+            title: "A survey on abnormal behavior detection based intelligence information video surveillance system",
+            authors: "Dr. Laxman Singh",
+            journal: "EAAI 2026",
+            link: "https://doi.org/10.1016/j.engappai.2025.113438"
+        },
+        {
+            id: 18,
+            title: "An Ontology Alignment based on Machine learning for Integration of Patient Health Data",
+            authors: "Sundeep Raj",
+            journal: "IJCDS 2024",
+            link: "http://dx.doi.org/10.12785/ijcds/1571028689"
+        },
+        {
+            id: 19,
+            title: "Mango leaf disease detection and classification using a federated learning based lightweight vision transformer",
+            authors: "Dr. Laxman Singh",
+            journal: "TJAF 2025",
+            link: "https://doi.org/10.55730/1300-011X.3325"
+        },
+        {
+            id: 20,
+            title: "Enhanced hyper tuning using bioinspired-based deep learning model for accurate lung cancer detection",
+            authors: "Dr. Laxman Singh",
+            journal: "TIJOS 2025",
+            link: "https://doi.org/10.1177/03913988251359522"
+        }
+    ];
 
+    // Stats based on "AI + AIML" table in the source Data
     const statsData = {
         '2023-24': {
-            publications: 48,
-            patents: 58,
-            projects: 28,
-            grants: 42,
-            collaboration: 55
+            publications: 47,
+            patents: 10,
+            projects: 0,
+            grants: 0
         },
         '2024-25': {
-            publications: 65,
-            patents: 45,
-            projects: 35,
-            grants: 50,
-            collaboration: 60
+            publications: 67,
+            patents: 25,
+            projects: 1,
+            grants: 25
         },
         '2025-26': {
-            publications: 72,
-            patents: 62,
-            projects: 40,
-            grants: 55,
-            collaboration: 70
+            publications: 123,
+            patents: 31,
+            projects: 2,
+            grants: 50
         }
     };
 
     const currentStats = statsData[activeYear];
-    const maxVal = 80; // For graph scaling
+    // Dynamic Max Value for Graph Scaling (adding 10% buffer)
+    const maxVal = Math.max(...Object.values(currentStats)) * 1.1 || 100;
 
     // --- Scroll Logic ---
     const handleScroll = () => {
@@ -91,7 +190,7 @@ export default function PublicationsResearch() {
     const scroll = (direction) => {
         if (scrollRef.current) {
             const { clientWidth } = scrollRef.current;
-            const scrollAmount = clientWidth / 2; // Scroll half the container width
+            const scrollAmount = clientWidth / 2;
             scrollRef.current.scrollBy({
                 left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth'
@@ -104,10 +203,13 @@ export default function PublicationsResearch() {
             <div className="container">
                 {/* Header */}
                 <h2 className="fw-bold mb-4" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.1rem)', color: '#00304C' }}>
-                    Publications & Research
+
                 </h2>
 
-                {/* 1. Publications Carousel */}
+                {/* 1. Recent Research Heading */}
+                <h3 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Recent Research</h3>
+
+                {/* Publications Carousel */}
                 <div className="mb-5 position-relative">
                     <div
                         ref={scrollRef}
@@ -123,26 +225,47 @@ export default function PublicationsResearch() {
                                 key={pub.id}
                                 className="card border-0 shadow-sm flex-shrink-0 p-4 d-flex flex-column justify-content-between"
                                 style={{
-                                    width: '280px',
+                                    width: '300px',
                                     borderRadius: '12px',
-                                    minHeight: '220px',
+                                    minHeight: '240px',
                                     scrollSnapAlign: 'start',
-                                    backgroundColor: '#fff'
+                                    backgroundColor: '#fff',
+                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                    cursor: 'pointer'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-5px)';
+                                    e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = '0 .125rem .25rem rgba(0,0,0,.075)';
                                 }}
                             >
                                 <div>
-                                    <h5 className="fw-bold mb-2" style={{ color: '#F26520', fontSize: '1rem' }}>
+                                    <h5 className="fw-bold mb-3 line-clamp-2" style={{
+                                        color: '#F26520',
+                                        fontSize: '1.1rem',
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: 3,
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden',
+                                        lineHeight: '1.4'
+                                    }}>
                                         {pub.title}
                                     </h5>
-                                    <p className="text-muted small mb-3">{pub.authors}</p>
+                                    <p className="text-muted small mb-3" style={{ fontSize: '0.85rem' }}>{pub.authors}</p>
                                 </div>
                                 <a
                                     href={pub.link}
-                                    className="btn btn-sm w-100 text-white"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="btn btn-sm w-100 text-white fw-semibold"
                                     style={{
                                         backgroundColor: '#00304C',
                                         borderRadius: '6px',
-                                        fontSize: '0.8rem'
+                                        fontSize: '0.85rem',
+                                        padding: '0.5rem'
                                     }}
                                 >
                                     {pub.journal}
@@ -151,115 +274,124 @@ export default function PublicationsResearch() {
                         ))}
                     </div>
 
-                    {/* Navigation Controls */}
-                    <div className="d-flex flex-column align-items-center mt-2">
-                        <div className="d-flex align-items-center gap-3">
-                            {/* Left Arrow */}
+                    {/* Footer: Controls */}
+                    <div className="d-flex justify-content-between align-items-center mt-3">
+                        {/* Navigation Arrows (Left) */}
+                        <div className="d-flex gap-2">
                             <button
                                 onClick={() => scroll('left')}
-                                className="btn rounded-circle d-flex justify-content-center align-items-center p-0"
+                                className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center p-0"
                                 style={{
                                     width: '32px',
                                     height: '32px',
-                                    border: '1px solid #dee2e6',
-                                    backgroundColor: '#fff',
-                                    color: '#00304C'
+                                    border: '1px solid #F26520',
+                                    backgroundColor: 'transparent',
+                                    color: '#F26520',
+                                    transition: 'all 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#F26520';
+                                    e.currentTarget.style.color = '#fff';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = 'transparent';
+                                    e.currentTarget.style.color = '#F26520';
                                 }}
                             >
-                                <span style={{ fontSize: '1.2rem', lineHeight: 0 }}>‹</span>
+                                <span style={{ fontSize: '1.2rem', lineHeight: 0, paddingBottom: '4px' }}>‹</span>
                             </button>
-
-                            {/* Pagination Dots */}
-                            <div className="d-flex justify-content-center gap-2">
-                                {[...Array(5)].map((_, index) => (
-                                    <div
-                                        key={index}
-                                        style={{
-                                            width: '8px',
-                                            height: '8px',
-                                            borderRadius: '50%',
-                                            backgroundColor: activeDot === index ? '#F26520' : '#dee2e6',
-                                            transition: 'background-color 0.3s ease'
-                                        }}
-                                    />
-                                ))}
-                            </div>
-
-                            {/* Right Arrow */}
                             <button
                                 onClick={() => scroll('right')}
-                                className="btn rounded-circle d-flex justify-content-center align-items-center p-0"
+                                className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center p-0"
                                 style={{
                                     width: '32px',
                                     height: '32px',
-                                    border: '1px solid #dee2e6',
-                                    backgroundColor: '#fff',
-                                    color: '#00304C'
+                                    border: '1px solid #F26520',
+                                    backgroundColor: 'transparent',
+                                    color: '#F26520',
+                                    transition: 'all 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#F26520';
+                                    e.currentTarget.style.color = '#fff';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = 'transparent';
+                                    e.currentTarget.style.color = '#F26520';
                                 }}
                             >
-                                <span style={{ fontSize: '1.2rem', lineHeight: 0 }}>›</span>
+                                <span style={{ fontSize: '1.2rem', lineHeight: 0, paddingBottom: '4px' }}>›</span>
                             </button>
+                        </div>
+
+                        {/* Pagination Dots (Right) */}
+                        <div className="d-flex gap-2">
+                            {[...Array(5)].map((_, index) => (
+                                <div
+                                    key={index}
+                                    style={{
+                                        width: '10px',
+                                        height: '10px',
+                                        borderRadius: '50%',
+                                        backgroundColor: activeDot === index ? '#F26520' : 'transparent',
+                                        border: activeDot === index ? '1px solid #F26520' : '1px solid #ced4da',
+                                        cursor: 'pointer',
+                                        transition: 'background-color 0.2s ease, border-color 0.2s ease'
+                                    }}
+                                    onClick={() => {
+                                        if (scrollRef.current) {
+                                            const { scrollWidth, clientWidth } = scrollRef.current;
+                                            const maxScroll = scrollWidth - clientWidth;
+                                            const targetScroll = (maxScroll / 4) * index;
+                                            scrollRef.current.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                                        }
+                                    }}
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>
 
 
-                {/* 2. Research Stats */}
-                <div>
-                    {/* Year Tabs */}
-                    <div className="d-flex justify-content-between align-items-center mb-5 position-relative">
-                        {/* Connecting Line */}
-                        <div
-                            className="position-absolute w-100"
-                            style={{
-                                height: '2px',
-                                backgroundColor: '#d3d3d3',
-                                zIndex: 0,
-                                top: '50%',
-                                transform: 'translateY(-50%)'
-                            }}
-                        />
-                        {['2023-24', '2024-25', '2025-26'].map((year) => (
-                            <button
-                                key={year}
-                                onClick={() => setActiveYear(year)}
-                                className="btn position-relative fw-bold py-3"
-                                style={{
-                                    backgroundColor: activeYear === year ? '#00304C' : '#fff',
-                                    color: activeYear === year ? '#fff' : '#00304C',
-                                    border: activeYear === year ? 'none' : '1px solid #dee2e6',
-                                    zIndex: 1,
-                                    borderRadius: '8px',
-                                    boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-                                    transition: 'all 0.3s ease',
-                                    minWidth: '220px',
-                                    letterSpacing: '1.5px'
-                                }}
-                            >
-                                {year}
-                            </button>
-                        ))}
-                    </div>
+                {/* 2. Publications Heading */}
+                <h3 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Publications Statistics</h3>
 
+                {/* Research Stats */}
+                <div>
                     <div className="row g-4">
-                        {/* Left: Bar Graph (Placeholder using CSS) */}
+                        {/* Left: Bar Graph */}
                         <div className="col-lg-7">
                             <div className="card border-0 shadow-sm p-4 h-100 rounded-4">
-                                <h6 className="text-muted mb-4">Data for the year {activeYear}</h6>
+                                <div className="d-flex justify-content-between align-items-center mb-4">
+                                    <h6 className="text-muted mb-0 fw-semibold">Academic Year</h6>
+                                    {/* Year Dropdown */}
+                                    <select
+                                        className="form-select border-0 bg-light text-primary fw-bold shadow-none"
+                                        style={{ width: 'auto', cursor: 'pointer', color: '#00304C' }}
+                                        value={activeYear}
+                                        onChange={(e) => setActiveYear(e.target.value)}
+                                    >
+                                        {Object.keys(statsData).map(year => (
+                                            <option key={year} value={year}>{year}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
                                 <div className="d-flex justify-content-around align-items-end h-100" style={{ minHeight: '300px' }}>
                                     {Object.entries(currentStats).map(([key, value]) => (
                                         <div key={key} className="d-flex flex-column align-items-center" style={{ width: '15%' }}>
+                                            <span className="mb-2 fw-bold" style={{ fontSize: '0.9rem', color: '#00304C' }}>{value}</span>
                                             <div
                                                 style={{
                                                     width: '100%',
-                                                    height: `${(value / maxVal) * 200}px`,
-                                                    backgroundColor: '#F9CAB3', // Uniform light orange/peach
+                                                    height: `${Math.max((value / maxVal) * 200, 4)}px`, // Min height for visibility
+                                                    backgroundColor: '#F9CAB3',
                                                     borderRadius: '8px 8px 0 0',
                                                     transition: 'height 0.5s ease'
                                                 }}
                                             />
-                                            <span className="text-muted small mt-2 text-center" style={{ fontSize: '0.7rem' }}>
-                                                {key === 'collaboration' ? 'Intl/Ind Collab' : key.charAt(0).toUpperCase() + key.slice(1)}
+                                            <span className="text-muted fw-semibold mt-3 text-center" style={{ fontSize: '0.75rem', letterSpacing: '0.5px' }}>
+                                                {key === 'projects' ? 'PROJECTS' : key.toUpperCase()}
                                             </span>
                                         </div>
                                     ))}
@@ -269,41 +401,50 @@ export default function PublicationsResearch() {
 
                         {/* Right: Stat Cards */}
                         <div className="col-lg-5">
-                            <div className="d-flex flex-column gap-3 h-100">
+                            <div className="d-flex flex-column gap-3 h-100 justify-content-center">
                                 <div className="row g-3">
-                                    {/* Publicatons */}
+                                    {/* Publications */}
                                     <div className="col-6">
-                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4">
+                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
+                                            style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
+                                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                                        >
                                             <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.publications}</h3>
-                                            <p className="small text-muted m-0">No. of Publications</p>
+                                            <p className="small text-muted m-0 fw-semibold">Publications</p>
                                         </div>
                                     </div>
                                     {/* Patents */}
                                     <div className="col-6">
-                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4">
+                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
+                                            style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
+                                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                                        >
                                             <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.patents}</h3>
-                                            <p className="small text-muted m-0">No. of Patents</p>
+                                            <p className="small text-muted m-0 fw-semibold">Patents</p>
                                         </div>
                                     </div>
                                     {/* Govt Projects */}
                                     <div className="col-6">
-                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4">
+                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
+                                            style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
+                                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                                        >
                                             <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.projects}</h3>
-                                            <p className="small text-muted m-0">No. of Govt. Projects</p>
+                                            <p className="small text-muted m-0 fw-semibold">Govt. Projects</p>
                                         </div>
                                     </div>
                                     {/* Grants */}
                                     <div className="col-6">
-                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4">
+                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
+                                            style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
+                                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                                        >
                                             <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.grants}</h3>
-                                            <p className="small text-muted m-0">No. of Grants</p>
-                                        </div>
-                                    </div>
-                                    {/* Collaboration */}
-                                    <div className="col-12">
-                                        <div className="card border-0 shadow-sm p-3 rounded-4">
-                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.collaboration}</h3>
-                                            <p className="small text-muted m-0">No. of International/Industry Collaboration</p>
+                                            <p className="small text-muted m-0 fw-semibold">Grants (Lakhs)</p>
                                         </div>
                                     </div>
                                 </div>

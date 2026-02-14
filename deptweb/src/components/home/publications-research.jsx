@@ -5,6 +5,7 @@ import React, { useState, useRef } from 'react';
 export default function PublicationsResearch() {
     const [activeYear, setActiveYear] = useState('2025-26');
     const [activeDot, setActiveDot] = useState(0);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const scrollRef = useRef(null);
 
     const publications = [
@@ -360,20 +361,60 @@ export default function PublicationsResearch() {
                                 <div className="d-flex justify-content-between align-items-center mb-4">
                                     <label htmlFor="year-select" className="text-muted mb-0 fw-semibold" style={{ fontSize: '1rem', color: '#495057' }}>Academic Year</label>
                                     {/* Year Dropdown */}
-                                    <select
-                                        id="year-select"
-                                        className="form-select border-0 bg-light fw-bold shadow-none"
-                                        style={{ width: 'auto', cursor: 'pointer', color: '#00304C' }}
-                                        value={activeYear}
-                                        onChange={(e) => setActiveYear(e.target.value)}
-                                        aria-label="Select academic year for publication statistics"
-                                    >
-                                        {Object.keys(statsData).map(year => (
-                                            <option key={year} value={year}>{year}</option>
-                                        ))}
-                                    </select>
-                                </div>
+                                    <div className="position-relative">
+                                        <button
+                                            className="d-flex align-items-center gap-2 border-0 bg-transparent fw-bold p-0"
+                                            style={{ color: '#00304C', fontSize: '1.2rem' }}
+                                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                        >
+                                            {activeYear}
+                                            <span style={{
+                                                transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                                                transition: 'transform 0.2s ease',
+                                                fontSize: '0.8rem'
+                                            }}>▼</span>
+                                        </button>
 
+                                        {isDropdownOpen && (
+                                            <div
+                                                className="position-absolute shadow-sm bg-white py-2"
+                                                style={{
+                                                    top: '100%',
+                                                    right: 0,
+                                                    zIndex: 1000,
+                                                    borderRadius: '16px',
+                                                    minWidth: '140px',
+                                                    marginTop: '8px',
+                                                    border: '1px solid rgba(0,0,0,0.05)'
+                                                }}
+                                            >
+                                                {Object.keys(statsData).map(year => (
+                                                    <div
+                                                        key={year}
+                                                        onClick={() => {
+                                                            setActiveYear(year);
+                                                            setIsDropdownOpen(false);
+                                                        }}
+                                                        className="px-4 py-2 text-center fw-semibold"
+                                                        style={{
+                                                            cursor: 'pointer',
+                                                            color: activeYear === year ? '#00304C' : '#6c757d',
+                                                            backgroundColor: activeYear === year ? '#f8f9fa' : 'transparent',
+                                                            transition: 'background-color 0.2s',
+                                                            fontSize: '0.95rem'
+                                                        }}
+                                                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f8f9fa'}
+                                                        onMouseLeave={(e) => {
+                                                            if (activeYear !== year) e.currentTarget.style.backgroundColor = 'transparent';
+                                                        }}
+                                                    >
+                                                        {year}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
                                 <div className="d-flex justify-content-around align-items-end h-100" style={{ minHeight: '300px' }}>
                                     {Object.entries(currentStats).map(([key, value]) => (
                                         <div key={key} className="d-flex flex-column align-items-center" style={{ width: '15%' }}>
@@ -449,7 +490,7 @@ export default function PublicationsResearch() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }

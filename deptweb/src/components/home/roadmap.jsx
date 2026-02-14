@@ -85,9 +85,7 @@ export default function Roadmap() {
                         }}>
                         Roadmap
                     </h2>
-                    <p style={{ fontSize: '1.1rem', color: '#6b7280', maxWidth: '700px' }}>
-                        Our strategic pathway from idea to impact
-                    </p>
+                    
                 </div>
 
                 {/* ===== DESKTOP ROADMAP - Snake/Zigzag Layout ===== */}
@@ -200,10 +198,10 @@ export default function Roadmap() {
                                                 zIndex: 200,
                                                 width: '480px',
                                                 backgroundColor: '#fff',
-                                                borderRadius: '16px',
+                                                borderRadius: '8px',
                                                 boxShadow: '0 15px 50px rgba(0, 0, 0, 0.25)',
                                                 border: '3px solid #F26520',
-                                                padding: '16px',
+                                                padding: '10px',
                                             }}
                                         >
                                             {/* (Arrow removed) */}
@@ -212,7 +210,8 @@ export default function Roadmap() {
                                                 alt={`${getName(step.logo)} Slide`}
                                                 style={{
                                                     width: '100%', height: 'auto',
-                                                    borderRadius: '8px', display: 'block'
+                                                    borderRadius: '2px', display: 'block',
+                                                    margin: 0
                                                 }}
                                             />
                                         </div>

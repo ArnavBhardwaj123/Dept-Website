@@ -11,6 +11,8 @@ import PublicationsResearch from "@/components/home/publications-research";
 import HomeNav from "@/components/home/home-nav";
 import Testimonial from "@/components/home/testimonial";
 
+import Roadmap from "@/components/home/roadmap";
+
 import FloatingAdmissionButton from "@/components/home/floating-admission-button";
 
 export default function Home() {
@@ -28,6 +30,9 @@ export default function Home() {
         {/* <PlacementOverview /> */}
         <div id="placement">
           <PlacementRecord />
+        </div>
+        <div id="roadmap">
+          <Roadmap />
         </div>
         <div id="coe">
           <DgxCoe />

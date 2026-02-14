@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 export default function HomeNav() {
     const scrollRef = useRef(null);
@@ -18,6 +18,31 @@ export default function HomeNav() {
         { name: 'Clubs', link: '#clubs' },
         { name: 'Syllabus', link: '#syllabus' },
     ];
+
+    // Scroll spy to update active tab based on scroll position
+    useEffect(() => {
+        const handleScrollSpy = () => {
+            const navHeight = 150;
+            
+            for (let i = navItems.length - 1; i >= 0; i--) {
+                const targetId = navItems[i].link.substring(1);
+                const element = document.getElementById(targetId);
+                
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= navHeight && rect.bottom > navHeight) {
+                        setActiveTab(navItems[i].name);
+                        break;
+                    }
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScrollSpy);
+        handleScrollSpy(); // Initial check
+        
+        return () => window.removeEventListener('scroll', handleScrollSpy);
+    }, []);
 
     const handleScroll = (direction) => {
         if (scrollRef.current) {
@@ -52,7 +77,20 @@ export default function HomeNav() {
                                     <a
                                         key={index}
                                         href={item.link}
-                                        onClick={() => setActiveTab(item.name)}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            setActiveTab(item.name);
+                                            const targetId = item.link.substring(1); // Remove the # symbol
+                                            const targetElement = document.getElementById(targetId);
+                                            if (targetElement) {
+                                                const navHeight = 100; // Approximate height of sticky nav
+                                                const targetPosition = targetElement.offsetTop - navHeight;
+                                                window.scrollTo({
+                                                    top: targetPosition,
+                                                    behavior: 'smooth'
+                                                });
+                                            }
+                                        }}
                                         className="text-decoration-none fw-bold text-nowrap"
                                         style={{
                                             color: isActive ? '#0056b3' : '#333', // Active blue, else dark grey

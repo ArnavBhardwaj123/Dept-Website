@@ -596,35 +596,28 @@ export default function Testimonial() {
                     }
                 }
 
-                /* Mobile: Vertical Stack */
+                /* Mobile: Horizontal Scroll */
                 @media (max-width: 768px) {
                     .testimonials-scroll-container {
                         display: flex;
-                        flex-direction: column;
-                        gap: 1.5rem;
-                        overflow-y: auto;
-                        overflow-x: hidden;
-                        max-height: 600px;
-                        padding: 0.5rem;
-                        scroll-snap-type: y mandatory;
-                        scrollbar-width: thin;
-                        scrollbar-color: #ff5722 #f3f4f6;
+                        flex-direction: row;
+                        gap: 1rem;
+                        overflow-x: auto;
+                        overflow-y: hidden;
+                        padding-bottom: 1rem;
+                        padding-left: 0.25rem;
+                        padding-right: 0.25rem;
+                        scroll-snap-type: x mandatory;
+                        scrollbar-width: none;
+                        -ms-overflow-style: none;
                     }
                     .testimonials-scroll-container::-webkit-scrollbar {
-                        width: 6px;
-                    }
-                    .testimonials-scroll-container::-webkit-scrollbar-track {
-                        background: #f3f4f6;
-                        border-radius: 10px;
-                    }
-                    .testimonials-scroll-container::-webkit-scrollbar-thumb {
-                        background: #ff5722;
-                        border-radius: 10px;
+                        display: none;
                     }
                     .testimonial-card-wrapper {
                         flex-shrink: 0;
-                        width: 100%;
-                        scroll-snap-align: start;
+                        width: 90vw;
+                        scroll-snap-align: center;
                     }
                     .testimonial-nav-controls {
                         display: none !important;

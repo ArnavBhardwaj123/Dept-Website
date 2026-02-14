@@ -653,9 +653,6 @@ export default function Testimonial() {
                         width: 80vw;
                         scroll-snap-align: center;
                     }
-                    .testimonial-nav-controls {
-                        display: none !important;
-                    }
                     
                     /* Mobile Modal Styles */
                     .testimonial-modal {

@@ -28,7 +28,7 @@ export default function DgxCoe() {
               </p>
               
               <h1 className="fw-bold mb-4" style={{ color: 'black' ,fontSize: 'clamp(1.3rem, 3vw, 2rem)' }}>
-                Driving  <span style={{ color: '#ff5722' }}>Next-Gen AI with DGX </span>
+                Driving  <span style={{ color: '#ff5722' }}>Supercomputing with DGX </span>
                 <br />
                  Centre of Excellence <span style={{ color: '#ff5722' }}></span>
               </h1>

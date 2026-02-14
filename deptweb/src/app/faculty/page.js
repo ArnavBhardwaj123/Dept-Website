@@ -58,7 +58,7 @@ export default function FacultyPage() {
         { id: 49, name: "Mr. Anuraag Raj Kamlesh Narayan", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/faculty/MR. ANURAG RAJ .JPG" },
         { id: 50, name: "Ms. Anshika Rai", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "NSUT, New Delhi", image: "/cse-ai-assets/faculty/MS. ANSHIKA RAI.JPG" },
         { id: 51, name: "Mr. Akash Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "NSUT, New Delhi", image: "/cse-ai-assets/faculty/MR. AKASH SINGH.JPG" },
-        { id: 52, name: "Mr. Piyush Agarwal", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/faculty/MR. PIYUSH AGARWAL.JPG" },
+        { id: 52, name: "Mr. Piyush Agarwal", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/faculty/MR. PIYUSH AGARWAL.jpeg" },
         { id: 53, name: "Mr. Atinder Pal Singh", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "MNIT, Jaipur", image: "/cse-ai-assets/faculty/MR. ATINDER PAL.JPG" },
         { id: 54, name: "Ms. Mohini Verma", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "IGDTUW, New Delhi", image: "/cse-ai-assets/faculty/MS. MOHINI.JPG" },
         { id: 55, name: "Ms. Himanshi Sharma", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "IGDTUW, Delhi", image: "/cse-ai-assets/faculty/MS. HIMANSHI SHARMA.JPG" },

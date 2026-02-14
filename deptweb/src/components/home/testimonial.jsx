@@ -650,7 +650,7 @@ export default function Testimonial() {
                     }
                     .testimonial-card-wrapper {
                         flex-shrink: 0;
-                        width: 90vw;
+                        width: 80vw;
                         scroll-snap-align: center;
                     }
                     .testimonial-nav-controls {

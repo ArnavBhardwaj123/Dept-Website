@@ -38,7 +38,7 @@ export default function FacultyPage() {
         { id: 29, name: "Ms. Himanshi Sharma", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "IGDTUW, Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 30, name: "Mr. Rahul Vishwakarma", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "B.Tech.+ M.Tech. (Integrated)", university: "Devi Ahilya Vishwavidyalaya, Indore", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 31, name: "Ms. Kajal Kansal", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Dr. A.P.J. AKTU, Lucknow", image: "/cse-ai-assets/images/Dean's photo.JPG" },
-        { id: 32, name: "Mr. Amit Kumar", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "IIT, Bombay / Thapar University", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 32, name: "Mr. Amit Kumar", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Thapar University", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 33, name: "Mr. Mrityunjay Kumar", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "AKTU, Lucknow", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 34, name: "Dr. Shelly Gupta", position: "Associate Professor & Program Head", branch: "CSE(AI)", degree: "Ph.D.", university: "Amity University, Uttar Pradesh", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 35, name: "Dr. Sapna Juneja", position: "Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "MDU, Rohtak, Haryana", image: "/cse-ai-assets/images/Dean's photo.JPG" },
@@ -60,10 +60,10 @@ export default function FacultyPage() {
         { id: 51, name: "Mr. Shivansh Prasad", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "GGSIPU, Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 52, name: "Mr. Bikki Kumar", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 53, name: "Ms. Ayushi Mittal", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "IGDTUW, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
-        { id: 54, name: "Mr. Rishabh Sachan", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "IIT - Jaipur", image: "/cse-ai-assets/images/Dean's photo.JPG" },
+        { id: 54, name: "Mr. Rishabh Sachan", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "IIT - Jodhpur", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 55, name: "Ms. Deepinder Kaur", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "GGSIPU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 56, name: "Mr. Pramod Kumar Sethy", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "IIT(ISM), Dhanbad", image: "/cse-ai-assets/images/Dean's photo.JPG" },
-        { id: 57, name: "Mr. Piyush Agarwal", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/Piyush.png" },
+        { id: 57, name: "Mr. Piyush Agarwal", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/image.jpg.jpeg" },
         { id: 58, name: "Ms. Mohini Verma", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "IGDTUW, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 59, name: "Mr. Atinder Pal Singh", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "MNIT, Jaipur", image: "/cse-ai-assets/images/Dean's photo.JPG" },
         { id: 60, name: "Mr. Mohit Sharma", position: "Assistant Professor", branch: "CSE(AI)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/images/Dean's photo.JPG" },
@@ -82,20 +82,40 @@ export default function FacultyPage() {
     return (
         <div style={{ backgroundColor: '#f8f9fa', minHeight: '100vh' }}>
             {/* Header */}
-            <header style={{ backgroundColor: '#002855', color: 'white', padding: '3rem 0' }}>
+            <header style={{ 
+                backgroundColor: 'white',
+                borderBottom: '1px solid #e5e7eb',
+                padding: '2.5rem 0 3rem 0'
+            }}>
                 <div className="container">
                     <Link 
                         href="/" 
-                        className="text-white text-decoration-none d-inline-flex align-items-center mb-3"
-                        style={{ fontSize: '0.9rem' }}
+                        className="text-decoration-none d-inline-flex align-items-center mb-4"
+                        style={{ 
+                            fontSize: '0.95rem',
+                            color: '#6b7280',
+                            fontWeight: '500',
+                            transition: 'color 0.2s'
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.color = '#111827'}
+                        onMouseLeave={(e) => e.currentTarget.style.color = '#6b7280'}
                     >
-                        <span style={{ fontSize: '1.2rem', marginRight: '0.5rem' }}>←</span>
+                        <span style={{ fontSize: '1.3rem', marginRight: '0.6rem' }}>←</span>
                         Back to Home
                     </Link>
-                    <h1 className="fw-bold mb-2" style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)' }}>
+                    <h1 className="fw-bold mb-3" style={{ 
+                        fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+                        color: '#111827',
+                        letterSpacing: '-0.02em'
+                    }}>
                         Our Faculty
                     </h1>
-                    <p className="mb-0" style={{ fontSize: '1.1rem', opacity: 0.9 }}>
+                    <p className="mb-0" style={{ 
+                        fontSize: '1.15rem',
+                        color: '#6b7280',
+                        maxWidth: '700px',
+                        lineHeight: '1.6'
+                    }}>
                         Meet the distinguished faculty members of CSE (AI) & CSE (AI & ML)
                     </p>
                 </div>

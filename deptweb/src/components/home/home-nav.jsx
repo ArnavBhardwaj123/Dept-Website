@@ -8,14 +8,14 @@ export default function HomeNav() {
 
     const navItems = [
         { name: 'Overview', link: '#overview' },
-        { name: "Dean's Message", link: '#dean-message' },
-        { name: 'Faculty', link: '#faculty' },
-        { name: 'Publications & Research', link: '#publications' },
-        // { name: 'Infrastructure', link: '#infrastructure' },
         { name: 'Placement', link: '#placement' },
         { name: 'COE', link: '#coe' },
-        { name: 'Testimonials', link: '#testimonials' },
         { name: 'Clubs', link: '#clubs' },
+        { name: "Dean's Message", link: '#dean-message' },
+        { name: 'Infrastructure', link: '#infrastructure' },
+        { name: 'Faculty', link: '#faculty' },
+        { name: 'Testimonials', link: '#testimonials' },
+        { name: 'Publications & Research', link: '#publications' },
         { name: 'Syllabus', link: '#syllabus' },
     ];
 

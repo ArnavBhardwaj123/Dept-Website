@@ -169,10 +169,9 @@ export default function Testimonial() {
 
     return (
         <section
-            suppressHydrationWarning={true}
             style={{
                 backgroundColor: '#f8f9fa',
-                padding: '5rem 0',
+                padding: '0 0 5rem 0',
                 position: 'relative'
             }}
         >
@@ -233,7 +232,7 @@ export default function Testimonial() {
                                     e.currentTarget.style.transform = 'translateY(0)';
                                     e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.07)';
                                 }}>
-                                {/* Company and Package */}
+                                {/* Company (left) and Batch (right) */}
                                 <div style={{
                                     display: 'flex',
                                     justifyContent: 'space-between',
@@ -243,104 +242,103 @@ export default function Testimonial() {
                                     borderBottom: '2px solid #f3f4f6'
                                 }}>
                                     <p style={{
-                                        fontSize: '1rem',
-                                        fontWeight: '600',
-                                        color: '#ff5722',
+                                        fontSize: '0.9rem',
+                                        fontWeight: '700',
+                                        color: '#F26520',
                                         margin: '0'
                                     }}>
                                         {testimonial.company}
                                     </p>
-                                    {testimonial.package && (
-                                        <p style={{
-                                            fontSize: '1rem',
-                                            fontWeight: '700',
-                                            color: '#ff5722',
-                                            margin: '0'
-                                        }}>
-                                            {testimonial.package}
-                                        </p>
-                                    )}
+                                    <span style={{
+                                        fontSize: '0.8rem',
+                                        fontWeight: '600',
+                                        color: '#6b7280',
+                                        backgroundColor: '#f3f4f6',
+                                        padding: '0.2rem 0.6rem',
+                                        borderRadius: '12px'
+                                    }}>
+                                        {testimonial.batch}
+                                    </span>
                                 </div>
 
-                                {/* Photo, Name and Batch */}
+                                {/* Circular Image - Centered */}
                                 <div style={{
                                     display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '1rem',
-                                    marginBottom: '1rem'
+                                    justifyContent: 'center',
+                                    marginBottom: '0.75rem'
                                 }}>
                                     <div style={{
-                                        width: '50px',
-                                        height: '50px',
+                                        width: '90px',
+                                        height: '90px',
                                         borderRadius: '50%',
                                         overflow: 'hidden',
                                         position: 'relative',
                                         backgroundColor: '#e5e7eb',
-                                        flexShrink: 0
+                                        border: '3px solid #F26520'
                                     }}>
                                         <Image
                                             src={testimonial.image}
                                             alt={testimonial.author}
                                             fill
-                                            style={{ objectFit: 'cover' }}
+                                            style={{ objectFit: 'cover', objectPosition: 'top' }}
                                         />
-                                    </div>
-                                    <div>
-                                        <h4 style={{
-                                            fontSize: '1.1rem',
-                                            fontWeight: '700',
-                                            color: '#111827',
-                                            margin: '0',
-                                            marginBottom: '0.25rem'
-                                        }}>
-                                            {testimonial.author}
-                                        </h4>
-                                        <p style={{
-                                            fontSize: '0.875rem',
-                                            color: '#6b7280',
-                                            margin: '0'
-                                        }}>
-                                            {testimonial.batch}
-                                        </p>
                                     </div>
                                 </div>
 
-                                {/* Quote Icon and Text Container */}
-                                <div style={{ display: 'flex', gap: '0.5rem', flex: 1, marginBottom: '1rem' }}>
-                                    {/* Quote Icon on Left */}
-                                    <div style={{
-                                        fontSize: '2.5rem',
-                                        color: '#ff5722',
-                                        lineHeight: '1',
-                                        fontWeight: 'bold',
-                                        flexShrink: 0
-                                    }}>
-                                        ❝
-                                    </div>
+                                {/* Name - Centered */}
+                                <h4 style={{
+                                    fontSize: '1.5rem',
+                                    fontWeight: '700',
+                                    color: '#111827',
+                                    margin: '0 0 0.25rem 0',
+                                    textAlign: 'center'
+                                }}>
+                                    {testimonial.author}
+                                </h4>
 
-                                    {/* Testimonial Text */}
+                                {/* LPA in Orange - Centered */}
+                                {testimonial.package && (
                                     <p style={{
-                                        fontSize: '0.95rem',
+                                        fontSize: '1.5rem',
+                                        fontWeight: '700',
+                                        color: '#F26520',
+                                        margin: '0 0 0.75rem 0',
+                                        textAlign: 'center'
+                                    }}>
+                                        {testimonial.package}
+                                    </p>
+                                )}
+
+                                {/* Quote */}
+                                <div style={{ flex: '1', margin: '0 0 0.75rem 0' }}>
+                                    <span style={{
+                                        fontSize: '1.5rem',
+                                        color: '#F26520',
+                                        fontWeight: 'bold',
+                                        lineHeight: '1'
+                                    }}>❝ </span>
+                                    <p style={{
+                                        fontSize: '0.85rem',
                                         color: '#6b7280',
                                         fontStyle: 'italic',
                                         lineHeight: '1.6',
-                                        flex: '1',
-                                        margin: 0
+                                        margin: '0.25rem 0 0 0',
+                                        display: 'inline'
                                     }}>
-                                        {truncateText(testimonial.quote)}
+                                        {truncateText(testimonial.quote, 150)}
                                     </p>
                                 </div>
 
-                                {/* Read More Button at Bottom */}
-                                {testimonial.quote.length > 200 && (
+                                {/* Read More */}
+                                {testimonial.quote.length > 150 && (
                                     <button
                                         onClick={() => openModal(testimonial)}
                                         style={{
                                             backgroundColor: 'transparent',
                                             border: 'none',
-                                            color: '#ff5722',
+                                            color: '#F26520',
                                             fontWeight: '600',
-                                            fontSize: '0.9rem',
+                                            fontSize: '0.85rem',
                                             cursor: 'pointer',
                                             padding: '0',
                                             marginTop: 'auto',
@@ -348,7 +346,7 @@ export default function Testimonial() {
                                             transition: 'color 0.2s'
                                         }}
                                         onMouseEnter={(e) => e.currentTarget.style.color = '#e64a19'}
-                                        onMouseLeave={(e) => e.currentTarget.style.color = '#ff5722'}
+                                        onMouseLeave={(e) => e.currentTarget.style.color = '#F26520'}
                                     >
                                         Read More →
                                     </button>
@@ -592,7 +590,7 @@ export default function Testimonial() {
             )}
 
             {/* Custom Scrollbar Styles */}
-            <style jsx>{`
+            <style>{`
                 .custom-scrollbar::-webkit-scrollbar {
                     width: 8px;
                 }
@@ -612,12 +610,12 @@ export default function Testimonial() {
                 @media (min-width: 769px) {
                     .testimonials-scroll-container {
                         display: flex;
-                        gap: 1rem;
+                        gap: 1.25rem;
                         overflow-x: auto;
                         overflow-y: hidden;
                         padding-bottom: 1rem;
-                        padding-left: 0.25rem;
-                        padding-right: 0.25rem;
+                        padding-left: 0;
+                        padding-right: 0;
                         scrollbar-width: none;
                         -ms-overflow-style: none;
                     }
@@ -626,7 +624,8 @@ export default function Testimonial() {
                     }
                     .testimonial-card-wrapper {
                         flex-shrink: 0;
-                        width: min(350px, 85vw);
+                        width: calc((100% - 3.75rem) / 4);
+                        min-width: 280px;
                     }
                 }
 

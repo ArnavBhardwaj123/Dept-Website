@@ -83,7 +83,7 @@ export default function Roadmap() {
                             paddingBottom: '10px',
                             display: 'inline-block'
                         }}>
-                        Roadmap
+                        Learning Roadmap
                     </h2>
                     
                 </div>
@@ -224,20 +224,37 @@ export default function Roadmap() {
 
                 {/* ===== MOBILE ROADMAP - Vertical Timeline ===== */}
                 <div className="d-lg-none">
-                    <div style={{ position: 'relative', paddingLeft: '50px' }}>
-                        {/* Vertical Line */}
-                        <div style={{
-                            position: 'absolute', left: '35px', top: '0', bottom: '0',
-                            width: '4px', borderLeft: '4px solid #002855'
-                        }} />
+                    <div style={{ position: 'relative', paddingLeft: '50px', minHeight: steps.length * 70 + 'px' }}>
+                        {/* SVG vertical line connecting circles */}
+                        <svg
+                            style={{ position: 'absolute', left: '35px', top: 0, height: '100%', width: '24px', zIndex: 1 }}
+                            height={steps.length * 70}
+                            width={24}
+                        >
+                            {steps.map((step, idx) => (
+                                idx < steps.length - 1 ? (
+                                    <line
+                                        key={idx}
+                                        x1={12}
+                                        y1={idx * 70 + 30}
+                                        x2={12}
+                                        y2={(idx + 1) * 70 + 30}
+                                        stroke="#002855"
+                                        strokeWidth={4}
+                                    />
+                                ) : null
+                            ))}
+                        </svg>
 
                         {steps.map((step, index) => (
                             <div key={index} style={{
                                 position: 'relative',
                                 marginBottom: index < steps.length - 1 ? '1.5rem' : '0',
                                 paddingLeft: '1.5rem',
+                                minHeight: '70px',
                                 display: 'flex', alignItems: 'center',
-                                minHeight: '60px', cursor: 'pointer'
+                                cursor: 'pointer',
+                                zIndex: 2,
                             }}
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -246,7 +263,7 @@ export default function Roadmap() {
                             >
                                 {/* Logo Circle on the line */}
                                 <div style={{
-                                    position: 'absolute', left: '-27px',
+                                    position: 'absolute', left: '-27px', top: '10px',
                                     width: '60px', height: '60px', borderRadius: '50%',
                                     backgroundColor: '#fff',
                                     border: 'none',
@@ -264,10 +281,11 @@ export default function Roadmap() {
                                     />
                                 </div>
 
-                                {/* Title */}
+                                {/* Title below circle */}
                                 <h5 style={{
                                     fontSize: '0.95rem', fontWeight: '800',
-                                    color: '#002855', textTransform: 'uppercase', margin: 0
+                                    color: '#002855', textTransform: 'uppercase', margin: 0,
+                                    marginLeft: '2.5rem', marginTop: '40px',
                                 }}>
                                     {getName(step.logo)}
                                 </h5>

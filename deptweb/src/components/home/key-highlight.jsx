@@ -45,7 +45,14 @@ export default function KeyHighlights() {
   return (
     <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
       <div className="container">
-        <h2 className="fw-bold mb-5" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.1rem)', color: '#000' }}>
+        <h2 className="fw-bold mb-5"
+          style={{
+            fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
+            color: '#002855',
+            borderBottom: '3px solid #F26520',
+            paddingBottom: '10px',
+            display: 'inline-block'
+          }}>
           Key Highlights
         </h2>
 

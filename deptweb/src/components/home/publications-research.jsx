@@ -201,7 +201,16 @@ export default function PublicationsResearch() {
         <section className="pb-5" style={{ backgroundColor: '#f8f9fa' }}>
             <div className="container">
                 {/* 1. Recent Publications Heading */}
-                <h3 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Recent Publications</h3>
+                <h3 className="fw-bold mb-4"
+                    style={{
+                        fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
+                        color: '#002855',
+                        borderBottom: '3px solid #F26520',
+                        paddingBottom: '10px',
+                        display: 'inline-block'
+                    }}>
+                    Recent Publications
+                </h3>
 
                 {/* Publications Carousel */}
                 <div className="mb-5 position-relative">
@@ -348,7 +357,16 @@ export default function PublicationsResearch() {
 
 
                 {/* 2. Research Heading */}
-                <h2 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Research Statistics</h2>
+                <h2 className="fw-bold mb-4"
+                    style={{
+                        fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
+                        color: '#002855',
+                        borderBottom: '3px solid #F26520',
+                        paddingBottom: '10px',
+                        display: 'inline-block'
+                    }}>
+                    Research Statistics
+                </h2>
 
                 {/* Research Stats */}
                 <div>

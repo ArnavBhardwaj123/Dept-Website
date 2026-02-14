@@ -13,9 +13,15 @@ export default function PlacementRecord() {
     return (
         <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
             <div className="container">
-                <h2 className="fw-bold mb-4" style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)' }}>
-                    <span style={{ color: '#ff5722' }}>PLACEMENT</span>{' '}
-                    <span style={{ color: '#000' }}>OVERVIEW</span>
+                <h2 className="fw-bold mb-4"
+                    style={{
+                        fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
+                        color: '#002855',
+                        borderBottom: '3px solid #F26520',
+                        paddingBottom: '10px',
+                        display: 'inline-block'
+                    }}>
+                    Placement Overview
                 </h2>
                 <div className="row g-3">
                     {cards.map((card, index) => (

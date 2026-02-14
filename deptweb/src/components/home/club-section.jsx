@@ -84,14 +84,14 @@ export default function ClubSection() {
     const clubs = [
         {
             title: "NextGen Supercomputing Club",
-            description: "NextGen Supercomputing Club is an innovation-driven community. Established on 6th November 2025, the club is powered by the NVIDIA DGX A100 Supercomputer and is dedicated to Building Production Brains.",
+            description: "NextGen Club is a community of passionate learners aspiring to become production-ready ML and AI engineers. The club focuses on bridging the gap between theory and real-world implementation through hands-on projects, technical sessions, collaborative learning, and internship opportunities. It aims to equip members with the practical skills, industry exposure, and confidence required to successfully tackle real-world, industry-level challenges.",
             link: "https://nextgen-supercomputing.in",
             image: "/cse-ai-assets/images/nextgen-logo.png"
         },
         {
             title: "DevUp Club",
-            description: "DevUp Club is a leading technical community that nurtures students across diverse domains, including Competitive Programming (CP/DSA), Web Development, Android, UI/UX, and Data Science and Machine Learning.",
-            link: "#", // Placeholder
+            description: "DevUp Club is a vibrant technical community committed to empowering students across diverse and high-demand domains, including Competitive Programming (CP/DSA), Web Development, Android Development, UI/UX Design, and Data Science and Machine Learning. The club focuses on building strong problem-solving abilities and practical expertise through hands-on workshops, coding sessions, real-world projects, and collaborative learning environments.",
+            link: "https://devup.co.in/",
             image: "/cse-ai-assets/images/devup-logo.png"
         }
     ];
@@ -99,22 +99,22 @@ export default function ClubSection() {
     return (
         <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
             <div className="container">
-                <div className="row mb-5">
-                    <div className="col-12 text-center">
-                        <h2 className="display-5 fw-bold" style={{ color: '#003049' }}>
+                <div className="row mb-4">
+                    <div className="col-12 text-start">
+                        <h2 className="fw-bold mb-4"
+                            style={{
+                                fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
+                                color: '#002855',
+                                borderBottom: '3px solid #F26520',
+                                paddingBottom: '10px',
+                                display: 'inline-block'
+                            }}>
                             Our Clubs
                         </h2>
-                        <div style={{
-                            width: '80px',
-                            height: '4px',
-                            backgroundColor: '#ff5722',
-                            margin: '20px auto 0',
-                            borderRadius: '2px'
-                        }}></div>
                     </div>
                 </div>
 
-                <div className="row g-4 justify-content-center">
+                <div className="row g-4">
                     {clubs.map((club, index) => (
                         <ClubCard
                             key={index}

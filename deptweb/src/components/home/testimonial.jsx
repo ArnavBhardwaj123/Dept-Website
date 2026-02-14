@@ -168,10 +168,10 @@ export default function Testimonial() {
     }, []);
 
     return (
-        <section 
+        <section
             suppressHydrationWarning={true}
-            style={{ 
-                backgroundColor: '#f8f9fa', 
+            style={{
+                backgroundColor: '#f8f9fa',
                 padding: '5rem 0',
                 position: 'relative'
             }}
@@ -179,13 +179,17 @@ export default function Testimonial() {
             <div className="container">
                 {/* Section Header */}
                 <div className="mb-4">
-                    <h2 className="fw-bold mb-3" style={{ 
-                        fontSize: 'clamp(2rem, 4vw, 2.8rem)',
-                        color: '#111827'
-                    }}>
+                    <h2 className="fw-bold mb-3"
+                        style={{
+                            fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
+                            color: '#002855',
+                            borderBottom: '3px solid #F26520',
+                            paddingBottom: '10px',
+                            display: 'inline-block'
+                        }}>
                         Voices of Excellence
                     </h2>
-                    <p style={{ 
+                    <p style={{
                         fontSize: '1.1rem',
                         color: '#6b7280',
                         maxWidth: '700px'
@@ -203,7 +207,7 @@ export default function Testimonial() {
                     }}
                 >
                     {testimonials.map((testimonial) => (
-                        <div 
+                        <div
                             key={testimonial.id}
                             className="flex-shrink-0"
                             style={{
@@ -222,14 +226,14 @@ export default function Testimonial() {
                                 display: 'flex',
                                 flexDirection: 'column'
                             }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-5px)';
-                                e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.12)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.07)';
-                            }}>
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-5px)';
+                                    e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.12)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.07)';
+                                }}>
                                 {/* Company and Package */}
                                 <div style={{
                                     display: 'flex',
@@ -362,16 +366,46 @@ export default function Testimonial() {
                         <button
                             onClick={() => scroll('left')}
                             className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center p-0"
-                            style={{ width: '36px', height: '36px', border: '2px solid #ff5722', color: '#ff5722', fontSize: '1.2rem' }}
+                            style={{
+                                width: '32px',
+                                height: '32px',
+                                border: '1px solid #F26520',
+                                backgroundColor: 'transparent',
+                                color: '#F26520',
+                                transition: 'all 0.3s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.backgroundColor = '#F26520';
+                                e.currentTarget.style.color = '#fff';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.backgroundColor = 'transparent';
+                                e.currentTarget.style.color = '#F26520';
+                            }}
                         >
-                            <span style={{ lineHeight: 0, paddingBottom: '2px' }}>‹</span>
+                            <span style={{ fontSize: '1.2rem', lineHeight: 0, paddingBottom: '4px' }}>‹</span>
                         </button>
                         <button
                             onClick={() => scroll('right')}
                             className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center p-0"
-                            style={{ width: '36px', height: '36px', border: '2px solid #ff5722', color: '#ff5722', fontSize: '1.2rem' }}
+                            style={{
+                                width: '32px',
+                                height: '32px',
+                                border: '1px solid #F26520',
+                                backgroundColor: 'transparent',
+                                color: '#F26520',
+                                transition: 'all 0.3s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.backgroundColor = '#F26520';
+                                e.currentTarget.style.color = '#fff';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.backgroundColor = 'transparent';
+                                e.currentTarget.style.color = '#F26520';
+                            }}
                         >
-                            <span style={{ lineHeight: 0, paddingBottom: '2px' }}>›</span>
+                            <span style={{ fontSize: '1.2rem', lineHeight: 0, paddingBottom: '4px' }}>›</span>
                         </button>
                     </div>
 
@@ -557,7 +591,7 @@ export default function Testimonial() {
                     </div>
                 </div>
             )}
-            
+
             {/* Custom Scrollbar Styles */}
             <style jsx>{`
                 .custom-scrollbar::-webkit-scrollbar {

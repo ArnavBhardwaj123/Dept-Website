@@ -27,7 +27,7 @@ export default function Faculty() {
         { id: 15, name: "Mr. Rajeev Kumar Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Dr. A.P.J. AKTU, Lucknow", image: "/cse-ai-assets/faculty/MR. RAJEEV KUMAR SINGH.JPG" },
         { id: 16, name: "Ms. Bhawna", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Maharishi Markandeshwar University, Mullana, Ambala", image: "/cse-ai-assets/faculty/MS. BHAWNA.JPG" },
         { id: 17, name: "Ms. Payal Chhabra", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Govind Ballabh Pant University, Pantnagar", image: "/cse-ai-assets/faculty/MS. PAYAL CHHABRA.JPG" },
-        { id: 18, name: "Dr. Gaurav Srivastav", position: "Assistant Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "Sharda University, Greater Noida", image: "/cse-ai-assets/faculty/DR. GAURAV SRIVASTAVA.JPG" },
+        { id: 18, name: "Dr. Gaurav Srivastav", position: "Assistant Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "Sharda University, Greater Noida", image: "/cse-ai-assets/faculty/DR. GAURAV.jpeg" },
         { id: 19, name: "Dr. Manvi Khatri", position: "Assistant Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "SRM University, Sonepat", image: "/cse-ai-assets/faculty/DR. MANVI KHATRI.JPG" },
         { id: 20, name: "Ms. Nidhi Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "UPTU, Lucknow", image: "/cse-ai-assets/faculty/MS. NIDHI SINGH.JPG" }
     ];
@@ -73,7 +73,14 @@ export default function Faculty() {
             <div className="container">
                 {/* Header */}
                 <div className="d-flex justify-content-between align-items-center mb-4">
-                    <h2 className="fw-bold m-0" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.1rem)', color: '#00304C' }}>
+                    <h2 className="fw-bold m-0"
+                        style={{
+                            fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)',
+                            color: '#002855',
+                            borderBottom: '3px solid #F26520',
+                            paddingBottom: '10px',
+                            display: 'inline-block'
+                        }}>
                         Faculty
                     </h2>
                     <Link

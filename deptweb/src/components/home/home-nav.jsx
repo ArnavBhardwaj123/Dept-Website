@@ -8,11 +8,11 @@ export default function HomeNav() {
 
     const navItems = [
         { name: 'Overview', link: '#overview' },
+        { name: 'Highlights', link: '#infrastructure' },
         { name: 'Placement', link: '#placement' },
         { name: 'COE', link: '#coe' },
         { name: 'Clubs', link: '#clubs' },
         { name: "Dean's Message", link: '#dean-message' },
-        { name: 'Key Highlights', link: '#infrastructure' },
         { name: 'Faculty', link: '#faculty' },
         { name: 'Testimonials', link: '#testimonials' },
         { name: 'Publications & Research', link: '#publications' },
@@ -43,6 +43,22 @@ export default function HomeNav() {
 
         return () => window.removeEventListener('scroll', handleScrollSpy);
     }, []);
+
+    // Auto-scroll navbar to keep active tab visible
+    useEffect(() => {
+        if (scrollRef.current) {
+            const container = scrollRef.current;
+            const activeLink = container.querySelector(`[data-nav-name="${activeTab}"]`);
+            if (activeLink) {
+                const containerRect = container.getBoundingClientRect();
+                const linkRect = activeLink.getBoundingClientRect();
+                // If the active link is out of view on the right or left, scroll to it
+                if (linkRect.right > containerRect.right || linkRect.left < containerRect.left) {
+                    activeLink.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                }
+            }
+        }
+    }, [activeTab]);
 
     const handleScroll = (direction) => {
         if (scrollRef.current) {
@@ -77,6 +93,7 @@ export default function HomeNav() {
                                     <a
                                         key={index}
                                         href={item.link}
+                                        data-nav-name={item.name}
                                         onClick={(e) => {
                                             e.preventDefault();
                                             setActiveTab(item.name);

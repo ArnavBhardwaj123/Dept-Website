@@ -18,7 +18,7 @@ export default function Overview() {
             {/* Left Content */}
             <div className="col-lg-5">
               <h2 className="fw-bold mb-4" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: '#000' }}>
-                CSE (AI / AI&ML) Department's <span style={{ color: '#F26520' }}>Key <br /> Highlights</span> in <span style={{ color: '#F26520' }}>Numbers</span>
+                CSE (AI / AI&ML) Department's <span style={{ color: '#F26520' }}>Overview </span>
               </h2>
 
               <p className="text-muted mb-4" style={{ lineHeight: '1.6', textAlign: 'justify' }}>

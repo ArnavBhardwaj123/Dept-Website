@@ -53,7 +53,7 @@ export default function KeyHighlights() {
             paddingBottom: '10px',
             display: 'inline-block'
           }}>
-          Key Highlights
+          Department's Highlights
         </h2>
 
         <div className="row g-4">

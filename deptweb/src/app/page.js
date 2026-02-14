@@ -22,6 +22,9 @@ export default function Home() {
         <div id="overview">
           <Overview />
         </div>
+        <div id="infrastructure">
+          <KeyHighlights />
+        </div>
         {/* <PlacementOverview /> */}
         <div id="placement">
           <PlacementRecord />
@@ -35,9 +38,7 @@ export default function Home() {
         <div id="dean-message">
           <DeanMessage />
         </div>
-        <div id="infrastructure">
-          <KeyHighlights />
-        </div>
+        
         <div id="faculty">
           <Faculty />
         </div>

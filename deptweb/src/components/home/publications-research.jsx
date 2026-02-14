@@ -153,10 +153,7 @@ export default function PublicationsResearch() {
 
     // Stats based on "AI + AIML" table in the source Data
     const statsData = {
-        '2023-24': {
-            publications: 47,
-            patents: 10
-        },
+
         '2024-25': {
             publications: 67,
             patents: 25,

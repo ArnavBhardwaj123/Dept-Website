@@ -1,73 +1,77 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function Roadmap() {
+    const [hoveredStep, setHoveredStep] = useState(null);
+    const sectionRef = useRef(null);
+    const gridRef = useRef(null);
+    const circleRefs = useRef([]);
+    const [lines, setLines] = useState([]);
+
+    // Measure circle positions and compute SVG curves
+    useEffect(() => {
+        const computeLines = () => {
+            if (!gridRef.current || circleRefs.current.length < 10) return;
+            const gridRect = gridRef.current.getBoundingClientRect();
+            const newLines = [];
+            for (let i = 0; i < 9; i++) {
+                const el1 = circleRefs.current[i];
+                const el2 = circleRefs.current[i + 1];
+                if (!el1 || !el2) continue;
+                const r1 = el1.getBoundingClientRect();
+                const r2 = el2.getBoundingClientRect();
+                const x1 = r1.left + r1.width / 2 - gridRect.left;
+                const y1 = r1.top + r1.height / 2 - gridRect.top;
+                const x2 = r2.left + r2.width / 2 - gridRect.left;
+                const y2 = r2.top + r2.height / 2 - gridRect.top;
+                newLines.push({ x1, y1, x2, y2 });
+            }
+            setLines(newLines);
+        };
+        computeLines();
+        window.addEventListener('resize', computeLines);
+        // recompute after fonts/images load
+        const timer = setTimeout(computeLines, 500);
+        return () => { window.removeEventListener('resize', computeLines); clearTimeout(timer); };
+    }, []);
+
+    // Close overlay on tap outside (mobile)
+    useEffect(() => {
+        const handleOutsideClick = (e) => {
+            if (hoveredStep !== null && sectionRef.current && !sectionRef.current.contains(e.target)) {
+                setHoveredStep(null);
+            }
+        };
+        document.addEventListener('click', handleOutsideClick);
+        return () => document.removeEventListener('click', handleOutsideClick);
+    }, [hoveredStep]);
+
     const steps = [
-        {
-            id: 'Q1',
-            title: 'Market Validation',
-            description: 'Identify a business idea and validate it through market research and customer feedback.',
-            icon: '💡'
-        },
-        {
-            id: 'Q2',
-            title: 'Business Planning',
-            description: 'Create a business plan that includes the vision, target market, and marketing strategies.',
-            icon: '🌍'
-        },
-        {
-            id: 'Q3',
-            title: 'Business Fundraising',
-            description: 'Assess funding needs and explore options like investors, loans, or venture capital for business growth.',
-            icon: '🚀'
-        },
-        {
-            id: 'Q4',
-            title: 'Product Development',
-            description: 'Build a Minimum Viable Product (MVP) and test it in the market for feedback and improvements.',
-            icon: '🛒'
-        },
-        {
-            id: 'Q5',
-            title: 'Product Launch',
-            description: 'Launch the product with a strategic marketing campaign to boost visibility and attract customers.',
-            icon: '⭐'
-        },
-        {
-            id: 'Q6',
-            title: 'Growth and Scalability',
-            description: 'Monitor business performance and develop long-term growth strategies for sustained success.',
-            icon: '📈'
-        },
-        {
-            id: 'Q7',
-            title: 'Growth and Scalability',
-            description: 'Monitor business performance and develop long-term growth strategies for sustained success.',
-            icon: '📈'
-        },
-        {
-            id: 'Q8',
-            title: 'Growth and Scalability',
-            description: 'Monitor business performance and develop long-term growth strategies for sustained success.',
-            icon: '📈'
-        },
-        {
-            id: 'Q9',
-            title: 'Growth and Scalability',
-            description: 'Monitor business performance and develop long-term growth strategies for sustained success.',
-            icon: '📈'
-        },
-        {
-            id: 'Q10',
-            title: 'Growth and Scalability',
-            description: 'Monitor business performance and develop long-term growth strategies for sustained success.',
-            icon: '📈'
-        }
+        { logo: 'Applied Science.png', slide: 'Applied Science.png' },
+        { logo: 'Aptitude & REASONING.png', slide: 'Aptitude & REASONING.png' },
+        { logo: 'Core Skills.png', slide: 'Core Skills.png' },
+        { logo: 'Problem Solving.png', slide: 'Problem Solving.png' },
+        { logo: 'Soft Skills.png', slide: 'Soft Skills.png' },
+        { logo: 'Web DEVELOPMENT.png', slide: 'Web DEVELOPMENT.png' },
+        { logo: 'Data Engineering.png', slide: 'Data Engineering.png' },
+        { logo: 'Machine Learning.png', slide: 'Machine Learning.png' },
+        { logo: 'Cloud and Network Security.png', slide: 'Cloud and Network Security.png' },
+        { logo: 'Industry-Integrated.png', slide: 'Industry Alligned.png' },
     ];
 
+    const getName = (filename) => filename.replace('.png', '');
+
     return (
-        <section style={{ backgroundColor: '#f8f9fa', padding: '4rem 0', overflow: 'hidden' }}>
+        <section
+            ref={sectionRef}
+            style={{
+                backgroundColor: '#f8f9fa',
+                padding: '4rem 0',
+                position: 'relative',
+                zIndex: hoveredStep !== null ? 50 : 1
+            }}
+        >
             <div className="container">
                 {/* Section Header */}
                 <div className="mb-5">
@@ -86,258 +90,254 @@ export default function Roadmap() {
                     </p>
                 </div>
 
-                {/* Desktop Roadmap - S-Curve Layout */}
+                {/* ===== DESKTOP ROADMAP - Snake/Zigzag Layout ===== */}
                 <div className="d-none d-lg-block">
-                    <div style={{ position: 'relative', padding: '1rem 0' }}>
-                        {/* SVG Curved Line */}
-                        <svg
-                            viewBox="0 0 1200 500"
-                            style={{
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                width: '100%',
-                                height: '100%',
-                                zIndex: 1,
-                                pointerEvents: 'none'
-                            }}
-                            preserveAspectRatio="none"
-                        >
-                            <path
-                                d="M 60 80 
-                                   L 280 80 
-                                   L 500 80 
-                                   L 720 80 
-                                   L 940 80 
-                                   C 1100 80, 1150 250, 940 300
-                                   L 720 300 
-                                   L 500 300 
-                                   L 280 300 
-                                   L 60 300"
-                                fill="none"
-                                stroke="#002855"
-                                strokeWidth="4"
-                            />
-                        </svg>
+                    <div ref={gridRef} style={{ position: 'relative', padding: '1rem 0' }}>
 
-                        {/* Top Row - Q1 to Q5 (left to right) */}
-                        <div className="d-flex justify-content-between" style={{ position: 'relative', zIndex: 2, marginBottom: '3.5rem' }}>
-                            {steps.slice(0, 5).map((step) => (
-                                <div key={step.id} className="text-center" style={{ width: '18%' }}>
-                                    {/* Icon Circle */}
-                                    <div style={{
-                                        width: '70px',
-                                        height: '70px',
-                                        borderRadius: '50%',
-                                        backgroundColor: '#002855',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        margin: '0 auto 0.6rem',
-                                        fontSize: '1.8rem',
-                                        boxShadow: '0 4px 15px rgba(0, 40, 85, 0.3)',
-                                        border: '4px solid #F26520'
-                                    }}>
-                                        <span>{step.icon}</span>
+                        {/* SVG curves connecting circles - drawn from measured positions */}
+                        {lines.length > 0 && (
+                            <svg
+                                style={{
+                                    position: 'absolute', top: 0, left: 0,
+                                    width: '100%', height: '100%',
+                                    zIndex: 1, pointerEvents: 'none',
+                                    overflow: 'visible'
+                                }}
+                            >
+                                {lines.map((l, i) => {
+                                    const midX = (l.x1 + l.x2) / 2;
+                                    return (
+                                        <path
+                                            key={i}
+                                            d={`M ${l.x1} ${l.y1} C ${midX} ${l.y1}, ${midX} ${l.y2}, ${l.x2} ${l.y2}`}
+                                            fill="none"
+                                            stroke="#002855"
+                                            strokeWidth="3"
+                                        />
+                                    );
+                                })}
+                            </svg>
+                        )}
+
+                        {/* 10 columns grid with steps zigzagging */}
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(10, 1fr)',
+                            gridTemplateRows: 'auto 1px auto',
+                            gap: '0 0.5rem',
+                            position: 'relative',
+                            zIndex: 2,
+                        }}>
+                            {steps.map((step, i) => {
+                                const isTop = i % 2 === 0; // 0,2,4,6,8 = top; 1,3,5,7,9 = bottom
+                                const isHovered = hoveredStep === i;
+                                const col = i + 1;
+                                const popupDirection = isTop ? 'below' : 'above';
+                                // For popup: left half (cols 1-5) open right, right half (cols 6-10) open left
+                                const popupSide = col <= 5 ? 'right' : 'left';
+
+                                return (
+                                    <div
+                                        key={i}
+                                        className="text-center"
+                                        style={{
+                                            gridColumn: col,
+                                            gridRow: isTop ? 1 : 3,
+                                            position: 'relative',
+                                            cursor: 'pointer',
+                                            paddingBottom: isTop ? '0' : '0',
+                                            paddingTop: !isTop ? '0' : '0',
+                                        }}
+                                        onMouseEnter={() => setHoveredStep(i)}
+                                        onMouseLeave={() => setHoveredStep(null)}
+                                    >
+                                        {/* Logo Circle */}
+                                        <div ref={(el) => { circleRefs.current[i] = el; }} style={{
+                                            width: '85px', height: '85px', borderRadius: '50%',
+                                            backgroundColor: '#fff',
+                                            margin: '0 auto 0.4rem',
+                                            boxShadow: isHovered
+                                                ? '0 6px 25px rgba(242, 101, 32, 0.5)'
+                                                : '0 4px 15px rgba(0, 40, 85, 0.3)',
+                                            border: 'none',
+                                            overflow: 'hidden',
+                                            transition: 'all 0.3s ease',
+                                            transform: isHovered ? 'scale(1.15)' : 'scale(1)',
+                                        }}>
+                                            <img
+                                                src={encodeURI(`/cse-ai-assets/Roadmap/${step.logo}`)}
+                                                alt={getName(step.logo)}
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                                            />
+                                        </div>
+
+                                        {/* Title */}
+                                        <h5 style={{
+                                            fontSize: '0.7rem', fontWeight: '800',
+                                            color: '#002855', textTransform: 'uppercase',
+                                            margin: 0, lineHeight: '1.2'
+                                        }}>
+                                            {getName(step.logo)}
+                                        </h5>
+
+                                        {/* Subject Slide Popup */}
+                                        <div
+                                            onMouseEnter={() => setHoveredStep(i)}
+                                            onMouseLeave={() => setHoveredStep(null)}
+                                            style={{
+                                                position: 'absolute',
+                                                ...(popupDirection === 'below'
+                                                    ? { top: '50%', transform: popupSide === 'right'
+                                                        ? `translateY(10px) translateX(40px) scale(${isHovered ? 1.28 : 0.95})`
+                                                        : `translateY(10px) translateX(-440px) scale(${isHovered ? 1.28 : 0.95})` }
+                                                    : { bottom: '50%', transform: popupSide === 'right'
+                                                        ? `translateY(-10px) translateX(40px) scale(${isHovered ? 1.28 : 0.95})`
+                                                        : `translateY(-10px) translateX(-440px) scale(${isHovered ? 1.28 : 0.95})` }),
+                                                left: popupSide === 'right' ? '100%' : '0',
+                                                opacity: isHovered ? 1 : 0,
+                                                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                                pointerEvents: isHovered ? 'auto' : 'none',
+                                                zIndex: 200,
+                                                width: '480px',
+                                                backgroundColor: '#fff',
+                                                borderRadius: '16px',
+                                                boxShadow: '0 15px 50px rgba(0, 0, 0, 0.25)',
+                                                border: '3px solid #F26520',
+                                                padding: '16px',
+                                            }}
+                                        >
+                                            {/* (Arrow removed) */}
+                                            <img
+                                                src={encodeURI(`/cse-ai-assets/Subject Slide/${step.slide}`)}
+                                                alt={`${getName(step.logo)} Slide`}
+                                                style={{
+                                                    width: '100%', height: 'auto',
+                                                    borderRadius: '8px', display: 'block'
+                                                }}
+                                            />
+                                        </div>
                                     </div>
-
-                                    {/* Quarter Badge */}
-                                    <div style={{
-                                        backgroundColor: '#002855',
-                                        color: 'white',
-                                        fontWeight: '700',
-                                        fontSize: '0.7rem',
-                                        padding: '0.15rem 0.5rem',
-                                        borderRadius: '12px',
-                                        display: 'inline-block',
-                                        marginBottom: '0.4rem'
-                                    }}>
-                                        {step.id}
-                                    </div>
-
-                                    {/* Title */}
-                                    <h5 style={{
-                                        fontSize: '0.85rem',
-                                        fontWeight: '800',
-                                        color: '#002855',
-                                        textTransform: 'uppercase',
-                                        marginBottom: '0.35rem',
-                                        lineHeight: '1.3'
-                                    }}>
-                                        {step.title}
-                                    </h5>
-
-                                    {/* Orange Divider */}
-                                    <div style={{
-                                        width: '25px',
-                                        height: '3px',
-                                        backgroundColor: '#F26520',
-                                        margin: '0 auto 0.35rem'
-                                    }} />
-
-                                    {/* Description */}
-                                    <p style={{
-                                        fontSize: '0.72rem',
-                                        color: '#6b7280',
-                                        lineHeight: '1.4',
-                                        margin: 0
-                                    }}>
-                                        {step.description}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Bottom Row - Q6 to Q10 (right to left) */}
-                        <div className="d-flex justify-content-between flex-row-reverse" style={{ position: 'relative', zIndex: 2 }}>
-                            {steps.slice(5, 10).map((step) => (
-                                <div key={step.id} className="text-center" style={{ width: '18%' }}>
-                                    {/* Icon Circle */}
-                                    <div style={{
-                                        width: '70px',
-                                        height: '70px',
-                                        borderRadius: '50%',
-                                        backgroundColor: '#002855',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        margin: '0 auto 0.6rem',
-                                        fontSize: '1.8rem',
-                                        boxShadow: '0 4px 15px rgba(0, 40, 85, 0.3)',
-                                        border: '4px solid #F26520'
-                                    }}>
-                                        <span>{step.icon}</span>
-                                    </div>
-
-                                    {/* Quarter Badge */}
-                                    <div style={{
-                                        backgroundColor: '#002855',
-                                        color: 'white',
-                                        fontWeight: '700',
-                                        fontSize: '0.7rem',
-                                        padding: '0.15rem 0.5rem',
-                                        borderRadius: '12px',
-                                        display: 'inline-block',
-                                        marginBottom: '0.4rem'
-                                    }}>
-                                        {step.id}
-                                    </div>
-
-                                    {/* Title */}
-                                    <h5 style={{
-                                        fontSize: '0.85rem',
-                                        fontWeight: '800',
-                                        color: '#002855',
-                                        textTransform: 'uppercase',
-                                        marginBottom: '0.35rem',
-                                        lineHeight: '1.3'
-                                    }}>
-                                        {step.title}
-                                    </h5>
-
-                                    {/* Orange Divider */}
-                                    <div style={{
-                                        width: '25px',
-                                        height: '3px',
-                                        backgroundColor: '#F26520',
-                                        margin: '0 auto 0.35rem'
-                                    }} />
-
-                                    {/* Description */}
-                                    <p style={{
-                                        fontSize: '0.72rem',
-                                        color: '#6b7280',
-                                        lineHeight: '1.4',
-                                        margin: 0
-                                    }}>
-                                        {step.description}
-                                    </p>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
 
-                {/* Mobile Roadmap - Vertical Timeline */}
+                {/* ===== MOBILE ROADMAP - Vertical Timeline ===== */}
                 <div className="d-lg-none">
                     <div style={{ position: 'relative', paddingLeft: '50px' }}>
-                        {/* Vertical Dotted Line */}
+                        {/* Vertical Line */}
                         <div style={{
-                            position: 'absolute',
-                            left: '30px',
-                            top: '0',
-                            bottom: '0',
-                            width: '4px',
-                            borderLeft: '4px solid #002855'
+                            position: 'absolute', left: '35px', top: '0', bottom: '0',
+                            width: '4px', borderLeft: '4px solid #002855'
                         }} />
 
                         {steps.map((step, index) => (
-                            <div key={step.id} style={{
+                            <div key={index} style={{
                                 position: 'relative',
-                                marginBottom: index < steps.length - 1 ? '2rem' : '0',
-                                paddingLeft: '1.5rem'
-                            }}>
-                                {/* Icon Circle on the line */}
+                                marginBottom: index < steps.length - 1 ? '1.5rem' : '0',
+                                paddingLeft: '1.5rem',
+                                display: 'flex', alignItems: 'center',
+                                minHeight: '60px', cursor: 'pointer'
+                            }}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setHoveredStep(hoveredStep === index ? null : index);
+                            }}
+                            >
+                                {/* Logo Circle on the line */}
                                 <div style={{
-                                    position: 'absolute',
-                                    left: '-32px',
-                                    top: '0',
-                                    width: '50px',
-                                    height: '50px',
-                                    borderRadius: '50%',
-                                    backgroundColor: '#002855',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: '1.3rem',
-                                    border: '3px solid #F26520',
-                                    boxShadow: '0 3px 10px rgba(0, 40, 85, 0.3)'
+                                    position: 'absolute', left: '-27px',
+                                    width: '60px', height: '60px', borderRadius: '50%',
+                                    backgroundColor: '#fff',
+                                    border: 'none',
+                                    boxShadow: hoveredStep === index
+                                        ? '0 4px 15px rgba(242, 101, 32, 0.5)'
+                                        : '0 3px 10px rgba(0, 40, 85, 0.3)',
+                                    overflow: 'hidden',
+                                    transition: 'all 0.3s ease',
+                                    transform: hoveredStep === index ? 'scale(1.1)' : 'scale(1)',
                                 }}>
-                                    <span>{step.icon}</span>
+                                    <img
+                                        src={encodeURI(`/cse-ai-assets/Roadmap/${step.logo}`)}
+                                        alt={getName(step.logo)}
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                                    />
                                 </div>
 
-                                {/* Content Card */}
-                                <div style={{
-                                    backgroundColor: 'white',
-                                    borderRadius: '12px',
-                                    padding: '1rem 1.25rem',
-                                    boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+                                {/* Title */}
+                                <h5 style={{
+                                    fontSize: '0.95rem', fontWeight: '800',
+                                    color: '#002855', textTransform: 'uppercase', margin: 0
                                 }}>
-                                    <div className="d-flex align-items-center gap-2 mb-1">
-                                        <span style={{
-                                            backgroundColor: '#002855',
-                                            color: 'white',
-                                            fontWeight: '700',
-                                            fontSize: '0.7rem',
-                                            padding: '0.15rem 0.5rem',
-                                            borderRadius: '10px'
-                                        }}>
-                                            {step.id}
-                                        </span>
-                                        <h5 style={{
-                                            fontSize: '0.95rem',
-                                            fontWeight: '800',
-                                            color: '#002855',
-                                            textTransform: 'uppercase',
-                                            margin: 0
-                                        }}>
-                                            {step.title}
-                                        </h5>
-                                    </div>
-                                    <p style={{
-                                        fontSize: '0.82rem',
-                                        color: '#6b7280',
-                                        lineHeight: '1.5',
-                                        margin: 0
-                                    }}>
-                                        {step.description}
-                                    </p>
-                                </div>
+                                    {getName(step.logo)}
+                                </h5>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
+
+            {/* Mobile Slide Overlay (shown on tap) */}
+            {hoveredStep !== null && (
+                <div
+                    className="d-lg-none"
+                    style={{
+                        position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+                        backgroundColor: 'rgba(0, 40, 85, 0.75)',
+                        zIndex: 9999,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        padding: '20px',
+                    }}
+                    onClick={() => setHoveredStep(null)}
+                >
+                    <div
+                        style={{
+                            backgroundColor: '#fff',
+                            borderRadius: '16px',
+                            padding: '12px',
+                            maxWidth: '90vw',
+                            width: '400px',
+                            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)',
+                            border: '3px solid #F26520',
+                            position: 'relative',
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Close button */}
+                        <button
+                            onClick={() => setHoveredStep(null)}
+                            style={{
+                                position: 'absolute', top: '-12px', right: '-12px',
+                                width: '32px', height: '32px', borderRadius: '50%',
+                                backgroundColor: '#F26520', border: 'none',
+                                color: '#fff', fontSize: '1rem', fontWeight: 'bold',
+                                cursor: 'pointer', display: 'flex',
+                                alignItems: 'center', justifyContent: 'center',
+                                boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                            }}
+                        >
+                            ✕
+                        </button>
+                        <img
+                            src={encodeURI(`/cse-ai-assets/Subject Slide/${steps[hoveredStep].slide}`)}
+                            alt={`${getName(steps[hoveredStep].logo)} Slide`}
+                            style={{
+                                width: '100%', height: 'auto',
+                                borderRadius: '10px', display: 'block'
+                            }}
+                        />
+                        <p style={{
+                            textAlign: 'center', marginTop: '10px',
+                            fontWeight: '800', color: '#002855',
+                            fontSize: '1rem', textTransform: 'uppercase',
+                            marginBottom: 0
+                        }}>
+                            {getName(steps[hoveredStep].logo)}
+                        </p>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

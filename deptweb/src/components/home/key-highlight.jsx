@@ -7,38 +7,26 @@ export default function KeyHighlights() {
     {
       id: 1,
       image: "/cse-ai-assets/images/key1.jpeg",
-      title: "Progressive, Experiential Learning Model",
-      description: "A technology-enabled, project-driven pedagogy that emphasizes continuous assessment and real-world problem solving. Students learn by building, experimenting, and innovating—not memorizing."
+      title: "Industry-Aligned Specializations with Global Certifications",
+      description: "Our Department blends strong academic foundations with industry-ready skills through professional electives aligned with globally recognized certifications, offering specialization tracks in AI & ML, Cloud Operations & Security, and Data Engineering & Cloud Analytics, enriched with industry expert sessions and practitioner-led workshops that ensures that students graduate certification-ready, technically proficient, professionally confident, and highly employable in today's rapidly evolving tech-driven world."
     },
     {
       id: 2,
       image: "/cse-ai-assets/images/key2.jpeg",
-      title: " Industry-Ready, Future-Focused Graduates",
-      description: "Structured exposure to industry tools, live projects, and applied learning ensures students graduate confident, competent, and workplace-ready."
+      title: "Strong Focus on Experiential & AI-Driven Learning",
+      description: "Our department adopts a future-focused learning approach through AI-driven assessments, Project-Based Learning (PBL), social internships, and industry-oriented capstone projects. Students work with real-world problems while gaining hands-on experience with leading tools such as CodeTantra, AWS Academy, HackerRank, Kaggle, WeXL, Infosys Springboard ensuring practical exposure and strong industry readiness."
     },
     {
       id: 3,
       image: "/cse-ai-assets/images/key3.jpeg",
-      title: "Globally Validated Skill Excellence",
-      description: "International certifications and global benchmarks strengthen our academic rigor, ensuring students meet worldwide standards of technical competence"
+      title: "Introduction of Advanced AI-Centric Core Courses",
+      description: "Our curriculum is systematically structured to progress from foundational sciences and programming to advanced domains such as AI, ML, DL, Gen AI, Cloud Computing, Computer Vision, Data Engineering, Cyber Security, and Full-Stack Development delivered by a highly qualified academic team of faculty members, graduating from premier institutions such as IITs, NITs, and other reputed universities, ensuring strong academic depth and industry-aligned expertise."
     },
     {
       id: 4,
       image: "/cse-ai-assets/images/key4.jpeg",
-      title: "Outstanding Career & Placement Success",
-      description: "A results-oriented ecosystem consistently translating academic excellence into high-impact career outcomes across premier organizations."
-    },
-    {
-      id: 5,
-      image: "/cse-ai-assets/images/key5.jpeg",
-      title: "AI-First Academic Framework",
-      description: "A strategically designed curriculum centered on Artificial Intelligence, Data, Cloud, and emerging technologies—preparing leaders for the intelligent digital era."
-    },
-    {
-      id: 6,
-      image: "/cse-ai-assets/images/key6.jpeg",
-      title: "Innovation-Driven Entrepreneurial Ecosystem",
-      description: "We foster creators, researchers, and founders—transforming ideas into funded ventures, impactful research, and scalable technological solutions."
+      title: "Structured Placement Preparation Ecosystem",
+      description: "The department provides a focused placement preparation combining DSA training, coding contests on iamneo, CodeTantra, HackerRank, CodeChef and assessments from AMCAT. Students also receive certification guidance, resume and LinkedIn optimization support, technical bootcamps, and personalized mentoring-ensuring streamlined, industry-aligned placement readiness."
     }
   ];
 

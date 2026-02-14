@@ -11,25 +11,25 @@ export default function Faculty() {
     // Top 20 faculty members
     const facultyMembers = [
         { id: 1, name: "Dr. Rekha Kashyap", position: "Dean-CSE(AI/AI&ML)", branch: "", degree: "Ph.D.", university: "JNU, New Delhi", image: "/cse-ai-assets/faculty/DR. REKHA KASHYAP.JPG" },
-        { id: 2, name: "Dr. Pratibha Singh", position: "Associate Professor & Program Head", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "IIT - Delhi", image: "/cse-ai-assets/faculty/DR. PRATIBHA SINGH.JPG" },
+        { id: 2, name: "Dr. Sapna Juneja", position: "Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "MDU, Rohtak, Haryana", image: "/cse-ai-assets/faculty/DR. SAPNA JUNEJA.JPG" },
         { id: 3, name: "Dr. Laxman Singh", position: "Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "Jamia Millia Islamia, New Delhi", image: "/cse-ai-assets/faculty/DR. LAXMAN SINGH.JPG" },
-        { id: 4, name: "Dr. Richa Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "Amity University, Lucknow", image: "/cse-ai-assets/faculty/DR. RICHA SINGH.JPG" },
-        { id: 5, name: "Dr. Kavya Gupta", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "IGDTUW, Delhi", image: "/cse-ai-assets/faculty/DR. KAVYA GUPTA.JPG" },
-        { id: 6, name: "Dr. Davesh Kumar Sharma", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "SRM Institute of Science and Technology", image: "/cse-ai-assets/faculty/DR. DAVESH KUMAR SHARMA.JPG" },
-        { id: 7, name: "Mr. Rajeev Kumar Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Dr. A.P.J. AKTU, Lucknow", image: "/cse-ai-assets/faculty/MR. RAJEEV KUMAR SINGH.JPG" },
-        { id: 8, name: "Ms. Bhawna", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Maharishi Markandeshwar University, Mullana, Ambala", image: "/cse-ai-assets/faculty/MS. BHAWNA.JPG" },
-        { id: 9, name: "Ms. Payal Chhabra", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Govind Ballabh Pant University, Pantnagar", image: "/cse-ai-assets/faculty/MS. PAYAL CHHABRA.JPG" },
-        { id: 10, name: "Ms. Akanksha", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Gautam Buddha University, Greater Noida", image: "/cse-ai-assets/faculty/MS. AKANKSHA .JPG" },
-        { id: 11, name: "Mr. Nagendra Nath Dubey", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Rajasthan Technical University, Kota", image: "/cse-ai-assets/faculty/Mr. Nagendra Nath Dubey.JPG" },
-        { id: 12, name: "Mr. Thammali Gangadhar", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/faculty/MR. THAMMALI GANGADHAR.JPG" },
-        { id: 13, name: "Ms. Nidhi Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "UPTU, Lucknow", image: "/cse-ai-assets/faculty/MS. NIDHI SINGH.JPG" },
-        { id: 14, name: "Mr. Tanmoy Das", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/faculty/MR. TANMOY DAS.JPG" },
-        { id: 15, name: "Mr. Rachit Patel", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/faculty/MR. RACHIT PATEL.JPG" },
-        { id: 16, name: "Mr. Mayank Lakhotia", position: "Assistant Professor & Program Head (First Year)", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "NSUT, New Delhi", image: "/cse-ai-assets/faculty/MR. MAYANK LAKHOTIA.JPG" },
-        { id: 17, name: "Mr. Abhishek Shukla", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "DTU, New Delhi", image: "/cse-ai-assets/faculty/MR. ABHISHEK SHUKLA.JPG" },
-        { id: 18, name: "Ms. Surbhi Verma", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Shobhit University, Meerut", image: "/cse-ai-assets/faculty/MS. SURBHI VERMA.JPG" },
-        { id: 19, name: "Mr. Sundeep Raj", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "GGSIPU, New Delhi", image: "/cse-ai-assets/faculty/MR. SUNDEEP RAJ.JPG" },
-        { id: 20, name: "Ms. Anjali Maurya", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "IIITDM, Jabalpur", image: "/cse-ai-assets/faculty/MS. ANJALI MAURYA.JPG" }
+        { id: 4, name: "Dr. Pratibha Singh", position: "Associate Professor & Program Head", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "IIT - Delhi", image: "/cse-ai-assets/faculty/DR. PRATIBHA SINGH.JPG" },
+        { id: 5, name: "Dr. Shelly Gupta", position: "Associate Professor & Program Head", branch: "CSE(AI)", degree: "Ph.D.", university: "Amity University, Uttar Pradesh", image: "/cse-ai-assets/faculty/DR. SHELLY GUPTA.JPG" },
+        { id: 6, name: "Dr. Mukesh Kumar Tripathi", position: "Associate Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "Visvesvaraya Technological University, Belagavi", image: "/cse-ai-assets/faculty/DR. MUKESH KUMAR TRIPATHI.JPG" },
+        { id: 7, name: "Dr. Puneet Garg", position: "Associate Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "J.C. Bose University of Science and Technology, YMCA", image: "/cse-ai-assets/faculty/DR. PUNEET GARG.JPG" },
+        { id: 8, name: "Dr. Rohit", position: "Associate Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "University of Technology, Jaipur", image: "/cse-ai-assets/faculty/DR. ROHIT.JPG" },
+        { id: 9, name: "Dr. Kiran", position: "Associate Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "SRM University, Sonepat", image: "/cse-ai-assets/faculty/DR. KIRAN.JPG" },
+        { id: 10, name: "Mr. Sahil Bhatia", position: "Assistant Professor & Program Head (First Year)", branch: "CSE(AI)", degree: "M.Tech.", university: "IIT - Jodhpur", image: "/cse-ai-assets/faculty/MR. SAHIL BHATIA.JPG" },
+        { id: 11, name: "Mr. Mayank Lakhotia", position: "Assistant Professor & Program Head (First Year)", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "NSUT, New Delhi", image: "/cse-ai-assets/faculty/MR. MAYANK LAKHOTIA.JPG" },
+        { id: 12, name: "Dr. Richa Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "Amity University, Lucknow", image: "/cse-ai-assets/faculty/DR. RICHA SINGH.JPG" },
+        { id: 13, name: "Dr. Kavya Gupta", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "IGDTUW, Delhi", image: "/cse-ai-assets/faculty/DR. KAVYA GUPTA.JPG" },
+        { id: 14, name: "Dr. Davesh Kumar Sharma", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "Ph.D.", university: "SRM Institute of Science and Technology", image: "/cse-ai-assets/faculty/DR. DAVESH KUMAR SHARMA.JPG" },
+        { id: 15, name: "Mr. Rajeev Kumar Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Dr. A.P.J. AKTU, Lucknow", image: "/cse-ai-assets/faculty/MR. RAJEEV KUMAR SINGH.JPG" },
+        { id: 16, name: "Ms. Bhawna", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Maharishi Markandeshwar University, Mullana, Ambala", image: "/cse-ai-assets/faculty/MS. BHAWNA.JPG" },
+        { id: 17, name: "Ms. Payal Chhabra", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "Govind Ballabh Pant University, Pantnagar", image: "/cse-ai-assets/faculty/MS. PAYAL CHHABRA.JPG" },
+        { id: 18, name: "Dr. Gaurav Srivastav", position: "Assistant Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "Sharda University, Greater Noida", image: "/cse-ai-assets/faculty/DR. GAURAV SRIVASTAVA.JPG" },
+        { id: 19, name: "Dr. Manvi Khatri", position: "Assistant Professor", branch: "CSE(AI)", degree: "Ph.D.", university: "SRM University, Sonepat", image: "/cse-ai-assets/faculty/DR. MANVI KHATRI.JPG" },
+        { id: 20, name: "Ms. Nidhi Singh", position: "Assistant Professor", branch: "CSE(AI&ML)", degree: "M.Tech.", university: "UPTU, Lucknow", image: "/cse-ai-assets/faculty/MS. NIDHI SINGH.JPG" }
     ];
 
     const scroll = (direction) => {

@@ -1,4 +1,5 @@
 import DgxCoe from "@/components/home/dgxcoe";
+import ClubSection from "@/components/home/club-section";
 import PlacementOverview from "@/components/home/placement-overview";
 import PlacementRecord from "@/components/home/placement-record";
 import Overview from "@/components/home/overview";
@@ -21,6 +22,7 @@ export default function Home() {
         {/* <PlacementOverview /> */}
         <PlacementRecord />
         <DgxCoe />
+        <ClubSection />
         <DeanMessage />
         <KeyHighlights />
         <Faculty />

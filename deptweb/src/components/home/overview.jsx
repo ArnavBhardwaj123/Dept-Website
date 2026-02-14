@@ -62,7 +62,7 @@ export default function Overview() {
 
                 {/* Stat 3 */}
                 <div className="col-sm-6">
-                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>240+300</h3>
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>240 + 300</h3>
                   <p className="small fw-bold mb-0 text-dark">Annual Student Intake</p>
                   <p className="small text-muted"> CSE (AI) + CSE (AI&ML)</p>
                 </div>

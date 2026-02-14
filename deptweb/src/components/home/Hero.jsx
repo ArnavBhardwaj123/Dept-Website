@@ -15,8 +15,8 @@ export default function Hero() {
           Department of CSE – AI & AIML
         </h1>
 
-        <p className="lead mb-4">
-          Empowering future innovators through cutting-edge education, 
+        <p className="lead mb-4" style={{ textAlign: 'justify' }}>
+          Empowering future innovators through cutting-edge education,
           advanced research, and industry-driven learning.
         </p>
 

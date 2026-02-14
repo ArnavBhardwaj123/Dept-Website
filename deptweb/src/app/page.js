@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <HomeNav />
       <FloatingAdmissionButton />
-      <main>
+      <main style={{ paddingTop: '80px' }}>
         <div id="overview">
           <Overview />
         </div>

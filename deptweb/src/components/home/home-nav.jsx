@@ -16,6 +16,7 @@ export default function HomeNav() {
         { name: 'Faculty', link: '#faculty' },
         { name: 'Testimonials', link: '#testimonials' },
         { name: 'Publications & Research', link: '#publications' },
+        
         { name: 'Syllabus', link: '#syllabus' },
     ];
 
@@ -52,7 +53,7 @@ export default function HomeNav() {
     };
 
     return (
-        <div className="sticky-top bg-white border-bottom shadow-sm" style={{ zIndex: 1000 }}>
+        <div className="fixed-top bg-white border-bottom shadow-sm w-100" style={{ zIndex: 1000 }}>
             {/* Scrollbar hidden with global .scrollbar-hide utility */}
             <div className="container">
                 <div className="d-flex align-items-center justify-content-between py-3">

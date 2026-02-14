@@ -23,25 +23,25 @@ export default function DgxCoe() {
           {/* Left Content */}
           <div className="col-lg-6 mb-4 mb-lg-0">
             <div className="pe-lg-4">
-              <p className="text-muted mb-3" style={{ color: 'black',fontSize: '0.95rem', letterSpacing: '0.5px' }}>
+              <p className="text-muted mb-3" style={{ color: 'black', fontSize: '0.95rem', letterSpacing: '0.5px' }}>
                 Your Journey Into Advanced Computing Begins Here
               </p>
-              
-              <h1 className="fw-bold mb-4" style={{ color: 'black' ,fontSize: 'clamp(1.3rem, 3vw, 2rem)' }}>
+
+              <h1 className="fw-bold mb-4" style={{ color: 'black', fontSize: 'clamp(1.3rem, 3vw, 2rem)' }}>
                 Driving  <span style={{ color: '#ff5722' }}>Supercomputing with DGX </span>
                 <br />
-                 Centre of Excellence <span style={{ color: '#ff5722' }}></span>
+                Centre of Excellence <span style={{ color: '#ff5722' }}></span>
               </h1>
-              
-              <p className="text-muted mb-4" style={{ fontSize: 'clamp(0.95rem, 2vw, 1rem)', lineHeight: '1.8' }}>
+
+              <p className="text-muted mb-4" style={{ fontSize: 'clamp(0.95rem, 2vw, 1rem)', lineHeight: '1.8', textAlign: 'justify' }}>
                 Powered by the NVIDIA DGX A100 Supercomputer, KIET enables enterprise-grade AI computing for advanced research in the field of AI. Students build and deploy complex AI models on industry-level GPU infrastructure. A hub for innovation, industry collaboration, and next-generation AI excellence.
               </p>
-              
+
               <button
                 type="button"
                 className="btn px-4 py-2 fw-semibold"
-                style={{ 
-                  backgroundColor: '#ff5722', 
+                style={{
+                  backgroundColor: '#ff5722',
                   color: 'white',
                   border: 'none',
                   borderRadius: '8px',
@@ -71,9 +71,9 @@ export default function DgxCoe() {
           {/* Right Image */}
           <div className="col-lg-6">
             <div className="position-relative">
-              <div 
+              <div
                 className="rounded-4 overflow-hidden"
-                style={{ 
+                style={{
                   boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
                   border: '8px solid white',
                   height: '350px',
@@ -85,7 +85,7 @@ export default function DgxCoe() {
                   src="/cse-ai-assets/images/DGX-Supercomputing.png"
                   alt="KIET College Building"
                   fill
-                  style={{ 
+                  style={{
                     objectFit: 'cover'
                   }}
                 />
@@ -93,7 +93,7 @@ export default function DgxCoe() {
             </div>
           </div>
         </div>
-        
+
         {/* PDF Modal */}
         {showPdfModal && (
           <div

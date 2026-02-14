@@ -318,6 +318,7 @@ export default function Testimonial() {
                                         lineHeight: '1'
                                     }}>❝ </span>
                                     <p style={{
+                                        textAlign: 'justify',
                                         fontSize: '0.85rem',
                                         color: '#6b7280',
                                         fontStyle: 'italic',

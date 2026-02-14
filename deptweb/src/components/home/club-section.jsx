@@ -50,7 +50,7 @@ const ClubCard = ({ title, description, link, imageSrc }) => (
                     <h4 className="fw-bold mb-2" style={{ color: '#003049', fontSize: '1.25rem' }}>
                         {title}
                     </h4>
-                    <p className="text-muted mb-3 flex-grow-1" style={{ lineHeight: '1.6', fontSize: '0.9rem' }}>
+                    <p className="text-muted mb-3 flex-grow-1" style={{ lineHeight: '1.6', fontSize: '0.9rem', textAlign: 'justify' }}>
                         {description}
                     </p>
                     <div>

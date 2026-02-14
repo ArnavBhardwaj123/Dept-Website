@@ -102,7 +102,8 @@ export default function KeyHighlights() {
                     style={{
                       fontSize: '0.85rem',
                       color: '#666',
-                      lineHeight: '1.5'
+                      lineHeight: '1.5',
+                      textAlign: 'justify'
                     }}
                   >
                     {highlight.description}

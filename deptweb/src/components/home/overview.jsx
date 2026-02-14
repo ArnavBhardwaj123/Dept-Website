@@ -21,7 +21,7 @@ export default function Overview() {
                 CSE (AI / AI&ML) Department's <span style={{ color: '#F26520' }}>Key <br /> Highlights</span> in <span style={{ color: '#F26520' }}>Numbers</span>
               </h2>
 
-              <p className="text-muted mb-4" style={{ lineHeight: '1.6' }}>
+              <p className="text-muted mb-4" style={{ lineHeight: '1.6', textAlign: 'justify' }}>
                 These achievements reflect our commitment to excellence in scale, skill, and success. With a robust intake, strong placement outcomes, global certifications, and significant student-led funding, the department stands as a dynamic ecosystem where academic strength, industry readiness, and entrepreneurial ambition translate into measurable, impactful results.
               </p>
 
@@ -56,7 +56,7 @@ export default function Overview() {
                 {/* Stat 2 */}
                 <div className="col-sm-6">
                   <h3 className="fw-bold mb-1" style={{ fontSize: '3rem', color: '#F26520' }}>95%</h3>
-                  <p className="small fw-bold mb-0 text-dark">Placement Record in 2025</p>
+                  <p className="small fw-bold mb-0 text-dark">Placements in 2025</p>
                   <p className="small text-muted">Leading Tech & AI Companies</p>
                 </div>
 

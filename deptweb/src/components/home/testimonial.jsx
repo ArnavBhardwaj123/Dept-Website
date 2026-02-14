@@ -250,7 +250,7 @@ export default function Testimonial() {
                                         <p style={{
                                             fontSize: '1rem',
                                             fontWeight: '700',
-                                            color: '#111827',
+                                            color: '#ff5722',
                                             margin: '0'
                                         }}>
                                             {testimonial.package}

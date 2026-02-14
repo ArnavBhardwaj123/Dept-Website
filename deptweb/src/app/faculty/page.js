@@ -82,16 +82,16 @@ export default function FacultyPage() {
     return (
         <div style={{ backgroundColor: '#f8f9fa', minHeight: '100vh' }}>
             {/* Header */}
-            <header style={{ 
+            <header style={{
                 backgroundColor: 'white',
                 borderBottom: '1px solid #e5e7eb',
                 padding: '2.5rem 0 3rem 0'
             }}>
                 <div className="container">
-                    <Link 
-                        href="/" 
+                    <Link
+                        href="/"
                         className="text-decoration-none d-inline-flex align-items-center mb-4"
-                        style={{ 
+                        style={{
                             fontSize: '0.95rem',
                             color: '#6b7280',
                             fontWeight: '500',
@@ -103,14 +103,14 @@ export default function FacultyPage() {
                         <span style={{ fontSize: '1.3rem', marginRight: '0.6rem' }}>←</span>
                         Back to Home
                     </Link>
-                    <h1 className="fw-bold mb-3" style={{ 
+                    <h1 className="fw-bold mb-3" style={{
                         fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
                         color: '#111827',
                         letterSpacing: '-0.02em'
                     }}>
                         Our Faculty
                     </h1>
-                    <p className="mb-0" style={{ 
+                    <p className="mb-0" style={{
                         fontSize: '1.15rem',
                         color: '#6b7280',
                         maxWidth: '700px',
@@ -122,16 +122,18 @@ export default function FacultyPage() {
             </header>
 
             {/* Faculty Grid */}
-            <main className="container py-5">
-                <div className="row g-4">
+            <main className="container-fluid px-5 py-5">
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
                     {facultyMembers.map((member) => (
-                        <div key={member.id} className="col-md-6 col-lg-4 col-xl-3">
+                        <div key={member.id} className="col">
                             <div
                                 className="card border-0 shadow-sm h-100"
                                 style={{
                                     borderRadius: '12px',
                                     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                                    cursor: 'pointer'
+                                    cursor: 'pointer',
+                                    width: '260px',
+                                    margin: '0 auto'
                                 }}
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.transform = 'translateY(-5px)';
@@ -145,7 +147,7 @@ export default function FacultyPage() {
                                 <div
                                     className="overflow-hidden"
                                     style={{
-                                        height: '200px',
+                                        height: '180px',
                                         borderTopLeftRadius: '12px',
                                         borderTopRightRadius: '12px',
                                         position: 'relative',

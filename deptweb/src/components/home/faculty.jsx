@@ -101,7 +101,7 @@ export default function Faculty() {
                             key={member.id}
                             className="card border-0 shadow-sm flex-shrink-0"
                             style={{
-                                width: '300px',
+                                width: '260px',
                                 borderRadius: '12px',
                                 scrollSnapAlign: 'start',
                                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',

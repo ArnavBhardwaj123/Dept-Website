@@ -12,11 +12,10 @@ export default function HomeNav() {
         { name: 'COE', link: '#coe' },
         { name: 'Clubs', link: '#clubs' },
         { name: "Dean's Message", link: '#dean-message' },
-        { name: 'Infrastructure', link: '#infrastructure' },
+        { name: 'Key Highlights', link: '#infrastructure' },
         { name: 'Faculty', link: '#faculty' },
         { name: 'Testimonials', link: '#testimonials' },
         { name: 'Publications & Research', link: '#publications' },
-        
         { name: 'Syllabus', link: '#syllabus' },
     ];
 

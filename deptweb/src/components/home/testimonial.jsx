@@ -188,13 +188,13 @@ export default function Testimonial() {
                         }}>
                         Voices of Excellence
                     </h2>
-                    <p style={{
+                    {/* <p style={{
                         fontSize: '1.1rem',
                         color: '#6b7280',
                         maxWidth: '700px'
                     }}>
                         Stories of learning, leadership, and transformation
-                    </p>
+                    </p> */}
                 </div>
 
                 {/* Testimonials Horizontal Scroll */}

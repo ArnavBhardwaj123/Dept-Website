@@ -153,8 +153,8 @@ export default function ProgramDetails() {
                                 <div
                                     className="overflow-hidden bg-white"
                                     style={{
-                                        maxHeight: isActive ? '1000px' : '0',
-                                        transition: 'max-height 0.5s ease-in-out',
+                                        maxHeight: isActive ? 'none' : '0',
+                                        transition: isActive ? 'opacity 0.5s' : 'max-height 0.5s ease-in-out',
                                         opacity: isActive ? 1 : 0,
                                         boxShadow: isActive ? '0 4px 6px rgba(0,0,0,0.05)' : 'none',
                                         border: isActive ? '1px solid #dee2e6' : 'none',

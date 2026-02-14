@@ -10,143 +10,143 @@ export default function PublicationsResearch() {
     const publications = [
         {
             id: 1,
-            title: "Prominent solution for solar panel defect detection using AI-based computer vision technology",
-            authors: "Dr. Rekha Kashyap, Dr. Richa Singh",
+            title: "Security Driven Scheduling Model for Computational Grid Using NSGA-II",
+            authors: "Dr. Rekha Kashyap",
+            journal: "Jour. of Grid Comp.",
+            link: "https://doi.org/10.1007/s10723-013-9251-x"
+        },
+        {
+            id: 2,
+            title: "Prominent solution for solar panel defect detection using AI-based computer vision technology with IoT sensors in the solar panel manufacturing industry",
+            authors: "Dr. Richa Singh, Dr. Rekha Kashyap",
             journal: "IJIT 2024",
             link: "https://doi.org/10.1007/s41870-024-02212-2"
         },
         {
-            id: 2,
+            id: 3,
+            title: "Immutable and Privacy Protected E-Certificate Repository on Blockchain",
+            authors: "Dr. Rekha Kashyap",
+            journal: "IJEAT 2020",
+            link: "https://doi.org/10.35940/ijeat.c5256.029320"
+        },
+        {
+            id: 4,
             title: "Towards Intelligent Retail Security: ConvLSTM-Based Shoplifting Detection with Adam Optimization",
-            authors: "Dr. Rekha Kashyap, Dr. Kiran, Dr. Laxman Singh",
+            authors: "Dr. Kiran, Dr. Laxman Singh, Dr. Rekha Kashyap",
             journal: "Zenodo 2025",
             link: "https://doi.org/10.5281/zenodo.17386861"
         },
         {
-            id: 3,
+            id: 5,
             title: "Predicting the Veracity of News Articles Using Multimodal Embeddings and NLP-Based Features",
-            authors: "Dr. Rekha Kashyap, Dr. Richa Singh, Dr. Gaurav Srivastav",
+            authors: "Dr. Richa Singh, Dr. Rekha Kashyap, Dr. Gaurav Srivastav",
             journal: "IDICAIEI 2023",
             link: "https://doi.org/10.1109/IDICAIEI58380.2023.10406898"
         },
         {
-            id: 4,
+            id: 6,
             title: "Proposed ResVGG-Net Model for Mango Leaf Disease Classification and Agricultural Sustainability",
             authors: "Dr. Sapna Juneja",
             journal: "App. Fru.Sci. 2025",
             link: "https://doi.org/10.1007/s10341-025-01667-2"
         },
         {
-            id: 5,
+            id: 7,
             title: "Hybrid deep learning system for crop disease classification using modified SegNet segmentation",
             authors: "Dr. Mukesh Kumar Tripathi",
             journal: "Comp. & Elec. Eng. 2025",
             link: "https://doi.org/10.1016/j.compeleceng.2025.110576"
         },
         {
-            id: 6,
+            id: 8,
             title: "A Hybrid DL with Battle Royal Optimisation Algorithm for Accurate Tree Counting Using Satellite Images",
             authors: "Dr. Shelly Gupta",
             journal: "IJCIS 2025",
             link: "https://doi.org/10.1007/s44196-025-00928-y"
         },
         {
-            id: 7,
+            id: 9,
             title: "Hybrid optimization with constraints handling for combinatorial test case prioritization problems",
             authors: "Dr. Mukesh Kumar Tripathi",
             journal: "NCNS 2025",
             link: "https://doi.org/10.1080/0954898x.2025.2517130"
         },
         {
-            id: 8,
+            id: 10,
             title: "Advanced hyperparameter optimization for lung cancer detection using DenseBeetle network",
             authors: "Dr. Laxman Singh",
             journal: "Chem. & Int. Lab. Sys. 2026",
             link: "https://doi.org/10.1016/j.chemolab.2025.105584"
         },
         {
-            id: 9,
-            title: "Enhanced tree enumeration through satellite imagery and hybrid ensemble cyclic averaging stacked chain model",
+            id: 11,
+            title: "Enhanced tree enumeration through satellite imagery and hybrid ensemble cyclic averaging stacked chain deep learning model tuned with BRO algorithm",
             authors: "Dr. Shelly Gupta",
             journal: "Jour. of Opt. 2025",
             link: "https://doi.org/10.1007/s12596-025-02810-8"
         },
         {
-            id: 10,
-            title: "Design of an Efficient Integrated Feature Engineering based Deep Learning Model Using CNN for Customer’s Review",
+            id: 12,
+            title: "Design of an Efficient Integrated Feature Engineering based Deep Learning Model Using CNN for Customer’s Review Helpfulness Prediction.",
             authors: "Dr. Laxman Singh",
             journal: "Wir. Per. Comm. 2024",
             link: "https://doi.org/10.1007/s11277-023-10834-1"
         },
         {
-            id: 11,
-            title: "Improvement of process capability analysis through Six Sigma methodology: a case study in capacitor industry",
+            id: 13,
+            title: "Improvement of process capability analysis through Six Sigma methodology: a case study in the capacitor manufacturing industry",
             authors: "Nidhi Singh",
             journal: "IJSSCA 2025",
             link: "https://doi.org/10.1504/IJSSCA.2025.145612"
         },
         {
-            id: 12,
-            title: "Multi-model machine learning framework for lung cancer risk prediction: A comparative analysis",
+            id: 14,
+            title: "Multi-model machine learning framework for lung cancer risk prediction: A comparative analysis of nine classifiers with hybrid and ensemble approaches using behavioral and hematological parameters",
             authors: "Dr. Sapna Juneja",
             journal: "SLAS Tech. 2025",
             link: "https://doi.org/10.1016/j.slast.2025.100314"
         },
         {
-            id: 13,
-            title: "Enhancing security and privacy of chest X-ray images by implementing edge-based steganography",
+            id: 15,
+            title: "Enhancing security and privacy of chest X-ray images by implementing edge-based steganography and layered cryptography",
             authors: "Dr. Sapna Juneja",
             journal: "Alex. Eng. Jour. 2025",
             link: "https://doi.org/10.1016/j.aej.2025.08.051"
         },
         {
-            id: 14,
-            title: "Hybrid pre trained model based feature extraction for enhanced indoor scene classification",
+            id: 16,
+            title: "Hybrid pre trained model based feature extraction for enhanced indoor scene classification in federated learning environments",
             authors: "Dr. Sapna Juneja",
             journal: "Sci. Rep. 2025",
             link: "https://doi.org/10.1038/s41598-025-16673-3"
         },
         {
-            id: 15,
-            title: "Diabetic Retinopathy Detection with Uncertainty scores: A Combined Approach Using Transfer Learning",
+            id: 17,
+            title: "Diabetic Retinopathy Detection with Uncertainty scores: A Combined Approach Using Transfer Learning and Ensemble Calibration",
             authors: "Preeti Verma",
             journal: "ADCAIJ 2025",
             link: "https://doi.org/10.14201/adcaij.32209"
         },
         {
-            id: 16,
+            id: 18,
             title: "Anomaly detection framework for highly scattered and dynamic data on large-scale networks using AWS",
             authors: "Dr. Richa Singh",
             journal: "IJIT 2024",
             link: "https://doi.org/10.1007/s41870-024-01765-6"
         },
         {
-            id: 17,
-            title: "A survey on abnormal behavior detection based intelligence information video surveillance system",
+            id: 19,
+            title: "A survey on abnormal behavior detection based intelligence information video surveillance system using optimized machine learning methods, Engineering Applications of Artificial Intelligence",
             authors: "Dr. Laxman Singh",
             journal: "EAAI 2026",
             link: "https://doi.org/10.1016/j.engappai.2025.113438"
         },
         {
-            id: 18,
+            id: 20,
             title: "An Ontology Alignment based on Machine learning for Integration of Patient Health Data",
             authors: "Sundeep Raj",
             journal: "IJCDS 2024",
             link: "http://dx.doi.org/10.12785/ijcds/1571028689"
-        },
-        {
-            id: 19,
-            title: "Mango leaf disease detection and classification using a federated learning based lightweight vision transformer",
-            authors: "Dr. Laxman Singh",
-            journal: "TJAF 2025",
-            link: "https://doi.org/10.55730/1300-011X.3325"
-        },
-        {
-            id: 20,
-            title: "Enhanced hyper tuning using bioinspired-based deep learning model for accurate lung cancer detection",
-            authors: "Dr. Laxman Singh",
-            journal: "TIJOS 2025",
-            link: "https://doi.org/10.1177/03913988251359522"
         }
     ];
 
@@ -201,8 +201,8 @@ export default function PublicationsResearch() {
     return (
         <section className="pb-5" style={{ backgroundColor: '#f8f9fa' }}>
             <div className="container">
-                {/* 1. Recent Research Heading */}
-                <h3 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Recent Research</h3>
+                {/* 1. Recent Publications Heading */}
+                <h3 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Recent Publications</h3>
 
                 {/* Publications Carousel */}
                 <div className="mb-5 position-relative">
@@ -348,8 +348,8 @@ export default function PublicationsResearch() {
                 </div>
 
 
-                {/* 2. Publications Heading */}
-                <h2 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Publications Statistics</h2>
+                {/* 2. Research Heading */}
+                <h2 className="fw-bold mb-4" style={{ fontSize: '1.5rem', color: '#00304C' }}>Research Statistics</h2>
 
                 {/* Research Stats */}
                 <div>

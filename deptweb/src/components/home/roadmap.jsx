@@ -94,6 +94,7 @@ export default function Roadmap() {
 
     return (
         <section
+            id="roadmap"
             ref={sectionRef}
             style={{
                 backgroundColor: '#f8f9fa',

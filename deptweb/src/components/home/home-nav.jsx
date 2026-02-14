@@ -10,6 +10,7 @@ export default function HomeNav() {
         { name: 'Overview', link: '#overview' },
         { name: 'Highlights', link: '#infrastructure' },
         { name: 'Placement', link: '#placement' },
+        { name: 'Roadmap', link: '#roadmap' },
         { name: 'COE', link: '#coe' },
         { name: 'Clubs', link: '#clubs' },
         { name: "Dean's Message", link: '#dean-message' },

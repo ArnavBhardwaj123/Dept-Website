@@ -71,7 +71,7 @@ export default function DgxCoe() {
                 }}
               >
                 <Image
-                  src="/cse-ai-assets/images/DGZ-Supercomputing.png"
+                  src="/cse-ai-assets/images/DGX-Supercomputing.png"
                   alt="KIET College Building"
                   fill
                   style={{ 

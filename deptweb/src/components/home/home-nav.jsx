@@ -11,7 +11,7 @@ export default function HomeNav() {
         { name: "Dean's Message", link: '#dean-message' },
         { name: 'Faculty', link: '#faculty' },
         { name: 'Publications & Research', link: '#publications' },
-        { name: 'Infrastructure', link: '#infrastructure' },
+        // { name: 'Infrastructure', link: '#infrastructure' },
         { name: 'Placement', link: '#placement' },
         { name: 'COE', link: '#coe' },
         { name: 'Testimonials', link: '#testimonials' },
@@ -23,11 +23,11 @@ export default function HomeNav() {
     useEffect(() => {
         const handleScrollSpy = () => {
             const navHeight = 150;
-            
+
             for (let i = navItems.length - 1; i >= 0; i--) {
                 const targetId = navItems[i].link.substring(1);
                 const element = document.getElementById(targetId);
-                
+
                 if (element) {
                     const rect = element.getBoundingClientRect();
                     if (rect.top <= navHeight && rect.bottom > navHeight) {
@@ -40,7 +40,7 @@ export default function HomeNav() {
 
         window.addEventListener('scroll', handleScrollSpy);
         handleScrollSpy(); // Initial check
-        
+
         return () => window.removeEventListener('scroll', handleScrollSpy);
     }, []);
 

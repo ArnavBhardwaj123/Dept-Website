@@ -172,9 +172,6 @@ export default function PublicationsResearch() {
     };
 
     const currentStats = statsData[activeYear];
-    // Dynamic Max Value for Graph Scaling (adding 10% buffer)
-    const maxVal = Math.max(...Object.values(currentStats)) * 1.1 || 100;
-
     // --- Scroll Logic ---
     const handleScroll = () => {
         if (scrollRef.current) {
@@ -369,143 +366,123 @@ export default function PublicationsResearch() {
                 </h2>
 
                 {/* Research Stats */}
+                {/* Research Stats */}
                 <div>
-                    <div className="row g-4">
-                        {/* Left: Bar Graph */}
-                        <div className="col-lg-7">
-                            <div className="card border-0 shadow-sm p-4 h-100 rounded-4">
-                                <div className="d-flex justify-content-between align-items-center mb-4">
-                                    <label htmlFor="year-select" className="text-muted mb-0 fw-semibold" style={{ fontSize: '1rem', color: '#495057' }}>Academic Year</label>
-                                    {/* Year Dropdown */}
-                                    <div className="position-relative">
-                                        <button
-                                            className="d-flex align-items-center gap-2 border-0 bg-transparent fw-bold p-0"
-                                            style={{ color: '#00304C', fontSize: '1.2rem' }}
-                                            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                        >
-                                            {activeYear}
-                                            <span style={{
-                                                transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                                                transition: 'transform 0.2s ease',
-                                                fontSize: '0.8rem'
-                                            }}>▼</span>
-                                        </button>
+                    {/* Year Dropdown Container */}
+                    <div className="d-flex justify-content-end mb-4">
+                        <div className="d-flex align-items-center gap-3 bg-white px-3 py-2 rounded-4 shadow-sm">
+                            <label htmlFor="year-select" className="text-muted mb-0 fw-semibold" style={{ fontSize: '0.95rem' }}>Academic Year:</label>
+                            <div className="position-relative">
+                                <button
+                                    className="d-flex align-items-center gap-2 border-0 bg-transparent fw-bold p-0"
+                                    style={{ color: '#00304C', fontSize: '1.1rem' }}
+                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                >
+                                    {activeYear}
+                                    <span style={{
+                                        transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                                        transition: 'transform 0.2s ease',
+                                        fontSize: '0.8rem'
+                                    }}>▼</span>
+                                </button>
 
-                                        {isDropdownOpen && (
+                                {isDropdownOpen && (
+                                    <div
+                                        className="position-absolute shadow-sm bg-white py-2"
+                                        style={{
+                                            top: '100%',
+                                            right: 0,
+                                            zIndex: 1000,
+                                            borderRadius: '12px',
+                                            minWidth: '120px',
+                                            marginTop: '8px',
+                                            border: '1px solid rgba(0,0,0,0.05)'
+                                        }}
+                                    >
+                                        {Object.keys(statsData).map(year => (
                                             <div
-                                                className="position-absolute shadow-sm bg-white py-2"
+                                                key={year}
+                                                onClick={() => {
+                                                    setActiveYear(year);
+                                                    setIsDropdownOpen(false);
+                                                }}
+                                                className="px-4 py-2 text-center fw-semibold"
                                                 style={{
-                                                    top: '100%',
-                                                    right: 0,
-                                                    zIndex: 1000,
-                                                    borderRadius: '16px',
-                                                    minWidth: '140px',
-                                                    marginTop: '8px',
-                                                    border: '1px solid rgba(0,0,0,0.05)'
+                                                    cursor: 'pointer',
+                                                    color: activeYear === year ? '#00304C' : '#6c757d',
+                                                    backgroundColor: activeYear === year ? '#f8f9fa' : 'transparent',
+                                                    transition: 'background-color 0.2s',
+                                                    fontSize: '0.9rem'
+                                                }}
+                                                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f8f9fa'}
+                                                onMouseLeave={(e) => {
+                                                    if (activeYear !== year) e.currentTarget.style.backgroundColor = 'transparent';
                                                 }}
                                             >
-                                                {Object.keys(statsData).map(year => (
-                                                    <div
-                                                        key={year}
-                                                        onClick={() => {
-                                                            setActiveYear(year);
-                                                            setIsDropdownOpen(false);
-                                                        }}
-                                                        className="px-4 py-2 text-center fw-semibold"
-                                                        style={{
-                                                            cursor: 'pointer',
-                                                            color: activeYear === year ? '#00304C' : '#6c757d',
-                                                            backgroundColor: activeYear === year ? '#f8f9fa' : 'transparent',
-                                                            transition: 'background-color 0.2s',
-                                                            fontSize: '0.95rem'
-                                                        }}
-                                                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f8f9fa'}
-                                                        onMouseLeave={(e) => {
-                                                            if (activeYear !== year) e.currentTarget.style.backgroundColor = 'transparent';
-                                                        }}
-                                                    >
-                                                        {year}
-                                                    </div>
-                                                ))}
+                                                {year}
                                             </div>
-                                        )}
+                                        ))}
                                     </div>
-                                </div>
-                                <div className="d-flex justify-content-around align-items-end h-100" style={{ minHeight: '300px' }}>
-                                    {Object.entries(currentStats).map(([key, value]) => (
-                                        <div key={key} className="d-flex flex-column align-items-center" style={{ width: '100px' }}>
-                                            <span className="mb-2 fw-bold" style={{ fontSize: '0.9rem', color: '#00304C' }}>{value}</span>
-                                            <div
-                                                style={{
-                                                    width: '100%',
-                                                    height: `${Math.max((value / maxVal) * 200, 4)}px`, // Min height for visibility
-                                                    backgroundColor: '#F9CAB3',
-                                                    borderRadius: '8px 8px 0 0',
-                                                    transition: 'height 0.5s ease'
-                                                }}
-                                            />
-                                            <span className="text-muted fw-semibold mt-3 text-center" style={{ fontSize: '0.75rem', letterSpacing: '0.5px' }}>
-                                                {key === 'projects' ? 'PROJECTS' : key.toUpperCase()}
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
+                                )}
                             </div>
                         </div>
+                    </div>
 
-                        {/* Right: Stat Cards */}
-                        <div className="col-lg-5">
-                            <div className="d-flex flex-column gap-3 h-100 justify-content-center">
-                                <div className="row g-3">
-                                    {/* Publications */}
-                                    <div className="col-6">
-                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
-                                            style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
-                                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                                        >
-                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.publications}</h3>
-                                            <p className="small text-muted m-0 fw-semibold">Publications</p>
-                                        </div>
-                                    </div>
-                                    {/* Patents */}
-                                    <div className="col-6">
-                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
-                                            style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
-                                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                                        >
-                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.patents}</h3>
-                                            <p className="small text-muted m-0 fw-semibold">Patents</p>
-                                        </div>
-                                    </div>
-                                    {/* Govt Projects */}
-                                    {currentStats.projects !== undefined && (
-                                        <div className="col-6">
-                                            <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
-                                                style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
-                                                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                                                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                                            >
-                                                <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.projects}</h3>
-                                                <p className="small text-muted m-0 fw-semibold">Govt. Projects</p>
-                                            </div>
-                                        </div>
-                                    )}
-                                    {/* Grants */}
-                                    {currentStats.grants !== undefined && (
-                                        <div className="col-6">
-                                            <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
-                                                style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
-                                                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                                                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                                            >
-                                                <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.grants}</h3>
-                                                <p className="small text-muted m-0 fw-semibold">Grants (Lakhs)</p>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
+                    <div className="row g-3">
+                        <div className="col-md-6 col-lg-3">
+                            <div
+                                className="card h-100 border-0 d-flex flex-column justify-content-center align-items-center text-center p-3"
+                                style={{
+                                    backgroundColor: 'white',
+                                    color: '#002855',
+                                    borderRadius: '12px',
+                                    minHeight: '140px'
+                                }}
+                            >
+                                <h3 className="fw-bold mb-2" style={{ fontSize: '2rem' }}>{currentStats.publications || 0}</h3>
+                                <p className="mb-0" style={{ fontSize: '1.2rem', opacity: 0.9 }}>Publications</p>
+                            </div>
+                        </div>
+                        <div className="col-md-6 col-lg-3">
+                            <div
+                                className="card h-100 border-0 d-flex flex-column justify-content-center align-items-center text-center p-3"
+                                style={{
+                                    backgroundColor: 'white',
+                                    color: '#002855',
+                                    borderRadius: '12px',
+                                    minHeight: '140px'
+                                }}
+                            >
+                                <h3 className="fw-bold mb-2" style={{ fontSize: '2rem' }}>{currentStats.patents || 0}</h3>
+                                <p className="mb-0" style={{ fontSize: '1.2rem', opacity: 0.9 }}>Patents</p>
+                            </div>
+                        </div>
+                        <div className="col-md-6 col-lg-3">
+                            <div
+                                className="card h-100 border-0 d-flex flex-column justify-content-center align-items-center text-center p-3"
+                                style={{
+                                    backgroundColor: 'white',
+                                    color: '#002855',
+                                    borderRadius: '12px',
+                                    minHeight: '140px'
+                                }}
+                            >
+                                <h3 className="fw-bold mb-2" style={{ fontSize: '2rem' }}>{currentStats.projects || 0}</h3>
+                                <p className="mb-0" style={{ fontSize: '1.2rem', opacity: 0.9 }}>Govt. Projects</p>
+                            </div>
+                        </div>
+                        <div className="col-md-6 col-lg-3">
+                            <div
+                                className="card h-100 border-0 d-flex flex-column justify-content-center align-items-center text-center p-3"
+                                style={{
+                                    backgroundColor: 'white',
+                                    color: '#002855',
+                                    borderRadius: '12px',
+                                    minHeight: '140px'
+                                }}
+                            >
+                                <h3 className="fw-bold mb-2" style={{ fontSize: '2rem' }}>{currentStats.grants || 0}</h3>
+                                <p className="mb-0" style={{ fontSize: '1.2rem', opacity: 0.9 }}>Grants (Lakhs)</p>
                             </div>
                         </div>
                     </div>

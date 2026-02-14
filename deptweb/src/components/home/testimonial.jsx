@@ -19,24 +19,6 @@ export default function Testimonial() {
             image: "/cse-ai-assets/Testimonial photo/Akshat Sharma.png"
         },
         {
-            id: 2,
-            company: "GPU.NET",
-            package: "24 LPA",
-            quote: "My journey at KIET Group of Institutions as a B.Tech graduate from the CSE (AI&ML) department was truly transformative! The vibrant campus and cutting-edge curriculum sparked my passion for technology, while the exceptional faculty in my department made learning an exhilarating experience. Their innovative, hands-on teaching approach, rooted in real-world applications, equipped me with practical skills that set me apart in the tech world. The department's unwavering support during internships and placements gave me the freedom to explore diverse opportunities and the confidence to secure my dream role. The faculty's mentorship was key, striking a perfect balance between honing my technical expertise and ensuring I excelled academically in exams. The peer-to-peer learning culture, amplified by dynamic clubs like Innogeeks and DevUp, sharpened my coding and problem-solving skills through hackathons, workshops, and collaborative projects. These platforms fueled my creativity and built lifelong friendships. From industry collaborations to cutting-edge resources, my department opened doors I never knew existed. Thank you, KIET and the CSE (AI & ML) department, for the opportunities, experiences, and memories that will drive my career forward for years to come!",
-            author: "Aryan Mishra",
-            batch: "2021-25",
-            image: "/cse-ai-assets/Testimonial photo/Aryan Mishra .png"
-        },
-        {
-            id: 3,
-            company: "CISCO",
-            package: "18 LPA",
-            quote: "During my first year at KIET Group of Institutions, Ghaziabad, I explored several domains, including machine learning and web development. I also dived into data structures and algorithms (DSA), but it didn't spark much interest. I then shifted focus to cybersecurity and networking, eventually joining the CPC Cyber Peace Centre, which provided me with deep insights into these fields. This was where I truly began to admire Cisco. As I continued exploring, I ventured into iOS development in my third year. Around this time, I secured an internship with Accenture, but unfortunately, I couldn't complete it due to university exams—a major setback for me. Despite this, I applied to various companies off-campus. I cleared Swiggy's online assessment, but after two rescheduled interviews, I never heard back. Then, during Cisco's Ideathon process, I interviewed with Blinkit but got rejected in the second round. Unsure about my chances with Cisco, I joined Rapipay to keep progressing. Just 15 days later, however, I received the life-changing email from Cisco offering me the role of Technical Consultant Engineer. This journey was filled with setbacks and uncertainty, but ultimately, I reached my goal, making the challenges all worth it.",
-            author: "Kanishk Joshi",
-            batch: "2021-25",
-            image: "/cse-ai-assets/Testimonial photo/Kanishk Joshi .jpeg"
-        },
-        {
             id: 4,
             company: "Triton One Limited",
             package: "55 LPA",
@@ -55,6 +37,15 @@ export default function Testimonial() {
             image: "/cse-ai-assets/Testimonial photo/Vedanshi .jpeg"
         },
         {
+            id: 9,
+            company: "Razorpay",
+            package: "35 LPA",
+            quote: "Pursuing B.Tech in CSE (AI) at KIET Group of Institutions was an important phase in my academic and professional journey. The program was designed to blend strong computer science fundamentals with emerging areas of Artificial Intelligence, which helped me understand not only how systems work but also how intelligent solutions are built and optimized. The coursework encouraged analytical thinking and practical application. Subjects related to algorithms, data handling, and AI concepts strengthened my technical confidence and improved my problem-solving approach. The faculty members were supportive and maintained an environment where discussions and doubts were welcomed, which made learning more interactive and effective. One of the most valuable aspects of my experience was the cooperation extended by the department during my internship tenure. The academic team ensured that all formalities and approvals were managed efficiently, allowing me to focus on industry exposure and skill development. That flexibility helped me bridge the gap between classroom learning and real-world implementation. The institute also provided a disciplined and resourceful academic environment. Facilities like the library and lab infrastructure supported research, project execution, and exam preparation effectively. Overall, my time in the CSE (AI) department contributed significantly to my technical growth, professional discipline, and readiness to take on industry challenges.",
+            author: "Archit Agarwal",
+            batch: "2022-26",
+            image: "/cse-ai-assets/Testimonial photo/Archit Agarwal.jpg"
+        },
+        {
             id: 6,
             company: "AMD",
             package: "32 LPA",
@@ -62,6 +53,15 @@ export default function Testimonial() {
             author: "Shobhit Sinha",
             batch: "2022-26",
             image: "/cse-ai-assets/Testimonial photo/Shobhit Sinha.jpg"
+        },
+        {
+            id: 2,
+            company: "GPU.NET",
+            package: "24 LPA",
+            quote: "My journey at KIET Group of Institutions as a B.Tech graduate from the CSE (AI&ML) department was truly transformative! The vibrant campus and cutting-edge curriculum sparked my passion for technology, while the exceptional faculty in my department made learning an exhilarating experience. Their innovative, hands-on teaching approach, rooted in real-world applications, equipped me with practical skills that set me apart in the tech world. The department's unwavering support during internships and placements gave me the freedom to explore diverse opportunities and the confidence to secure my dream role. The faculty's mentorship was key, striking a perfect balance between honing my technical expertise and ensuring I excelled academically in exams. The peer-to-peer learning culture, amplified by dynamic clubs like Innogeeks and DevUp, sharpened my coding and problem-solving skills through hackathons, workshops, and collaborative projects. These platforms fueled my creativity and built lifelong friendships. From industry collaborations to cutting-edge resources, my department opened doors I never knew existed. Thank you, KIET and the CSE (AI & ML) department, for the opportunities, experiences, and memories that will drive my career forward for years to come!",
+            author: "Aryan Mishra",
+            batch: "2021-25",
+            image: "/cse-ai-assets/Testimonial photo/Aryan Mishra .png"
         },
         {
             id: 7,
@@ -82,15 +82,6 @@ export default function Testimonial() {
             image: "/cse-ai-assets/Testimonial photo/Aditya Mohan Gupta.jpg"
         },
         {
-            id: 9,
-            company: "Razorpay",
-            package: "35 LPA",
-            quote: "Pursuing B.Tech in CSE (AI) at KIET Group of Institutions was an important phase in my academic and professional journey. The program was designed to blend strong computer science fundamentals with emerging areas of Artificial Intelligence, which helped me understand not only how systems work but also how intelligent solutions are built and optimized. The coursework encouraged analytical thinking and practical application. Subjects related to algorithms, data handling, and AI concepts strengthened my technical confidence and improved my problem-solving approach. The faculty members were supportive and maintained an environment where discussions and doubts were welcomed, which made learning more interactive and effective. One of the most valuable aspects of my experience was the cooperation extended by the department during my internship tenure. The academic team ensured that all formalities and approvals were managed efficiently, allowing me to focus on industry exposure and skill development. That flexibility helped me bridge the gap between classroom learning and real-world implementation. The institute also provided a disciplined and resourceful academic environment. Facilities like the library and lab infrastructure supported research, project execution, and exam preparation effectively. Overall, my time in the CSE (AI) department contributed significantly to my technical growth, professional discipline, and readiness to take on industry challenges.",
-            author: "Archit Agarwal",
-            batch: "2022-26",
-            image: "/cse-ai-assets/Testimonial photo/Archit Agarwal.jpg"
-        },
-        {
             id: 10,
             company: "Juspay",
             package: "21 LPA",
@@ -107,6 +98,15 @@ export default function Testimonial() {
             author: "Parth Agarwal",
             batch: "2022-26",
             image: "/cse-ai-assets/Testimonial photo/PARTH AGARWAL.jpg"
+        },
+        {
+            id: 3,
+            company: "CISCO",
+            package: "18 LPA",
+            quote: "During my first year at KIET Group of Institutions, Ghaziabad, I explored several domains, including machine learning and web development. I also dived into data structures and algorithms (DSA), but it didn't spark much interest. I then shifted focus to cybersecurity and networking, eventually joining the CPC Cyber Peace Centre, which provided me with deep insights into these fields. This was where I truly began to admire Cisco. As I continued exploring, I ventured into iOS development in my third year. Around this time, I secured an internship with Accenture, but unfortunately, I couldn't complete it due to university exams—a major setback for me. Despite this, I applied to various companies off-campus. I cleared Swiggy's online assessment, but after two rescheduled interviews, I never heard back. Then, during Cisco's Ideathon process, I interviewed with Blinkit but got rejected in the second round. Unsure about my chances with Cisco, I joined Rapipay to keep progressing. Just 15 days later, however, I received the life-changing email from Cisco offering me the role of Technical Consultant Engineer. This journey was filled with setbacks and uncertainty, but ultimately, I reached my goal, making the challenges all worth it.",
+            author: "Kanishk Joshi",
+            batch: "2021-25",
+            image: "/cse-ai-assets/Testimonial photo/Kanishk Joshi .jpeg"
         },
         {
             id: 12,

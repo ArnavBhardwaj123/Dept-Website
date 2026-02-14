@@ -19,17 +19,37 @@ export default function Home() {
       <HomeNav />
       <FloatingAdmissionButton />
       <main>
-        <Overview />
+        <div id="overview">
+          <Overview />
+        </div>
         {/* <PlacementOverview /> */}
-        <PlacementRecord />
-        <DgxCoe />
-        <ClubSection />
-        <DeanMessage />
-        <KeyHighlights />
-        <Faculty />
-        <Testimonial />
-        <PublicationsResearch />
-        <ProgramDetails />
+        <div id="placement">
+          <PlacementRecord />
+        </div>
+        <div id="coe">
+          <DgxCoe />
+        </div>
+        <div id="clubs">
+          <ClubSection />
+        </div>
+        <div id="dean-message">
+          <DeanMessage />
+        </div>
+        <div id="infrastructure">
+          <KeyHighlights />
+        </div>
+        <div id="faculty">
+          <Faculty />
+        </div>
+        <div id="testimonials">
+          <Testimonial />
+        </div>
+        <div id="publications">
+          <PublicationsResearch />
+        </div>
+        <div id="syllabus">
+          <ProgramDetails />
+        </div>
       </main>
     </>
   );

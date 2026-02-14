@@ -7,7 +7,7 @@ export default function PlacementRecord() {
         { value: '60 LPA', label: 'Highest Package', color: '#F26520', textcolor: 'white' },
         { value: '17 LPA', label: 'Top 10% Placement', color: '#002855', textcolor: 'white' },
         { value: '6.5 LPA', label: 'Average Package', color: '#F26520', textcolor: 'white' },
-        { value: '150+', label: 'Total Companies', color: '#002855', textcolor: 'white' },
+        { value: '300+', label: 'Total Companies', color: '#002855', textcolor: 'white' },
     ];
 
     return (

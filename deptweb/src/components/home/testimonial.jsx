@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 export default function Testimonial() {
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedTestimonial, setSelectedTestimonial] = useState(null);
-    const testimonialsPerPage = 3;
+    const [activeDot, setActiveDot] = useState(0);
+    const scrollRef = useRef(null);
 
     const testimonials = [
         {
@@ -119,23 +119,29 @@ export default function Testimonial() {
         },
     ];
 
-    const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
+    const totalDots = 4; // 12 testimonials / 3 visible at a time = 4 dots
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % totalPages);
+    const scroll = (direction) => {
+        if (scrollRef.current) {
+            const scrollAmount = 400;
+            if (direction === 'left') {
+                scrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
     };
 
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + totalPages) % totalPages);
-    };
-
-    const goToSlide = (index) => {
-        setCurrentIndex(index);
-    };
-
-    const getCurrentTestimonials = () => {
-        const startIndex = currentIndex * testimonialsPerPage;
-        return testimonials.slice(startIndex, startIndex + testimonialsPerPage);
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+            const scrollProgress = scrollLeft / (scrollWidth - clientWidth);
+            const newActiveDot = Math.min(
+                Math.floor(scrollProgress * totalDots),
+                totalDots - 1
+            );
+            setActiveDot(newActiveDot);
+        }
     };
 
     const truncateText = (text, maxLength = 200) => {
@@ -153,15 +159,26 @@ export default function Testimonial() {
         document.body.style.overflow = 'unset';
     };
 
+    useEffect(() => {
+        const ref = scrollRef.current;
+        if (ref) {
+            ref.addEventListener('scroll', handleScroll);
+            return () => ref.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
+
     return (
-        <section style={{ 
-            backgroundColor: '#f8f9fa', 
-            padding: '5rem 0',
-            position: 'relative'
-        }}>
+        <section 
+            suppressHydrationWarning={true}
+            style={{ 
+                backgroundColor: '#f8f9fa', 
+                padding: '5rem 0',
+                position: 'relative'
+            }}
+        >
             <div className="container">
                 {/* Section Header */}
-                <div className="mb-5">
+                <div className="mb-4">
                     <h2 className="fw-bold mb-3" style={{ 
                         fontSize: 'clamp(2rem, 4vw, 2.8rem)',
                         color: '#111827'
@@ -177,14 +194,27 @@ export default function Testimonial() {
                     </p>
                 </div>
 
-                {/* Testimonials Grid */}
-                <div className="row g-4 mb-4">
-                    {getCurrentTestimonials().map((testimonial) => (
-                        <div key={testimonial.id} className="col-lg-4 col-md-6">
+                {/* Testimonials Horizontal Scroll */}
+                <div
+                    ref={scrollRef}
+                    className="d-flex gap-4 overflow-auto pb-4 px-1 scrollbar-hide"
+                    style={{
+                        scrollSnapType: 'x mandatory'
+                    }}
+                >
+                    {testimonials.map((testimonial) => (
+                        <div 
+                            key={testimonial.id}
+                            className="flex-shrink-0"
+                            style={{
+                                width: 'min(350px, 85vw)',
+                                scrollSnapAlign: 'start'
+                            }}
+                        >
                             <div style={{
                                 backgroundColor: 'white',
                                 borderRadius: '16px',
-                                padding: '1.25rem 1.75rem',
+                                padding: '1.5rem',
                                 height: '100%',
                                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07)',
                                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -325,106 +355,52 @@ export default function Testimonial() {
                     ))}
                 </div>
 
-                {/* Navigation Dots */}
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                    marginTop: '3rem'
-                }}>
-                    {Array.from({ length: totalPages }).map((_, index) => (
+                {/* Navigation Controls */}
+                <div className="d-flex justify-content-between align-items-center mt-3">
+                    {/* Navigation Arrows (Left) */}
+                    <div className="d-flex gap-2">
                         <button
-                            key={index}
-                            onClick={() => goToSlide(index)}
-                            style={{
-                                width: currentIndex === index ? '32px' : '10px',
-                                height: '10px',
-                                borderRadius: '5px',
-                                border: 'none',
-                                backgroundColor: currentIndex === index ? '#ff5722' : '#d1d5db',
-                                cursor: 'pointer',
-                                transition: 'all 0.3s ease',
-                                padding: '0'
-                            }}
-                            aria-label={`Go to slide ${index + 1}`}
-                        />
-                    ))}
-                </div>
+                            onClick={() => scroll('left')}
+                            className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center p-0"
+                            style={{ width: '36px', height: '36px', border: '2px solid #ff5722', color: '#ff5722', fontSize: '1.2rem' }}
+                        >
+                            <span style={{ lineHeight: 0, paddingBottom: '2px' }}>‹</span>
+                        </button>
+                        <button
+                            onClick={() => scroll('right')}
+                            className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center p-0"
+                            style={{ width: '36px', height: '36px', border: '2px solid #ff5722', color: '#ff5722', fontSize: '1.2rem' }}
+                        >
+                            <span style={{ lineHeight: 0, paddingBottom: '2px' }}>›</span>
+                        </button>
+                    </div>
 
-                {/* Navigation Arrows */}
-                <button
-                    onClick={prevSlide}
-                    style={{
-                        position: 'absolute',
-                        left: '10px',
-                        top: '50%',
-                        transform: 'translateY(-50%)',
-                        backgroundColor: 'white',
-                        border: 'none',
-                        borderRadius: '50%',
-                        width: '48px',
-                        height: '48px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        cursor: 'pointer',
-                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                        fontSize: '1.5rem',
-                        color: '#3b82f6',
-                        transition: 'all 0.3s ease',
-                        zIndex: 10
-                    }}
-                    onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#ff5722';
-                        e.currentTarget.style.color = 'white';
-                        e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
-                    }}
-                    onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'white';
-                        e.currentTarget.style.color = '#ff5722';
-                        e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
-                    }}
-                    aria-label="Previous testimonials"
-                >
-                    ‹
-                </button>
-                <button
-                    onClick={nextSlide}
-                    style={{
-                        position: 'absolute',
-                        right: '10px',
-                        top: '50%',
-                        transform: 'translateY(-50%)',
-                        backgroundColor: 'white',
-                        border: 'none',
-                        borderRadius: '50%',
-                        width: '48px',
-                        height: '48px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        cursor: 'pointer',
-                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                        fontSize: '1.5rem',
-                        color: '#3b82f6',
-                        transition: 'all 0.3s ease',
-                        zIndex: 10
-                    }}
-                    onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#ff5722';
-                        e.currentTarget.style.color = 'white';
-                        e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
-                    }}
-                    onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'white';
-                        e.currentTarget.style.color = '#ff5722';
-                        e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
-                    }}
-                    aria-label="Next testimonials"
-                >
-                    ›
-                </button>
+                    {/* Pagination Dots (Right) */}
+                    <div className="d-flex gap-2">
+                        {[...Array(totalDots)].map((_, index) => (
+                            <div
+                                key={index}
+                                style={{
+                                    width: '10px',
+                                    height: '10px',
+                                    borderRadius: '50%',
+                                    backgroundColor: activeDot === index ? '#ff5722' : 'transparent',
+                                    border: activeDot === index ? '1px solid #ff5722' : '1px solid #ced4da',
+                                    cursor: 'pointer',
+                                    transition: 'background-color 0.2s ease, border-color 0.2s ease'
+                                }}
+                                onClick={() => {
+                                    if (scrollRef.current) {
+                                        const { scrollWidth, clientWidth } = scrollRef.current;
+                                        const maxScroll = scrollWidth - clientWidth;
+                                        const targetScroll = (maxScroll / (totalDots - 1)) * index;
+                                        scrollRef.current.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                                    }
+                                }}
+                            />
+                        ))}
+                    </div>
+                </div>
             </div>
 
             {/* Modal */}

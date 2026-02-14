@@ -50,7 +50,7 @@ export default function Overview() {
                 <div className="col-sm-6">
                   <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>₹7 Cr</h3>
                   <p className="small fw-bold mb-0 text-dark">Funding Raised by Alumni</p>
-                  <p className="small text-muted">Through Startups : 2025 batch</p>
+                  <p className="small text-muted">Through Startup : 2025 batch</p>
                 </div>
 
                 {/* Stat 2 */}
@@ -64,6 +64,7 @@ export default function Overview() {
                 <div className="col-sm-6">
                   <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>240+300</h3>
                   <p className="small fw-bold mb-0 text-dark">Annual Student Intake</p>
+                  <p className="small text-muted"> CSE (AI) + CSE (AI&ML)</p>
                 </div>
 
                 {/* Stat 4 */}

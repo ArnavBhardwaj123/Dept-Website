@@ -50,13 +50,13 @@ export default function Overview() {
                 <div className="col-sm-6">
                   <h3 className="fw-bold mb-1" style={{ fontSize: '3rem', color: '#F26520' }}>₹7 Cr</h3>
                   <p className="small fw-bold mb-0 text-dark">Funding Raised by Alumni</p>
-                  <p className="small text-muted">Through Startup : 2025 batch</p>
+                  <p className="small text-muted">Through Startup : 2025 Batch</p>
                 </div>
 
                 {/* Stat 2 */}
                 <div className="col-sm-6">
                   <h3 className="fw-bold mb-1" style={{ fontSize: '3rem', color: '#F26520' }}>95%</h3>
-                  <p className="small fw-bold mb-0 text-dark">Placement Record in</p>
+                  <p className="small fw-bold mb-0 text-dark">Placement Record in 2025</p>
                   <p className="small text-muted">Leading Tech & AI Companies</p>
                 </div>
 

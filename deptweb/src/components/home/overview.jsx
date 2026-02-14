@@ -14,7 +14,7 @@ export default function Overview() {
             backgroundColor: '#fff'
           }}
         >
-          <div className="row align-items-center g-5">
+          <div className="row align-items-center justify-content-between g-5">
             {/* Left Content */}
             <div className="col-lg-5">
               <h2 className="fw-bold mb-4" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: '#000' }}>
@@ -44,32 +44,32 @@ export default function Overview() {
             </div>
 
             {/* Right Stats Grid */}
-            <div className="col-lg-7">
+            <div className="col-lg-6">
               <div className="row g-4 text-center text-lg-start">
                 {/* Stat 1 */}
                 <div className="col-sm-6">
-                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>₹7 Cr</h3>
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '3rem', color: '#F26520' }}>₹7 Cr</h3>
                   <p className="small fw-bold mb-0 text-dark">Funding Raised by Alumni</p>
                   <p className="small text-muted">Through Startup : 2025 batch</p>
                 </div>
 
                 {/* Stat 2 */}
                 <div className="col-sm-6">
-                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>95%</h3>
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '3rem', color: '#F26520' }}>95%</h3>
                   <p className="small fw-bold mb-0 text-dark">Placement Record in</p>
                   <p className="small text-muted">Leading Tech & AI Companies</p>
                 </div>
 
                 {/* Stat 3 */}
                 <div className="col-sm-6">
-                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>240 + 300</h3>
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '3rem', color: '#F26520' }}>240 + 300</h3>
                   <p className="small fw-bold mb-0 text-dark">Annual Student Intake</p>
                   <p className="small text-muted"> CSE (AI) + CSE (AI&ML)</p>
                 </div>
 
                 {/* Stat 4 */}
                 <div className="col-sm-6">
-                  <h3 className="fw-bold mb-1" style={{ fontSize: '2.5rem', color: '#F26520' }}>650+</h3>
+                  <h3 className="fw-bold mb-1" style={{ fontSize: '3rem', color: '#F26520' }}>650+</h3>
                   <p className="small fw-bold mb-0 text-dark">Globally Certified Students</p>
                   <p className="small text-muted">(AI • ML • Cloud)</p>
                 </div>

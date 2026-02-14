@@ -155,9 +155,7 @@ export default function PublicationsResearch() {
     const statsData = {
         '2023-24': {
             publications: 47,
-            patents: 10,
-            projects: 0,
-            grants: 0
+            patents: 10
         },
         '2024-25': {
             publications: 67,
@@ -417,7 +415,7 @@ export default function PublicationsResearch() {
                                 </div>
                                 <div className="d-flex justify-content-around align-items-end h-100" style={{ minHeight: '300px' }}>
                                     {Object.entries(currentStats).map(([key, value]) => (
-                                        <div key={key} className="d-flex flex-column align-items-center" style={{ width: '15%' }}>
+                                        <div key={key} className="d-flex flex-column align-items-center" style={{ width: '100px' }}>
                                             <span className="mb-2 fw-bold" style={{ fontSize: '0.9rem', color: '#00304C' }}>{value}</span>
                                             <div
                                                 style={{
@@ -464,27 +462,31 @@ export default function PublicationsResearch() {
                                         </div>
                                     </div>
                                     {/* Govt Projects */}
-                                    <div className="col-6">
-                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
-                                            style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
-                                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                                        >
-                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.projects}</h3>
-                                            <p className="small text-muted m-0 fw-semibold">Govt. Projects</p>
+                                    {currentStats.projects !== undefined && (
+                                        <div className="col-6">
+                                            <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
+                                                style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
+                                                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                                                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                                            >
+                                                <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.projects}</h3>
+                                                <p className="small text-muted m-0 fw-semibold">Govt. Projects</p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    )}
                                     {/* Grants */}
-                                    <div className="col-6">
-                                        <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
-                                            style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
-                                            onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                                            onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
-                                        >
-                                            <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.grants}</h3>
-                                            <p className="small text-muted m-0 fw-semibold">Grants (Lakhs)</p>
+                                    {currentStats.grants !== undefined && (
+                                        <div className="col-6">
+                                            <div className="card border-0 shadow-sm p-3 h-100 rounded-4 text-center d-flex flex-column justify-content-center align-items-center"
+                                                style={{ transition: 'transform 0.3s ease', cursor: 'default' }}
+                                                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                                                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                                            >
+                                                <h3 className="fw-bold mb-1" style={{ color: '#F26520', fontSize: '2.5rem' }}>{currentStats.grants}</h3>
+                                                <p className="small text-muted m-0 fw-semibold">Grants (Lakhs)</p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

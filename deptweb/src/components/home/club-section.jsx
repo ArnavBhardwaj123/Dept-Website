@@ -12,7 +12,7 @@ const ClubCard = ({ title, description, link, imageSrc }) => (
                 overflow: 'hidden',
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 cursor: 'default',
-                minHeight: '320px' // Increased minimum height
+                minHeight: '260px'
             }}
             onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-5px)';
@@ -23,54 +23,57 @@ const ClubCard = ({ title, description, link, imageSrc }) => (
                 e.currentTarget.style.boxShadow = '0 .125rem .25rem rgba(0,0,0,.075)';
             }}
         >
-            <div className="card-body p-5 d-flex flex-column flex-md-row align-items-center">
+            <div className="card-body p-4 d-flex flex-column flex-md-row h-100">
                 {/* Logo/Image */}
                 <div
-                    className="flex-shrink-0 mb-4 mb-md-0 me-md-5"
+                    className="flex-shrink-0 mb-3 mb-md-0 me-md-4 align-self-center"
                     style={{
-                        width: '130px', // Slightly larger logo area
-                        height: '130px',
+                        width: '100px',
+                        height: '100px',
                         borderRadius: '50%',
                         overflow: 'hidden',
                         position: 'relative',
-                        border: '3px solid #f0f0f0',
-                        backgroundColor: '#fff' // Ensure logo background is clean
+                        border: '2px solid #f0f0f0',
+                        backgroundColor: '#fff'
                     }}
                 >
                     <Image
                         src={imageSrc}
                         alt={title}
                         fill
-                        style={{ objectFit: 'cover' }} // Contain to show full logo
+                        style={{ objectFit: 'cover' }}
                     />
                 </div>
 
                 {/* Content */}
-                <div className="flex-grow-1 text-center text-md-start">
-                    <h3 className="h3 fw-bold mb-3" style={{ color: '#003049' }}>
+                <div className="flex-grow-1 text-center text-md-start d-flex flex-column">
+                    <h4 className="fw-bold mb-2" style={{ color: '#003049', fontSize: '1.25rem' }}>
                         {title}
-                    </h3>
-                    <p className="text-muted mb-4" style={{ lineHeight: '1.8', fontSize: '1.05rem' }}>
+                    </h4>
+                    <p className="text-muted mb-3 flex-grow-1" style={{ lineHeight: '1.6', fontSize: '0.9rem' }}>
                         {description}
                     </p>
-                    <a
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn px-4 py-2 fw-semibold" // Reduced button size
-                        style={{
-                            backgroundColor: '#ff5722',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '8px',
-                            transition: 'background-color 0.2s',
-                            textDecoration: 'none'
-                        }}
-                        onMouseEnter={(e) => e.target.style.backgroundColor = '#e64a19'}
-                        onMouseLeave={(e) => e.target.style.backgroundColor = '#ff5722'}
-                    >
-                        Website
-                    </a>
+                    <div>
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn px-3 py-1 fw-semibold"
+                            style={{
+                                backgroundColor: '#ff5722',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '6px',
+                                fontSize: '0.85rem',
+                                transition: 'background-color 0.2s',
+                                textDecoration: 'none'
+                            }}
+                            onMouseEnter={(e) => e.target.style.backgroundColor = '#e64a19'}
+                            onMouseLeave={(e) => e.target.style.backgroundColor = '#ff5722'}
+                        >
+                            Website
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,7 +99,22 @@ export default function ClubSection() {
     return (
         <section className="py-5" style={{ backgroundColor: '#f8f9fa' }}>
             <div className="container">
-                <div className="row g-5">
+                <div className="row mb-5">
+                    <div className="col-12 text-center">
+                        <h2 className="display-5 fw-bold" style={{ color: '#003049' }}>
+                            Our Clubs
+                        </h2>
+                        <div style={{
+                            width: '80px',
+                            height: '4px',
+                            backgroundColor: '#ff5722',
+                            margin: '20px auto 0',
+                            borderRadius: '2px'
+                        }}></div>
+                    </div>
+                </div>
+
+                <div className="row g-4 justify-content-center">
                     {clubs.map((club, index) => (
                         <ClubCard
                             key={index}

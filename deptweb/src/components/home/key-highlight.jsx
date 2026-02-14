@@ -53,7 +53,7 @@ export default function KeyHighlights() {
           {highlights.map((highlight) => (
             <div key={highlight.id} className="col-lg-6">
               <div
-                className="d-flex align-items-start bg-white rounded-3 overflow-hidden"
+                className="d-flex bg-white rounded-3 overflow-hidden h-100"
                 style={{
                   boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
                   transition: 'all 0.3s ease',
@@ -69,18 +69,18 @@ export default function KeyHighlights() {
                 }}
               >
                 {/* Image */}
-                <div style={{ flex: '0 0 160px', height: '140px' }}>
+                <div style={{ flex: '0 0 160px', position: 'relative' }}>
                   <img
                     src={highlight.image}
                     alt={highlight.title}
                     className="w-100 h-100"
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'cover', position: 'absolute', top: 0, left: 0 }}
                   />
                 </div>
 
                 {/* Content */}
                 <div className="p-3 flex-grow-1">
-                  <h3 
+                  <h3
                     className="fw-semibold mb-2"
                     style={{
                       fontSize: '1.2rem',

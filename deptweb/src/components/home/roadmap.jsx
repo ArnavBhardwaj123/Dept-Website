@@ -7,7 +7,9 @@ export default function Roadmap() {
     const sectionRef = useRef(null);
     const gridRef = useRef(null);
     const circleRefs = useRef([]);
+    const mobileCircleRefs = useRef([]);
     const [lines, setLines] = useState([]);
+    const [mobileLines, setMobileLines] = useState([]);
 
     // Measure circle positions and compute SVG curves
     useEffect(() => {
@@ -34,6 +36,34 @@ export default function Roadmap() {
         // recompute after fonts/images load
         const timer = setTimeout(computeLines, 500);
         return () => { window.removeEventListener('resize', computeLines); clearTimeout(timer); };
+    }, []);
+
+    // Measure mobile circle positions and compute straight lines
+    useEffect(() => {
+        const computeMobileLines = () => {
+            if (!mobileCircleRefs.current || mobileCircleRefs.current.length < 10) return;
+            const container = document.querySelector('.d-lg-none > div');
+            if (!container) return;
+            const containerRect = container.getBoundingClientRect();
+            const newLines = [];
+            for (let i = 0; i < 9; i++) {
+                const el1 = mobileCircleRefs.current[i];
+                const el2 = mobileCircleRefs.current[i + 1];
+                if (!el1 || !el2) continue;
+                const r1 = el1.getBoundingClientRect();
+                const r2 = el2.getBoundingClientRect();
+                const x1 = r1.left + r1.width / 2 - containerRect.left;
+                const y1 = r1.top + r1.height / 2 - containerRect.top;
+                const x2 = r2.left + r2.width / 2 - containerRect.left;
+                const y2 = r2.top + r2.height / 2 - containerRect.top;
+                newLines.push({ x1, y1, x2, y2 });
+            }
+            setMobileLines(newLines);
+        };
+        computeMobileLines();
+        window.addEventListener('resize', computeMobileLines);
+        const timer = setTimeout(computeMobileLines, 500);
+        return () => { window.removeEventListener('resize', computeMobileLines); clearTimeout(timer); };
     }, []);
 
     // Close overlay on tap outside (mobile)
@@ -225,24 +255,22 @@ export default function Roadmap() {
                 {/* ===== MOBILE ROADMAP - Vertical Timeline ===== */}
                 <div className="d-lg-none">
                     <div style={{ position: 'relative', paddingLeft: '50px', minHeight: steps.length * 70 + 'px' }}>
-                        {/* SVG vertical line connecting circles */}
+                        {/* SVG lines connecting mobile circles center-to-center */}
                         <svg
-                            style={{ position: 'absolute', left: '35px', top: 0, height: '100%', width: '24px', zIndex: 1 }}
-                            height={steps.length * 70}
-                            width={24}
+                            style={{ position: 'absolute', left: 0, top: 0, height: '100%', width: '100%', zIndex: 1, pointerEvents: 'none' }}
+                            height="100%"
+                            width="100%"
                         >
-                            {steps.map((step, idx) => (
-                                idx < steps.length - 1 ? (
-                                    <line
-                                        key={idx}
-                                        x1={12}
-                                        y1={idx * 70 + 30}
-                                        x2={12}
-                                        y2={(idx + 1) * 70 + 30}
-                                        stroke="#002855"
-                                        strokeWidth={4}
-                                    />
-                                ) : null
+                            {mobileLines.map((l, i) => (
+                                <line
+                                    key={i}
+                                    x1={l.x1}
+                                    y1={l.y1}
+                                    x2={l.x2}
+                                    y2={l.y2}
+                                    stroke="#002855"
+                                    strokeWidth={4}
+                                />
                             ))}
                         </svg>
 
@@ -262,18 +290,21 @@ export default function Roadmap() {
                             }}
                             >
                                 {/* Logo Circle on the line */}
-                                <div style={{
-                                    position: 'absolute', left: '-27px', top: '10px',
-                                    width: '60px', height: '60px', borderRadius: '50%',
-                                    backgroundColor: '#fff',
-                                    border: 'none',
-                                    boxShadow: hoveredStep === index
-                                        ? '0 4px 15px rgba(242, 101, 32, 0.5)'
-                                        : '0 3px 10px rgba(0, 40, 85, 0.3)',
-                                    overflow: 'hidden',
-                                    transition: 'all 0.3s ease',
-                                    transform: hoveredStep === index ? 'scale(1.1)' : 'scale(1)',
-                                }}>
+                                <div
+                                    ref={el => mobileCircleRefs.current[index] = el}
+                                    style={{
+                                        position: 'absolute', left: '-27px', top: '10px',
+                                        width: '60px', height: '60px', borderRadius: '50%',
+                                        backgroundColor: '#fff',
+                                        border: 'none',
+                                        boxShadow: hoveredStep === index
+                                            ? '0 4px 15px rgba(242, 101, 32, 0.5)'
+                                            : '0 3px 10px rgba(0, 40, 85, 0.3)',
+                                        overflow: 'hidden',
+                                        transition: 'all 0.3s ease',
+                                        transform: hoveredStep === index ? 'scale(1.1)' : 'scale(1)',
+                                    }}
+                                >
                                     <img
                                         src={encodeURI(`/cse-ai-assets/Roadmap/${step.logo}`)}
                                         alt={getName(step.logo)}

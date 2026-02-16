@@ -12,7 +12,7 @@ export default function KeyHighlights() {
     },
     {
       id: 2,
-      image: "/cse-ai-assets/images/Experimental-Learning.jpg",
+      image: "/cse-ai-assets/images/Experimental-Learning.JPG",
       title: "Strong Focus on Experiential & AI-Driven Learning",
       description: "Our department adopts a future-focused learning approach through AI-driven assessments, Project-Based Learning (PBL), social internships, and industry-oriented capstone projects. Students work with real-world problems while gaining hands-on experience with leading tools such as CodeTantra, AWS Academy, HackerRank, Kaggle, WeXL, Infosys Springboard ensuring practical exposure and strong industry readiness."
     },

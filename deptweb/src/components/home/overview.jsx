@@ -22,8 +22,7 @@ export default function Overview() {
               </h2>
 
               <p className="text-muted mb-4" style={{ lineHeight: '1.6', textAlign: 'justify' }}>
-                These achievements reflect our commitment to excellence in scale, skill, and success. With a robust intake, strong placement outcomes, global certifications, and significant student-led funding, the department stands as a dynamic ecosystem where academic strength, industry readiness, and entrepreneurial ambition translate into measurable, impactful results.
-              </p>
+                The CSE (AI/AI&ML) programs craft future-ready innovators by blending strong computing fundamentals with advanced domains like Machine Learning, Deep Learning, Computer Vision, NLP, Robotics and Agentic AI. Through hands-on projects, industry exposure, leadership training, and ethical grounding, students graduate confident, career-ready, and prepared to lead in the AI-driven global technology era.</p>
 
               <a
                 href="https://admission.kiet.edu/"

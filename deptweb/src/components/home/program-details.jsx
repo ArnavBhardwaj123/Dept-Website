@@ -6,23 +6,7 @@ export default function ProgramDetails() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const programs = [
-        {
-            title: "Program Description",
-            content: (
-                <>
-                    <h3 className="fw-bold mb-3">About the Program</h3>
-                    <p className="mb-3" style={{ textAlign: 'justify' }}>
-                        The CSE (AI/AI&ML) programs are strategically designed to shape future-ready professionals in Artificial Intelligence and emerging technologies. Blending strong core computing foundations with cutting-edge domains like Machine Learning, Deep Learning, Computer Vision, NLP, Robotics, and Generative AI, the curriculum emphasizes structured, hands-on, and industry-aligned learning.
-                    </p>
-                    <p className="mb-3" style={{ textAlign: 'justify' }}>
-                        Beyond technical excellence, equal focus is given to communication, leadership, teamwork, and professional ethics—ensuring holistic personality development. Through internships, industry exposure, live projects, and continuous mentoring, students gain real-world experience and career confidence.
-                    </p>
-                    <p className="mb-0" style={{ textAlign: 'justify' }}>
-                        With a supportive ecosystem that fosters innovation, adaptability, and problem-solving, we empower learners to build impactful careers and responsibly contribute to the evolving global technology landscape.
-                    </p>
-                </>
-            )
-        },
+        // Program Description removed as requested
         {
             title: "Vision",
             content: (

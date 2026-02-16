@@ -6,21 +6,21 @@ export default function KeyHighlights() {
   const highlights = [
     {
       id: 1,
-      image: "/cse-ai-assets/images/key1.jpeg",
-      title: "Industry-Aligned Specializations with Global Certifications",
-      description: "Our Department blends strong academic foundations with industry-ready skills through professional electives aligned with globally recognized certifications, offering specialization tracks in AI & ML, Cloud Operations & Security, and Data Engineering & Cloud Analytics, enriched with industry expert sessions and practitioner-led workshops that ensures that students graduate certification-ready, technically proficient, professionally confident, and highly employable in today's rapidly evolving tech-driven world."
+      image: "/cse-ai-assets/images/key3.jpeg",
+      title: "Introduction of Advanced AI-Centric Core Courses",
+      description: "Our curriculum is systematically structured to progress from foundational sciences and programming to advanced domains such as AI, ML, DL, Gen AI, Cloud Computing, Computer Vision, Data Engineering, Cyber Security, and Full-Stack Development delivered by a highly qualified academic team of faculty members, graduating from premier institutions such as IITs, NITs, and other reputed universities, ensuring strong academic depth and industry-aligned expertise."
     },
     {
       id: 2,
-      image: "/cse-ai-assets/images/key2.jpeg",
+      image: "/cse-ai-assets/images/Experimental-Learning.jpg",
       title: "Strong Focus on Experiential & AI-Driven Learning",
       description: "Our department adopts a future-focused learning approach through AI-driven assessments, Project-Based Learning (PBL), social internships, and industry-oriented capstone projects. Students work with real-world problems while gaining hands-on experience with leading tools such as CodeTantra, AWS Academy, HackerRank, Kaggle, WeXL, Infosys Springboard ensuring practical exposure and strong industry readiness."
     },
     {
       id: 3,
-      image: "/cse-ai-assets/images/key3.jpeg",
-      title: "Introduction of Advanced AI-Centric Core Courses",
-      description: "Our curriculum is systematically structured to progress from foundational sciences and programming to advanced domains such as AI, ML, DL, Gen AI, Cloud Computing, Computer Vision, Data Engineering, Cyber Security, and Full-Stack Development delivered by a highly qualified academic team of faculty members, graduating from premier institutions such as IITs, NITs, and other reputed universities, ensuring strong academic depth and industry-aligned expertise."
+      image: "/cse-ai-assets/images/key1.jpeg",
+      title: "Industry-Aligned Specializations with Global Certifications",
+      description: "Our Department blends strong academic foundations with industry-ready skills through professional electives aligned with globally recognized certifications, offering specialization tracks in AI & ML, Cloud Operations & Security, and Data Engineering & Cloud Analytics, enriched with industry expert sessions and practitioner-led workshops that ensures that students graduate certification-ready, technically proficient, professionally confident, and highly employable in today's rapidly evolving tech-driven world."
     },
     {
       id: 4,

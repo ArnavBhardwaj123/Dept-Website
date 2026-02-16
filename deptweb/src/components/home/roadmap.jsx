@@ -87,10 +87,10 @@ export default function Roadmap() {
         { logo: 'Data Engineering.png', slide: 'Data Engineering.png' },
         { logo: 'Machine Learning.png', slide: 'Machine Learning.png' },
         { logo: 'Cloud and Network Security.png', slide: 'Cloud and Network Security.png' },
-        { logo: 'Industry-Integrated.png', slide: 'Industry Alligned.png' },
+        { logo: 'Industry-Integrated.png', slide: 'Industry Alligned.png', display: 'Industry Integrated Certification' },
     ];
 
-    const getName = (filename) => filename.replace('.png', '');
+    const getName = (filename, display) => display ? display : filename.replace('.png', '');
 
     return (
         <section
@@ -116,7 +116,15 @@ export default function Roadmap() {
                         }}>
                         Learning Roadmap
                     </h2>
-                    
+                    {/* Mobile: show click instruction, Desktop: show hover instruction */}
+                    <div>
+                        <span className="d-lg-none" style={{ color: '#525151', fontWeight: 500, fontSize: '1rem' }}>
+                            Tap logo to read more
+                        </span>
+                        <span className="d-none d-lg-inline" style={{ color: '#303030', fontWeight: 500, fontSize: '1rem' }}>
+                            Hover and view details
+                        </span>
+                    </div>
                 </div>
 
                 {/* ===== DESKTOP ROADMAP - Snake/Zigzag Layout ===== */}
@@ -195,7 +203,7 @@ export default function Roadmap() {
                                         }}>
                                             <img
                                                 src={encodeURI(`/cse-ai-assets/Roadmap/${step.logo}`)}
-                                                alt={getName(step.logo)}
+                                                alt={getName(step.logo, step.display)}
                                                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
                                             />
                                         </div>
@@ -206,7 +214,7 @@ export default function Roadmap() {
                                             color: '#002855', textTransform: 'uppercase',
                                             margin: 0, lineHeight: '1.2'
                                         }}>
-                                            {getName(step.logo)}
+                                            {getName(step.logo, step.display)}
                                         </h5>
 
                                         {/* Subject Slide Popup */}
@@ -308,7 +316,7 @@ export default function Roadmap() {
                                 >
                                     <img
                                         src={encodeURI(`/cse-ai-assets/Roadmap/${step.logo}`)}
-                                        alt={getName(step.logo)}
+                                        alt={getName(step.logo, step.display)}
                                         style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
                                     />
                                 </div>
@@ -319,7 +327,7 @@ export default function Roadmap() {
                                     color: '#002855', textTransform: 'uppercase', margin: 0,
                                     marginLeft: '2.5rem', marginTop: '40px',
                                 }}>
-                                    {getName(step.logo)}
+                                    {getName(step.logo, step.display)}
                                 </h5>
                             </div>
                         ))}
@@ -370,7 +378,7 @@ export default function Roadmap() {
                         </button>
                         <img
                             src={encodeURI(`/cse-ai-assets/Subject Slide/${steps[hoveredStep].slide}`)}
-                            alt={`${getName(steps[hoveredStep].logo)} Slide`}
+                            alt={`${getName(steps[hoveredStep].logo, steps[hoveredStep].display)} Slide`}
                             style={{
                                 width: '100%', height: 'auto',
                                 borderRadius: '10px', display: 'block'
@@ -382,7 +390,7 @@ export default function Roadmap() {
                             fontSize: '1rem', textTransform: 'uppercase',
                             marginBottom: 0
                         }}>
-                            {getName(steps[hoveredStep].logo)}
+                            {getName(steps[hoveredStep].logo, steps[hoveredStep].display)}
                         </p>
                     </div>
                 </div>
